@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class CreatMapMatrix : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class CreatMapMatrix : MonoBehaviour
         public Tree b;
         public Tree parent;
     }
+    public GameObject player;
+    public GameObject startpoint;
 
     public int[,] mapMatrix = new int [30,30];
     public int roomCount = 0;
@@ -57,13 +60,13 @@ public class CreatMapMatrix : MonoBehaviour
         q.Enqueue(enq);
         s.Push(enq);
         int[] ii = s.Pop();
-        Instantiate(spawnpoint, new Vector3(ii[1] * 2.83f, -ii[0] * 1.1f), Quaternion.identity);
-        while (roomCount < 10)
+        startpoint = Instantiate(spawnpoint, new Vector3((ii[1]-14) * 28, (-ii[0]+14) * 20), Quaternion.identity);
+        while (roomCount < 8)
         {
             if (q.Count == 0)   //이전에 생성된 방으로 인해 맵 전체가 닫혔고 방의 갯수가 10개가 안됐을 시 이전방을 삭제하고 새로 만들어서 열릴때까지 반복(이 부분때문에 여러분 수행할 가능성이 있으나 현재로는 이대로 진행
             {
                 q.Enqueue(enq);
-                ran = UnityEngine.Random.Range(0, 16);
+                ran = UnityEngine.Random.Range(0, roomList.Length);
                 roomCount--;
                 mapMatrix[enq[0], enq[1]] = CheckTBLR(enq[0], enq[1], ran);
             }
@@ -193,7 +196,7 @@ public class CreatMapMatrix : MonoBehaviour
             {
                 if(mapMatrix[j, i] != 0)
                 {
-                    Instantiate(roomList[mapMatrix[j,i]-1], new Vector3(i*2.83f,-j*1.1f), Quaternion.identity);
+                    Instantiate(roomList[mapMatrix[j,i]-1], new Vector3((i-14)* 28, (-j+14)* 20), Quaternion.identity);
                 }
             }
         }
@@ -201,7 +204,8 @@ public class CreatMapMatrix : MonoBehaviour
         Debug.Log(ii[0].ToString() + ii[1].ToString());
         Debug.Log(trees[lastRoom-1].point[0].ToString()+ trees[lastRoom - 1].point[1].ToString());
         findRootNode(trees[lastRoom - 1]);
-        Instantiate(core, new Vector3(ii[1] * 2.83f, -ii[0] * 1.1f), Quaternion.identity);
+        Instantiate(core, new Vector3((ii[1]-14) * 28,  (- ii[0]+14) * 20), Quaternion.identity);
+        Instantiate(player, startpoint.transform.position, Quaternion.identity);
     }
 
     // Update is called once per frame
@@ -246,7 +250,7 @@ public class CreatMapMatrix : MonoBehaviour
                     mapMatrix[deq[0], deq[1] + 1] = CheckTBLR(deq[0], deq[1] + 1, 0);
                     int[] en = new int[2];
                     Array.Copy(deq, en, 2);
-                    en[0]--;
+                    en[1]++;
                     s.Push(en);
                     trees[lastRoom] = new Tree(en[0], en[1]);
                     trees[lastRoom].parent = trees[nowRoom];
@@ -260,7 +264,7 @@ public class CreatMapMatrix : MonoBehaviour
                     mapMatrix[deq[0], deq[1] - 1] = CheckTBLR(deq[0], deq[1] - 1, 0);
                     int[] en = new int[2];
                     Array.Copy(deq, en, 2);
-                    en[0]--;
+                    en[1]--;
                     s.Push(en);
                     int i = 0;
                     while(true)
@@ -284,7 +288,7 @@ public class CreatMapMatrix : MonoBehaviour
                     mapMatrix[deq[0] + 1, deq[1]] = CheckTBLR(deq[0] + 1, deq[1], 0);
                     int[] en = new int[2];
                     Array.Copy(deq, en, 2);
-                    en[0]--;
+                    en[0]++;
                     s.Push(en);
                     int i = 0;
                     while (true)

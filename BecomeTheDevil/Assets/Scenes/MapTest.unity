@@ -97,7 +97,7 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 0.5
+    agentRadius: 1.55
     agentHeight: 2
     agentSlope: 45
     agentClimb: 0.4
@@ -111,7 +111,7 @@ NavMeshSettings:
     accuratePlacement: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 1c746f3235e63f94e81b820c09c91a30, type: 2}
 --- !u!1 &993998234
 GameObject:
   m_ObjectHideFlags: 0
@@ -158,13 +158,13 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1
+    width: 2
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 60
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -261,5 +261,106 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8352707705582115289, guid: 0ec13de5990c1434e97ac79b414f2de6,
+        type: 3}
+      propertyPath: roomList.Array.size
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8352707705582115289, guid: 0ec13de5990c1434e97ac79b414f2de6,
+        type: 3}
+      propertyPath: roomList.Array.data[0]
+      value: 
+      objectReference: {fileID: 4999834343748433032, guid: e47aaa4e469129d4286c1bbf96219449,
+        type: 3}
+    - target: {fileID: 8352707705582115289, guid: 0ec13de5990c1434e97ac79b414f2de6,
+        type: 3}
+      propertyPath: roomList.Array.data[1]
+      value: 
+      objectReference: {fileID: 202137230227537523, guid: 3c7b2a4b9ee6bb94580029edbf17307a,
+        type: 3}
+    - target: {fileID: 8352707705582115289, guid: 0ec13de5990c1434e97ac79b414f2de6,
+        type: 3}
+      propertyPath: roomList.Array.data[2]
+      value: 
+      objectReference: {fileID: 642758069183161781, guid: 9d8a3968e3fd6bb48a0bf8604c3dca2a,
+        type: 3}
+    - target: {fileID: 8352707705582115289, guid: 0ec13de5990c1434e97ac79b414f2de6,
+        type: 3}
+      propertyPath: roomList.Array.data[3]
+      value: 
+      objectReference: {fileID: 225596602825518559, guid: b421240f97d77664fb2ca74340b94031,
+        type: 3}
+    - target: {fileID: 8352707705582115289, guid: 0ec13de5990c1434e97ac79b414f2de6,
+        type: 3}
+      propertyPath: roomList.Array.data[4]
+      value: 
+      objectReference: {fileID: 3298358084622974878, guid: ca28d9556fcb0ed4191b836db58906a7,
+        type: 3}
+    - target: {fileID: 8352707705582115289, guid: 0ec13de5990c1434e97ac79b414f2de6,
+        type: 3}
+      propertyPath: roomList.Array.data[5]
+      value: 
+      objectReference: {fileID: 126080712945955981, guid: de8493bb00028f04e9f1c4f4fd5b22ec,
+        type: 3}
+    - target: {fileID: 8352707705582115289, guid: 0ec13de5990c1434e97ac79b414f2de6,
+        type: 3}
+      propertyPath: roomList.Array.data[6]
+      value: 
+      objectReference: {fileID: 6293527746794231170, guid: a2998e7942fd481409d2deefe6495682,
+        type: 3}
+    - target: {fileID: 8352707705582115289, guid: 0ec13de5990c1434e97ac79b414f2de6,
+        type: 3}
+      propertyPath: roomList.Array.data[7]
+      value: 
+      objectReference: {fileID: 8489247189513120380, guid: f877615d5ab911e458cc4c28c77d54d9,
+        type: 3}
+    - target: {fileID: 8352707705582115289, guid: 0ec13de5990c1434e97ac79b414f2de6,
+        type: 3}
+      propertyPath: roomList.Array.data[8]
+      value: 
+      objectReference: {fileID: 1463669545763656652, guid: e0d6ada2bc2d4434d966797d66698a32,
+        type: 3}
+    - target: {fileID: 8352707705582115289, guid: 0ec13de5990c1434e97ac79b414f2de6,
+        type: 3}
+      propertyPath: roomList.Array.data[9]
+      value: 
+      objectReference: {fileID: 6424094578258619975, guid: bf8c8d25c550bad4abf5cd50aa2ed964,
+        type: 3}
+    - target: {fileID: 8352707705582115289, guid: 0ec13de5990c1434e97ac79b414f2de6,
+        type: 3}
+      propertyPath: roomList.Array.data[10]
+      value: 
+      objectReference: {fileID: 5939006631833282193, guid: ca2a5e491b5cee8498280cd93b7bcbb8,
+        type: 3}
+    - target: {fileID: 8352707705582115289, guid: 0ec13de5990c1434e97ac79b414f2de6,
+        type: 3}
+      propertyPath: roomList.Array.data[11]
+      value: 
+      objectReference: {fileID: 77234216277443763, guid: 02120b67beb64da4da308bdb7eee2465,
+        type: 3}
+    - target: {fileID: 8352707705582115289, guid: 0ec13de5990c1434e97ac79b414f2de6,
+        type: 3}
+      propertyPath: roomList.Array.data[12]
+      value: 
+      objectReference: {fileID: 7941811046721805604, guid: dc3a66ac48afee14c932b95621681b31,
+        type: 3}
+    - target: {fileID: 8352707705582115289, guid: 0ec13de5990c1434e97ac79b414f2de6,
+        type: 3}
+      propertyPath: roomList.Array.data[13]
+      value: 
+      objectReference: {fileID: 5676346421854453175, guid: cfc2051b25203cb45a454f90f6cb2649,
+        type: 3}
+    - target: {fileID: 8352707705582115289, guid: 0ec13de5990c1434e97ac79b414f2de6,
+        type: 3}
+      propertyPath: roomList.Array.data[14]
+      value: 
+      objectReference: {fileID: 7811177432431988397, guid: 4ec5c94cbddce1249897c1003d334169,
+        type: 3}
+    - target: {fileID: 8352707705582115289, guid: 0ec13de5990c1434e97ac79b414f2de6,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 6899024419526884799, guid: e6e4f9fc28ef2674fa9fec26e44dbaeb,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ec13de5990c1434e97ac79b414f2de6, type: 3}

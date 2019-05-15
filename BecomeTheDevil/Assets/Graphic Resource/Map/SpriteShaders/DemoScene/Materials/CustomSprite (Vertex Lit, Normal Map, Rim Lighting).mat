@@ -4,12 +4,12 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: CustomSprite (Vertex Lit, Normal Map, Rim Lighting)
-  m_Shader: {fileID: 4800000, guid: 8d8595bc04e68504fa1e36c72d7ead57, type: 3}
-  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA PIXELSNAP_ON _ALPHABLEND_ON _FIXED_NORMALS_VIEWSPACE
-    _GLOSSYREFLECTIONS_OFF _NORMALMAP _RIM_LIGHTING _SPHERICAL_HARMONICS _ZWRITE_OFF
+  m_Shader: {fileID: 4800000, guid: 33b83ec84e459f742b6679edfdb486a3, type: 3}
+  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA _ALPHABLEND_ON _GLOSSYREFLECTIONS_OFF _NORMALMAP
+    _RIM_LIGHTING _ZWRITE_OFF
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -31,7 +31,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: be77e7bace7ee2d42acfce585e04a465, type: 3}
+        m_Texture: {fileID: 2800000, guid: 20497c37ed7d5824bb3f95db3d607547, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -71,7 +71,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - PixelSnap: 1
+    - PixelSnap: 0
     - _BlendAmount: 0
     - _Brightness: 1
     - _BumpScale: 1
@@ -91,7 +91,7 @@ Material:
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _RenderQueue: 0
-    - _RimPower: 2.5
+    - _RimPower: 1
     - _Saturation: 1
     - _ShadowAlphaCutoff: 0.004
     - _SmoothnessTextureChannel: 0
@@ -102,6 +102,6 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
-    - _FixedNormal: {r: 0, g: 0, b: 1, a: 1}
+    - _FixedNormal: {r: 0, g: 0, b: -1, a: 1}
     - _OverlayColor: {r: 0, g: 0, b: 0, a: 0}
-    - _RimColor: {r: 0.3066038, g: 1, b: 0.3222869, a: 1}
+    - _RimColor: {r: 1, g: 0.09377968, b: 0, a: 1}
