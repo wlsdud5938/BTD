@@ -60,3 +60,6 @@ MonoBehaviour:
   - {fileID: 5496032426065224341, guid: d8a360db04f99f14c85b62b62acd77fd, type: 3}
   - {fileID: 4329491193234432039, guid: 31ce9849be3c98742a674cfef1fe563d, type: 3}
   - {fileID: 4921412787251771972, guid: 227dba6c3a5effa45b19732bf77abe7a, type: 3}
+  spawnpoint: {fileID: 3150875196988411395, guid: b346c64972e8b8742b668d4e04c5970f,
+    type: 3}
+  core: {fileID: 2194923770807123677, guid: ec3f3638be429f94a9b997e0d334bf2b, type: 3}

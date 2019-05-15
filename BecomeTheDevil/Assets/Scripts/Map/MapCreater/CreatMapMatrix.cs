@@ -5,10 +5,28 @@ using UnityEngine;
 
 public class CreatMapMatrix : MonoBehaviour
 {
+    class Tree
+    {
+        public Tree(int a, int b)
+        {
+            this.point[0] = a;
+            this.point[1] = b;
+        }
+        public int[] point = new int[2];
+        public Tree r;
+        public Tree l;
+        public Tree t;
+        public Tree b;
+        public Tree parent;
+    }
+
     public int[,] mapMatrix = new int [30,30];
     public int roomCount = 0;
     public GameObject[] roomList;
+    public GameObject spawnpoint;
+    public GameObject core;
     private Queue<int[]> q = new Queue<int[]>();
+    private Stack<int[]> s = new Stack<int[]>();
     private int[] enq = new int[2];
     private int[] deq = new int[2];
     private int ran;
@@ -16,6 +34,9 @@ public class CreatMapMatrix : MonoBehaviour
     private int[] randomArr2 = new int[8] {1,3,5,7,9,11,13,15};     //왼쪽이 열린 방 목록
     private int[] randomArr3 = new int[8] {8,9,10,11,12,13,14,15};      //윗쪽이 열린 방 목록
     private int[] randomArr4 = new int[8] {4,5,6,7,12,13,14,15};        //아래쪽이 열린 방 목록
+    Tree[] trees = new Tree[20];
+    int nowRoom = 0;
+    int lastRoom = 0;
     int num;
     // Start is called before the first frame update
     void Start()
@@ -25,21 +46,26 @@ public class CreatMapMatrix : MonoBehaviour
             for (int j = 0; j < 30; j++)
                 mapMatrix[i, j] = 0;
         }
-
+        Tree root = new Tree(14,14);
+        trees[nowRoom] = root;
+        nowRoom++;
+        lastRoom++;
         mapMatrix[14, 14] = 1;
-
         enq[0] = 14;
         enq[1] = 14;
         roomCount = 0;
         q.Enqueue(enq);
-        while(roomCount < 10)
+        s.Push(enq);
+        int[] ii = s.Pop();
+        Instantiate(spawnpoint, new Vector3(ii[1] * 2.83f, -ii[0] * 1.1f), Quaternion.identity);
+        while (roomCount < 10)
         {
             if (q.Count == 0)   //이전에 생성된 방으로 인해 맵 전체가 닫혔고 방의 갯수가 10개가 안됐을 시 이전방을 삭제하고 새로 만들어서 열릴때까지 반복(이 부분때문에 여러분 수행할 가능성이 있으나 현재로는 이대로 진행
             {
                 q.Enqueue(enq);
                 ran = UnityEngine.Random.Range(0, 16);
                 roomCount--;
-                mapMatrix[enq[0], enq[1]] = CheckTBLR(enq[0], enq[1], ran); ;
+                mapMatrix[enq[0], enq[1]] = CheckTBLR(enq[0], enq[1], ran);
             }
             deq = (int[])q.Dequeue().Clone();
             if ((mapMatrix[deq[0], deq[1]] & 1) == 1)  //오른쪽이 열린방
@@ -53,6 +79,20 @@ public class CreatMapMatrix : MonoBehaviour
                     Array.Copy(deq, en, 2);
                     en[1]++;
                     q.Enqueue(en);
+                    s.Push(en);
+                    int i = 0;
+                    while (true)
+                    {
+                        if (trees[i].point[0] == deq[0] && trees[i].point[1] == deq[1])
+                        {
+                            break;
+                        }
+                        i++;
+                    }
+                    nowRoom = i;
+                    trees[lastRoom] = new Tree(en[0], en[1]);
+                    trees[lastRoom].parent = trees[nowRoom];
+                    lastRoom++;
                 }
             }
             if ((mapMatrix[deq[0], deq[1]] & 2) == 2)  //왼쪽이 열린방
@@ -66,6 +106,20 @@ public class CreatMapMatrix : MonoBehaviour
                     Array.Copy(deq, en, 2);
                     en[1]--;
                     q.Enqueue(en);
+                    s.Push(en);
+                    int i = 0;
+                    while (true)
+                    {
+                        if (trees[i].point[0] == deq[0] && trees[i].point[1] == deq[1])
+                        {
+                            break;
+                        }
+                        i++;
+                    }
+                    nowRoom = i;
+                    trees[lastRoom] = new Tree(en[0], en[1]);
+                    trees[lastRoom].parent = trees[nowRoom];
+                    lastRoom++;
                 }
             }
             if ((mapMatrix[deq[0], deq[1]] & 4) == 4)  //아래쪽이 열린방
@@ -79,6 +133,20 @@ public class CreatMapMatrix : MonoBehaviour
                     Array.Copy(deq, en, 2);
                     en[0]++;
                     q.Enqueue(en);
+                    s.Push(en);
+                    int i = 0;
+                    while (true)
+                    {
+                        if (trees[i].point[0] == deq[0] && trees[i].point[1] == deq[1])
+                        {
+                            break;
+                        }
+                        i++;
+                    }
+                    nowRoom = i;
+                    trees[lastRoom] = new Tree(en[0], en[1]);
+                    trees[lastRoom].parent = trees[nowRoom];
+                    lastRoom++;
                 }
             }
             if ((mapMatrix[deq[0], deq[1]] & 8) == 8)  //윗쪽이 열린방
@@ -92,6 +160,20 @@ public class CreatMapMatrix : MonoBehaviour
                     Array.Copy(deq, en, 2);
                     en[0]--;
                     q.Enqueue(en);
+                    s.Push(en);
+                    int i = 0;
+                    while (true)
+                    {
+                        if (trees[i].point[0] == deq[0] && trees[i].point[1] == deq[1])
+                        {
+                            break;
+                        }
+                        i++;
+                    }
+                    nowRoom = i;
+                    trees[lastRoom] = new Tree(en[0], en[1]);
+                    trees[lastRoom].parent = trees[nowRoom];
+                    lastRoom++;
                 }
             }
 
@@ -115,6 +197,11 @@ public class CreatMapMatrix : MonoBehaviour
                 }
             }
         }
+        ii = s.Pop();
+        Debug.Log(ii[0].ToString() + ii[1].ToString());
+        Debug.Log(trees[lastRoom-1].point[0].ToString()+ trees[lastRoom - 1].point[1].ToString());
+        findRootNode(trees[lastRoom - 1]);
+        Instantiate(core, new Vector3(ii[1] * 2.83f, -ii[0] * 1.1f), Quaternion.identity);
     }
 
     // Update is called once per frame
@@ -157,7 +244,13 @@ public class CreatMapMatrix : MonoBehaviour
                 if ((mapMatrix[deq[0], deq[1] + 1] == 0))
                 {
                     mapMatrix[deq[0], deq[1] + 1] = CheckTBLR(deq[0], deq[1] + 1, 0);
-
+                    int[] en = new int[2];
+                    Array.Copy(deq, en, 2);
+                    en[0]--;
+                    s.Push(en);
+                    trees[lastRoom] = new Tree(en[0], en[1]);
+                    trees[lastRoom].parent = trees[nowRoom];
+                    lastRoom++;
                 }
             }
             if ((mapMatrix[deq[0], deq[1]] & 2) == 2)
@@ -165,7 +258,23 @@ public class CreatMapMatrix : MonoBehaviour
                 if ((mapMatrix[deq[0], deq[1] - 1] == 0))
                 {
                     mapMatrix[deq[0], deq[1] - 1] = CheckTBLR(deq[0], deq[1] - 1, 0);
-
+                    int[] en = new int[2];
+                    Array.Copy(deq, en, 2);
+                    en[0]--;
+                    s.Push(en);
+                    int i = 0;
+                    while(true)
+                    {
+                        if(trees[i].point[0] == deq[0] && trees[i].point[1] == deq[1])
+                        {
+                            break;
+                        }
+                        i++;
+                    }
+                    nowRoom = i;
+                    trees[lastRoom] = new Tree(en[0], en[1]);
+                    trees[lastRoom].parent = trees[nowRoom];
+                    lastRoom++;
                 }
             }
             if ((mapMatrix[deq[0], deq[1]] & 4) == 4)
@@ -173,7 +282,23 @@ public class CreatMapMatrix : MonoBehaviour
                 if ((mapMatrix[deq[0] + 1, deq[1]] == 0))
                 {
                     mapMatrix[deq[0] + 1, deq[1]] = CheckTBLR(deq[0] + 1, deq[1], 0);
-
+                    int[] en = new int[2];
+                    Array.Copy(deq, en, 2);
+                    en[0]--;
+                    s.Push(en);
+                    int i = 0;
+                    while (true)
+                    {
+                        if (trees[i].point[0] == deq[0] && trees[i].point[1] == deq[1])
+                        {
+                            break;
+                        }
+                        i++;
+                    }
+                    nowRoom = i;
+                    trees[lastRoom] = new Tree(en[0], en[1]);
+                    trees[lastRoom].parent = trees[nowRoom];
+                    lastRoom++;
                 }
             }
             if ((mapMatrix[deq[0], deq[1]] & 8) == 8)
@@ -181,9 +306,34 @@ public class CreatMapMatrix : MonoBehaviour
                 if ((mapMatrix[deq[0] - 1, deq[1]] == 0))
                 {
                     mapMatrix[deq[0] - 1, deq[1]] = CheckTBLR(deq[0] - 1, deq[1], 0);
-
+                    int[] en = new int[2];
+                    Array.Copy(deq, en, 2);
+                    en[0]--;
+                    s.Push(en);
+                    int i = 0;
+                    while (true)
+                    {
+                        if (trees[i].point[0] == deq[0] && trees[i].point[1] == deq[1])
+                        {
+                            break;
+                        }
+                        i++;
+                    }
+                    nowRoom = i;
+                    trees[lastRoom] = new Tree(en[0], en[1]);
+                    trees[lastRoom].parent = trees[nowRoom];
+                    lastRoom++;
                 }
             }
         }
+    }
+    void findRootNode(Tree t)
+    {
+        if(t.parent == null)
+        {
+            Debug.Log(t.point[0].ToString() + t.point[1].ToString());
+            return;
+        }
+        findRootNode(t.parent);
     }
 }

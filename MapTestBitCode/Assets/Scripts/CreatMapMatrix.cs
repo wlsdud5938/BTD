@@ -133,12 +133,6 @@ public class CreatMapMatrix : MonoBehaviour
                 }
             }
         }
-        for (int i = 0; i < 30; i++)
-        {
-            Debug.Log(mapMatrix[i, 0] + " " + mapMatrix[i, 1] + " " + mapMatrix[i, 2] + " " + mapMatrix[i, 3] + " " + mapMatrix[i, 4] + " " + mapMatrix[i, 5] + " " + mapMatrix[i, 6] + " " + mapMatrix[i, 7] + " " + mapMatrix[i, 8] + " " + mapMatrix[i, 9] + " " +
-                     mapMatrix[i, 10] + " " + mapMatrix[i, 11] + " " + mapMatrix[i, 12] + " " + mapMatrix[i, 13] + " " + mapMatrix[i, 14] + " " + mapMatrix[i, 15] + " " + mapMatrix[i, 16] + " " + mapMatrix[i, 17] + " " + mapMatrix[i, 18] + " " + mapMatrix[i, 19] + " " +
-                     mapMatrix[i, 20] + " " + mapMatrix[i, 21] + " " + mapMatrix[i, 22] + " " + mapMatrix[i, 23] + " " + mapMatrix[i, 24] + " " + mapMatrix[i, 25] + " " + mapMatrix[i, 26] + " " + mapMatrix[i, 27] + " " + mapMatrix[i, 28] + " " + mapMatrix[i, 29] + " ");
-        }
     }
 
     // Update is called once per frame
