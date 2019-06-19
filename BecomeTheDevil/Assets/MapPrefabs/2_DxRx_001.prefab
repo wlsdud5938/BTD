@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3298358084622974876}
   - component: {fileID: 3298358084622974877}
-  - component: {fileID: 1335229060952995511}
   m_Layer: 0
   m_Name: 2_DxRx_001
   m_TagString: Untagged
@@ -49,19 +48,6 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
---- !u!114 &1335229060952995511
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3298358084622974878}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a76a94961db8844449eb40878882f6c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  roomCode: 5
 --- !u!1001 &895310584708851349
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -219,6 +205,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3298358084622974876}
     m_Modifications:
+    - target: {fileID: 6548692027837899105, guid: 7951d2d0de3f8c04d831fbc89423d579,
+        type: 3}
+      propertyPath: m_Name
+      value: No_UpHall_col
+      objectReference: {fileID: 0}
     - target: {fileID: 3910620547698900458, guid: 7951d2d0de3f8c04d831fbc89423d579,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -273,11 +264,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6548692027837899105, guid: 7951d2d0de3f8c04d831fbc89423d579,
-        type: 3}
-      propertyPath: m_Name
-      value: No_UpHall_col
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7951d2d0de3f8c04d831fbc89423d579, type: 3}
@@ -369,6 +355,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3298358084622974876}
     m_Modifications:
+    - target: {fileID: 1812232314151213408, guid: fc2b3c57d4273874a9165f4ffdc1fed1,
+        type: 3}
+      propertyPath: m_Name
+      value: 02_DownHall
+      objectReference: {fileID: 0}
     - target: {fileID: 3280847767825194945, guid: fc2b3c57d4273874a9165f4ffdc1fed1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -423,11 +414,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1812232314151213408, guid: fc2b3c57d4273874a9165f4ffdc1fed1,
-        type: 3}
-      propertyPath: m_Name
-      value: 02_DownHall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc2b3c57d4273874a9165f4ffdc1fed1, type: 3}

@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 663561187004609527}
   - component: {fileID: 663561187004609526}
-  - component: {fileID: 6005559728479024300}
   m_Layer: 0
   m_Name: 3_DxRU_001
   m_TagString: Untagged
@@ -49,19 +48,6 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
---- !u!114 &6005559728479024300
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 663561187004609525}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a76a94961db8844449eb40878882f6c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  roomCode: 13
 --- !u!1001 &23238058061229
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -219,6 +205,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 663561187004609527}
     m_Modifications:
+    - target: {fileID: 1812232314151213408, guid: fc2b3c57d4273874a9165f4ffdc1fed1,
+        type: 3}
+      propertyPath: m_Name
+      value: 02_DownHall
+      objectReference: {fileID: 0}
     - target: {fileID: 3280847767825194945, guid: fc2b3c57d4273874a9165f4ffdc1fed1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -273,11 +264,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1812232314151213408, guid: fc2b3c57d4273874a9165f4ffdc1fed1,
-        type: 3}
-      propertyPath: m_Name
-      value: 02_DownHall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc2b3c57d4273874a9165f4ffdc1fed1, type: 3}

@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1463669545763656654}
   - component: {fileID: 1463669545763656655}
-  - component: {fileID: 6661422325444542578}
   m_Layer: 0
   m_Name: 2_xxRU_000
   m_TagString: Untagged
@@ -49,19 +48,6 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
---- !u!114 &6661422325444542578
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1463669545763656652}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a76a94961db8844449eb40878882f6c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  roomCode: 9
 --- !u!1001 &453778039619591082
 PrefabInstance:
   m_ObjectHideFlags: 0
