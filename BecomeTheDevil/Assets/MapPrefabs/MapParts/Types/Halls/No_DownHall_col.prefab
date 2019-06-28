@@ -73,4 +73,4 @@ MonoBehaviour:
   shape: 1
   center: {x: 0, y: 0}
   size: {x: 28, y: 4}
-  carve: 0
+  carve: 1

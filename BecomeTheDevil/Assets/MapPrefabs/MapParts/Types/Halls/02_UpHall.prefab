@@ -73,7 +73,7 @@ MonoBehaviour:
   shape: 1
   center: {x: 0, y: 0}
   size: {x: 12, y: 4}
-  carve: 0
+  carve: 1
 --- !u!1 &3556590630262127898
 GameObject:
   m_ObjectHideFlags: 0
@@ -147,7 +147,7 @@ MonoBehaviour:
   shape: 1
   center: {x: 0, y: 0}
   size: {x: 12, y: 4}
-  carve: 0
+  carve: 1
 --- !u!1 &7650609386645233817
 GameObject:
   m_ObjectHideFlags: 0
