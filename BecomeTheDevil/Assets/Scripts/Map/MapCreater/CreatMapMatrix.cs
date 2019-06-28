@@ -42,7 +42,8 @@ public class CreatMapMatrix : MonoBehaviour
     int lastRoom = 0;
     int num;
     // Start is called before the first frame update
-    void Start()
+
+    void Awake()
     {
         for(int i=0;i<30;i++)
         {

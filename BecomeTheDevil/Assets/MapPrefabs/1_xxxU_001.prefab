@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8489247189513120382}
   - component: {fileID: 8489247189513120383}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 1_xxxU_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59,6 +59,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: 02_UpHall
+      objectReference: {fileID: 0}
+    - target: {fileID: 7650609386645233817, guid: 26c09d3a391686e4c9461269150fb0fb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6813333440787588664, guid: 26c09d3a391686e4c9461269150fb0fb,
         type: 3}
@@ -115,6 +120,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3556590630262127898, guid: 26c09d3a391686e4c9461269150fb0fb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3029212113689265755, guid: 26c09d3a391686e4c9461269150fb0fb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26c09d3a391686e4c9461269150fb0fb, type: 3}
 --- !u!4 &5352255178095789672 stripped
@@ -134,6 +149,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: No_LeftHall_col
+      objectReference: {fileID: 0}
+    - target: {fileID: 4443634488311741654, guid: e0ae7d0601c4a554b998769ccdf5ba3e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5840612496039518301, guid: e0ae7d0601c4a554b998769ccdf5ba3e,
         type: 3}
@@ -210,6 +230,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: No_RightHall_col
       objectReference: {fileID: 0}
+    - target: {fileID: 7449987250632252431, guid: cbe04eec3ecb57141b547c6df4911b7f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 848748167393804420, guid: cbe04eec3ecb57141b547c6df4911b7f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -285,6 +310,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ground_001
       objectReference: {fileID: 0}
+    - target: {fileID: 3830400368022471558, guid: 5c3085260f4cb2f4382e77081e171de9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3830400368022471559, guid: 5c3085260f4cb2f4382e77081e171de9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -340,6 +370,27 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8748731821558638687, guid: 5c3085260f4cb2f4382e77081e171de9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1203361627, guid: 5c3085260f4cb2f4382e77081e171de9, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 476746830, guid: 5c3085260f4cb2f4382e77081e171de9, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 629403263, guid: 5c3085260f4cb2f4382e77081e171de9, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 740659905, guid: 5c3085260f4cb2f4382e77081e171de9, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c3085260f4cb2f4382e77081e171de9, type: 3}
 --- !u!4 &4728872567030443130 stripped
@@ -359,6 +410,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: No_DownHall_col
+      objectReference: {fileID: 0}
+    - target: {fileID: 5133996972411498132, guid: 5de4bf29d863eb54f8d4fd0031a7484f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3142227293504467487, guid: 5de4bf29d863eb54f8d4fd0031a7484f,
         type: 3}
