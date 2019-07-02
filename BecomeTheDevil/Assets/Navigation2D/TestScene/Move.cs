@@ -3,22 +3,24 @@ using System.Collections;
 
 public class Move : MonoBehaviour
 {
-    //void Update()
-    //{
-    //    if (Input.GetMouseButton(0))
-    //    {
-    //        Vector3 w = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-    //        GetComponent<NavMeshAgent2D>().destination = w;
-    //    }
-    //}     
-    public Vector3 target;
-    private void Start()
-    {
-
-        target = GameObject.FindGameObjectWithTag("Finish").gameObject.transform.position;
-    }
+    public Vector3 w;
     void Update()
     {
-            GetComponent<NavMeshAgent2D>().destination = target;
+        if (Input.GetMouseButton(0))
+        {
+            w = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            GetComponent<NavMeshAgent2D>().destination = w;
+        }
     }
+    //public GameObject target;
+    //NavMeshAgent2D nav;
+    //private void Start()
+    //{
+    //    nav = GetComponent<NavMeshAgent2D>();
+    //    target = GameObject.FindGameObjectWithTag("Finish").gameObject;
+    //}
+    //void Update()
+    //{
+    //        nav.destination = target.transform.position;
+    //}
 }

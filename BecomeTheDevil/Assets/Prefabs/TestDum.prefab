@@ -126,7 +126,7 @@ MonoBehaviour:
   _stoppingDistance: 0
   _autoBraking: 1
   _radius: 0.5
-  _quality: 0
+  _quality: 3
   _priority: 50
   _autoRepath: 1
 --- !u!114 &6899024419526884795
@@ -141,3 +141,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 031a2185e48bdd84ba593dd6f6669a3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 0}
