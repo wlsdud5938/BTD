@@ -1,14 +1,14 @@
 fileFormatVersion: 2
-guid: c13e74d18519a4e4dbadddb65d269a28
+guid: 3dec736b7443375418a8bb53e2a7ea24
 TextureImporter:
   fileIDToRecycleName:
-    21300000: wizard_1_walk_0
-    21300002: wizard_1_walk_1
-    21300004: wizard_1_walk_2
-    21300006: wizard_1_walk_3
-    21300008: wizard_1_walk_4
-    21300010: wizard_1_walk_5
-    21300012: wizard_1_walk_6
+    21300000: knight_1_walk_0
+    21300002: knight_1_walk_1
+    21300004: knight_1_walk_2
+    21300006: knight_1_walk_3
+    21300008: knight_1_walk_4
+    21300010: knight_1_walk_5
+    21300012: knight_1_walk_6
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -135,7 +135,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: wizard_1_walk_0
+      name: knight_1_walk_0
       rect:
         serializedVersion: 2
         x: 0
@@ -149,13 +149,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 260491d4299469342baf9f998c5e721a
+      spriteID: 95f603149bb2de14e81300ca3b727e21
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wizard_1_walk_1
+      name: knight_1_walk_1
       rect:
         serializedVersion: 2
         x: 128
@@ -169,13 +169,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb25a3385be1a1d45a83dfb7750ca75d
+      spriteID: f085065875e750244adf8958a2953975
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wizard_1_walk_2
+      name: knight_1_walk_2
       rect:
         serializedVersion: 2
         x: 256
@@ -189,13 +189,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 66766a5cae757634fa8592e79ec13e8a
+      spriteID: 3fb306ece3bfc3b4ab0713a32db68188
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wizard_1_walk_3
+      name: knight_1_walk_3
       rect:
         serializedVersion: 2
         x: 384
@@ -209,13 +209,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f509000619f23844a6472dc94920733
+      spriteID: c75291e92f1c14e4abf2034743e630af
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wizard_1_walk_4
+      name: knight_1_walk_4
       rect:
         serializedVersion: 2
         x: 512
@@ -229,13 +229,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a5caaf6b1e678ef4d8884edce08f2364
+      spriteID: fa49ef90cb1ad814f8b5786f82c64f31
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wizard_1_walk_5
+      name: knight_1_walk_5
       rect:
         serializedVersion: 2
         x: 640
@@ -249,13 +249,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ed12fa5ca1c2d804f91c7a5a3f338e5e
+      spriteID: 46e7d8e9ed0de0c45abce8243ef8e07a
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wizard_1_walk_6
+      name: knight_1_walk_6
       rect:
         serializedVersion: 2
         x: 768
@@ -269,7 +269,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5cb6fd6f5ab7dfa48b90cf65fe1d1f08
+      spriteID: d9b8976e98850de4dbd37047de92c908
       vertices: []
       indices: 
       edges: []
@@ -277,7 +277,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 094a0e3058119aa40961287a46b1a99f
+    spriteID: 097ce686e39a90d46abeadd29aca4724
     vertices: []
     indices: 
     edges: []
