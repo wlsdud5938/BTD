@@ -61,7 +61,7 @@ public class CreatMapMatrix : MonoBehaviour
         q.Enqueue(enq);
         s.Push(enq);
         int[] ii = s.Pop();
-        startpoint = Instantiate(spawnpoint, new Vector3((ii[1]-14) * 28, (-ii[0]+14) * 20), Quaternion.identity);
+        startpoint = Instantiate(spawnpoint, new Vector3((ii[1]-14) * 28, 0, (-ii[0]+14) * 20), Quaternion.Euler(90.0f, 0.0f, 0.0f));
         while (roomCount < 8)
         {
             if (q.Count == 0)   //이전에 생성된 방으로 인해 맵 전체가 닫혔고 방의 갯수가 10개가 안됐을 시 이전방을 삭제하고 새로 만들어서 열릴때까지 반복(이 부분때문에 여러분 수행할 가능성이 있으나 현재로는 이대로 진행
@@ -197,7 +197,7 @@ public class CreatMapMatrix : MonoBehaviour
             {
                 if(mapMatrix[j, i] != 0)
                 {
-                    Instantiate(roomList[mapMatrix[j,i]-1], new Vector3((i-14)* 28, (-j+14)* 20), Quaternion.identity);
+                    Instantiate(roomList[mapMatrix[j,i]-1], new Vector3((i-14)* 28,0, (-j+14)* 20), Quaternion.Euler(90.0f, 0.0f, 0.0f));
                 }
             }
         }
@@ -205,8 +205,8 @@ public class CreatMapMatrix : MonoBehaviour
         Debug.Log(ii[0].ToString() + ii[1].ToString());
         Debug.Log(trees[lastRoom-1].point[0].ToString()+ trees[lastRoom - 1].point[1].ToString());
         findRootNode(trees[lastRoom - 1]);
-        Instantiate(core, new Vector3((ii[1]-14) * 28,  (- ii[0]+14) * 20), Quaternion.identity);
-        Instantiate(player, startpoint.transform.position, Quaternion.identity);
+        Instantiate(core, new Vector3((ii[1]-14) * 28, 0,  (- ii[0]+14) * 20), Quaternion.Euler(90.0f, 0.0f, 0.0f));
+        Instantiate(player, startpoint.transform.position, Quaternion.Euler(90.0f, 0.0f, 0.0f));
     }
 
     // Update is called once per frame
