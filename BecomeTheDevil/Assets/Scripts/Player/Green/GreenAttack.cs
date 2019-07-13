@@ -15,27 +15,27 @@ public class GreenAttack : MonoBehaviour
     public float height;
     public float width;
     public bool isGreen = true;
-    Transform greenBulletPoint_right;
-    Transform greenBulletPoint_up;
-    Transform greenBulletPoint_down;
-    Transform greenBulletPoint_left;
-    Transform whiteBulletPoint_1;
-    Transform whiteBulletPoint_2;
-    Transform whiteBulletPoint_3;
+    Vector3 greenBulletPoint_right;
+    Vector3 greenBulletPoint_up;
+    Vector3 greenBulletPoint_down;
+    Vector3 greenBulletPoint_left;
+    Vector3 whiteBulletPoint_1;
+    Vector3 whiteBulletPoint_2;
+    Vector3 whiteBulletPoint_3;
 
     // Start is called before the first frame update
     void Start()
     {
 
         trans = GetComponent<Transform>();
-        greenBulletPoint_right = gameObject.transform.Find("GreenBulletPoint").gameObject.transform.Find("right").transform;
-        greenBulletPoint_up = gameObject.transform.Find("GreenBulletPoint").gameObject.transform.Find("up").transform;
-        greenBulletPoint_down = gameObject.transform.Find("GreenBulletPoint").gameObject.transform.Find("down").transform;
-        greenBulletPoint_left = gameObject.transform.Find("GreenBulletPoint").gameObject.transform.Find("left").transform;
+        greenBulletPoint_right = gameObject.transform.Find("GreenBulletPoint").gameObject.transform.Find("right").transform.position;
+        greenBulletPoint_up = gameObject.transform.Find("GreenBulletPoint").gameObject.transform.Find("up").transform.position;
+        greenBulletPoint_down = gameObject.transform.Find("GreenBulletPoint").gameObject.transform.Find("down").transform.position;
+        greenBulletPoint_left = gameObject.transform.Find("GreenBulletPoint").gameObject.transform.Find("left").transform.position;
 
-        whiteBulletPoint_1 = gameObject.transform.Find("WhiteBulletPoint").gameObject.transform.Find("1").transform;
-        whiteBulletPoint_2 = gameObject.transform.Find("WhiteBulletPoint").gameObject.transform.Find("2").transform;
-        whiteBulletPoint_3 = gameObject.transform.Find("WhiteBulletPoint").gameObject.transform.Find("3").transform;
+        whiteBulletPoint_1 = gameObject.transform.Find("WhiteBulletPoint").gameObject.transform.Find("1").transform.position;
+        whiteBulletPoint_2 = gameObject.transform.Find("WhiteBulletPoint").gameObject.transform.Find("2").transform.position;
+        whiteBulletPoint_3 = gameObject.transform.Find("WhiteBulletPoint").gameObject.transform.Find("3").transform.position;
     }
 
     // Update is called once per frame
@@ -64,7 +64,8 @@ public class GreenAttack : MonoBehaviour
 
         height = Screen.height;
         width = Screen.width;
-        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mousePosition = Input.mousePosition;
+        Debug.Log(mousePosition);
         angle = CalculateAngle(mousePosition);
         if (isGreen)
             GreenBulletAttack();
@@ -76,22 +77,22 @@ public class GreenAttack : MonoBehaviour
     {
         if (angle > -315 && angle <= 45)
         {
-            newBullet = Instantiate(bullet, greenBulletPoint_up);
+            newBullet = Instantiate(bullet, greenBulletPoint_up, Quaternion.Euler(90.0f, 0.0f, 0.0f));
             newBullet.GetComponent<Bullet>().target = mousePosition;
         }
         else if (angle > 45 && angle <= 135)
         {
-            newBullet = Instantiate(bullet, greenBulletPoint_left);
+            newBullet = Instantiate(bullet, greenBulletPoint_left, Quaternion.Euler(90.0f, 0.0f, 0.0f));
             newBullet.GetComponent<Bullet>().target = mousePosition;
         }
         else if (angle > 135 && angle <= 225)
         {
-            newBullet = Instantiate(bullet, greenBulletPoint_down);
+            newBullet = Instantiate(bullet, greenBulletPoint_down, Quaternion.Euler(90.0f, 0.0f, 0.0f));
             newBullet.GetComponent<Bullet>().target = mousePosition;
         }
         else if (angle > 225 && angle <= 315)
         {
-            newBullet = Instantiate(bullet, greenBulletPoint_right);
+            newBullet = Instantiate(bullet, greenBulletPoint_right, Quaternion.Euler(90.0f, 0.0f, 0.0f));
             newBullet.GetComponent<Bullet>().target = mousePosition;
         }
     }
@@ -99,13 +100,13 @@ public class GreenAttack : MonoBehaviour
     void WhiteBulletAttack()
     {
 
-        newBullet1 = Instantiate(bullet, whiteBulletPoint_1);
+        newBullet1 = Instantiate(bullet, whiteBulletPoint_1, Quaternion.Euler(90.0f, 0.0f, 0.0f));
         newBullet1.GetComponent<Bullet>().target = mousePosition;
 
-        newBullet2 = Instantiate(bullet, whiteBulletPoint_2);
+        newBullet2 = Instantiate(bullet, whiteBulletPoint_2, Quaternion.Euler(90.0f, 0.0f, 0.0f));
         newBullet2.GetComponent<Bullet>().target = mousePosition;
 
-        newBullet3 = Instantiate(bullet, whiteBulletPoint_3);
+        newBullet3 = Instantiate(bullet, whiteBulletPoint_3, Quaternion.Euler(90.0f, 0.0f, 0.0f));
         newBullet3.GetComponent<Bullet>().target = mousePosition;
 
     }
