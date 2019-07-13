@@ -220,6 +220,31 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 3
+--- !u!1 &1738301471 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7837392377250795086, guid: a938348b349f62d4cbe7b1a2bdbf3b3f,
+    type: 3}
+  m_PrefabInstance: {fileID: 7837392376615393318}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1738301474
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1738301471}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e887b612af4ac3f49a65911948addd32, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1881326989 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 146954886135157459, guid: b421240f97d77664fb2ca74340b94031,
@@ -247,6 +272,31 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 3
+--- !u!1 &1979262231 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7837392377454705768, guid: a938348b349f62d4cbe7b1a2bdbf3b3f,
+    type: 3}
+  m_PrefabInstance: {fileID: 7837392376615393318}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1979262234
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1979262231}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c00c39e2b059da341ad80bf6db1a5844, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &2122271946
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -516,6 +566,11 @@ PrefabInstance:
     - target: {fileID: 7837392377751475778, guid: a938348b349f62d4cbe7b1a2bdbf3b3f,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7837392377250795086, guid: a938348b349f62d4cbe7b1a2bdbf3b3f,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

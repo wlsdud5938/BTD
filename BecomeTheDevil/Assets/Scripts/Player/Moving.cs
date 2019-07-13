@@ -10,22 +10,90 @@ public class Moving : MonoBehaviour
     private Transform trans;
     public float moveSpeed = 10.0f;
     Vector3 moveDir;
+
+    private Animator greenAnimator;
+    private Animator whiteAnimator;
+
+    public string state = "green";
+
     // Start is called before the first frame update
     void Start()
     {
         trans = GetComponent<Transform>();
+        greenAnimator = transform.GetChild(0).gameObject.GetComponent<Animator>();
+        whiteAnimator = transform.GetChild(1).gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        h = Input.GetAxis("Horizontal");
-        v = Input.GetAxis("Vertical");
+        greenAnimator.SetBool("Walking", false);
 
-        moveDir = (Vector3.up * v) + (Vector3.right * h);
+        if (Input.GetKeyDown("space"))
+        {
 
-        trans.Translate(moveDir.normalized * moveSpeed * Time.deltaTime, Space.Self);
+            changeState(state);
 
 
+            if (state == "green")
+            {
+                transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().enabled = true;
+                transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                transform.GetChild(0).gameObject.SetActive(true);
+                transform.GetChild(1).gameObject.SetActive(false);
+            }
+            if (state == "white")
+            {
+                transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().enabled = true;
+                transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                transform.GetChild(1).gameObject.SetActive(true);
+                transform.GetChild(0).gameObject.SetActive(false);
+            }
+
+
+        }
+
+
+        if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
+        {
+
+            h = Input.GetAxisRaw("Horizontal");
+            v = Input.GetAxisRaw("Vertical");
+
+            moveDir = (Vector3.up * v) + (Vector3.right * h);
+
+            trans.Translate(moveDir.normalized * moveSpeed * Time.deltaTime, Space.Self);
+            if (state == "green")
+            {
+                greenAnimator.SetFloat("DirX", h);
+                greenAnimator.SetFloat("DirY", v);
+                greenAnimator.SetBool("Walking", true);
+            }
+
+            if (state == "white")
+            {
+                whiteAnimator.SetFloat("DirX", h);
+                whiteAnimator.SetFloat("DirY", v);
+                whiteAnimator.SetBool("Walking", true);
+            }
+
+
+        }
+
+
+
+    }
+
+    void changeState(string state)
+    {
+        if (state == "green")
+        {
+            this.state = "white";
+        }
+
+        else if (state == "white")
+        {
+            this.state = "green";
+        }
     }
 }
