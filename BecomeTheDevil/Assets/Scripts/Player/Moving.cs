@@ -56,13 +56,14 @@ public class Moving : MonoBehaviour
 
         if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
         {
-
+            Debug.Log("aa");
             h = Input.GetAxisRaw("Horizontal");
             v = Input.GetAxisRaw("Vertical");
 
             moveDir = (Vector3.up * v) + (Vector3.right * h);
 
             trans.Translate(moveDir.normalized * moveSpeed * Time.deltaTime, Space.Self);
+            trans.position.Set(trans.position.x, 0, trans.position.z);
             if (state == "green")
             {
                 greenAnimator.SetFloat("DirX", h);

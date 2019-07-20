@@ -8,6 +8,8 @@ public class GridUnitCreate : MonoBehaviour
     public GameObject unit;
     Vector3 truePos;
     public float gridSize;
+    public RaycastHit[] allHit;
+    public int length;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,17 +21,17 @@ public class GridUnitCreate : MonoBehaviour
     {
         //Raycast from the mouse position
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit[] allHit = Physics.RaycastAll(ray, 20.0f);
+        allHit = Physics.RaycastAll(ray, 20.0f);
         //Here acceptableLayer is set to my Ground layer that's what I want to check against
+        length = allHit.Length;
         if (allHit.Length==1&&allHit[0].collider.CompareTag("Map"))
         {
-            {
-                Debug.Log(allHit[0].collider);
-                int x = Mathf.FloorToInt(allHit[0].point.x / gridSize);
-                int z = Mathf.FloorToInt(allHit[0].point.z / gridSize);
+            Debug.Log(allHit[0].collider.name);
+            int x = Mathf.FloorToInt(allHit[0].point.x / gridSize);
+            int z = Mathf.FloorToInt(allHit[0].point.z / gridSize);
 
-                unit.transform.position = new Vector3(x * gridSize, allHit[0].point.y, z * gridSize);
-            }
+            unit.transform.position = new Vector3(x * gridSize, allHit[0].point.y, z * gridSize);
+            
         }
 
 

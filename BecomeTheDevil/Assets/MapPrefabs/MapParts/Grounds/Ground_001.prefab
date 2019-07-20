@@ -449,9 +449,9 @@ GameObject:
   - component: {fileID: 629403264}
   - component: {fileID: 629403266}
   - component: {fileID: 629403265}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 00_Background
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10517,11 +10517,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3830400368022471559}
     m_Modifications:
-    - target: {fileID: 9127725805541159892, guid: 69a5b7d71ef624f42aa2d2526400d763,
-        type: 3}
-      propertyPath: m_Name
-      value: stage01_gem (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 9127725805541159895, guid: 69a5b7d71ef624f42aa2d2526400d763,
         type: 3}
       propertyPath: m_RootOrder
@@ -10552,6 +10547,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 9127725805541159892, guid: 69a5b7d71ef624f42aa2d2526400d763,
+        type: 3}
+      propertyPath: m_Name
+      value: stage01_gem (2)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69a5b7d71ef624f42aa2d2526400d763, type: 3}
 --- !u!4 &8929105907682879147 stripped
@@ -10567,11 +10567,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3830400368022471559}
     m_Modifications:
-    - target: {fileID: 9127725805541159892, guid: 69a5b7d71ef624f42aa2d2526400d763,
-        type: 3}
-      propertyPath: m_Name
-      value: stage01_gem (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 9127725805541159895, guid: 69a5b7d71ef624f42aa2d2526400d763,
         type: 3}
       propertyPath: m_RootOrder
@@ -10597,6 +10592,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 9127725805541159892, guid: 69a5b7d71ef624f42aa2d2526400d763,
+        type: 3}
+      propertyPath: m_Name
+      value: stage01_gem (1)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69a5b7d71ef624f42aa2d2526400d763, type: 3}
 --- !u!4 &7605592652348476889 stripped
@@ -10612,11 +10612,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3830400368022471559}
     m_Modifications:
-    - target: {fileID: 9127725805541159892, guid: 69a5b7d71ef624f42aa2d2526400d763,
-        type: 3}
-      propertyPath: m_Name
-      value: stage01_gem (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 9127725805541159895, guid: 69a5b7d71ef624f42aa2d2526400d763,
         type: 3}
       propertyPath: m_RootOrder
@@ -10641,6 +10636,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 9127725805541159892, guid: 69a5b7d71ef624f42aa2d2526400d763,
+        type: 3}
+      propertyPath: m_Name
+      value: stage01_gem (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69a5b7d71ef624f42aa2d2526400d763, type: 3}

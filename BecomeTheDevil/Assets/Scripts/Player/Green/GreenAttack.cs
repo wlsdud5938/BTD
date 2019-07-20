@@ -64,8 +64,7 @@ public class GreenAttack : MonoBehaviour
 
         height = Screen.height;
         width = Screen.width;
-        mousePosition = Input.mousePosition;
-        Debug.Log(mousePosition);
+        mousePosition = new Vector3(Input.mousePosition.x-(width/2), Input.mousePosition.y - (height / 2));
         angle = CalculateAngle(mousePosition);
         if (isGreen)
             GreenBulletAttack();
