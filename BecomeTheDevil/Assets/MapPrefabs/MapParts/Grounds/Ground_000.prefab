@@ -10281,6 +10281,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2265027187799330717}
     m_Modifications:
+    - target: {fileID: 9127725805541159892, guid: 69a5b7d71ef624f42aa2d2526400d763,
+        type: 3}
+      propertyPath: m_Name
+      value: stage01_gem (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 9127725805541159895, guid: 69a5b7d71ef624f42aa2d2526400d763,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10336,11 +10341,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9127725805541159892, guid: 69a5b7d71ef624f42aa2d2526400d763,
-        type: 3}
-      propertyPath: m_Name
-      value: stage01_gem (1)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69a5b7d71ef624f42aa2d2526400d763, type: 3}
 --- !u!1 &9127725804362702436 stripped
@@ -10362,6 +10362,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2265027187799330717}
     m_Modifications:
+    - target: {fileID: 9127725805541159892, guid: 69a5b7d71ef624f42aa2d2526400d763,
+        type: 3}
+      propertyPath: m_Name
+      value: stage01_gem
+      objectReference: {fileID: 0}
     - target: {fileID: 9127725805541159895, guid: 69a5b7d71ef624f42aa2d2526400d763,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10417,11 +10422,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9127725805541159892, guid: 69a5b7d71ef624f42aa2d2526400d763,
-        type: 3}
-      propertyPath: m_Name
-      value: stage01_gem
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69a5b7d71ef624f42aa2d2526400d763, type: 3}
 --- !u!1 &9127725804553776764 stripped
@@ -10443,6 +10443,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2265027187799330717}
     m_Modifications:
+    - target: {fileID: 9127725805541159892, guid: 69a5b7d71ef624f42aa2d2526400d763,
+        type: 3}
+      propertyPath: m_Name
+      value: stage01_gem (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 9127725805541159895, guid: 69a5b7d71ef624f42aa2d2526400d763,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10498,11 +10503,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9127725805541159892, guid: 69a5b7d71ef624f42aa2d2526400d763,
-        type: 3}
-      propertyPath: m_Name
-      value: stage01_gem (2)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69a5b7d71ef624f42aa2d2526400d763, type: 3}
 --- !u!1 &9127725804751460576 stripped
@@ -10524,6 +10524,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2265027187799330717}
     m_Modifications:
+    - target: {fileID: 9127725805541159892, guid: 69a5b7d71ef624f42aa2d2526400d763,
+        type: 3}
+      propertyPath: m_Name
+      value: stage01_gem (3)
+      objectReference: {fileID: 0}
     - target: {fileID: 9127725805541159895, guid: 69a5b7d71ef624f42aa2d2526400d763,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10578,11 +10583,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9127725805541159892, guid: 69a5b7d71ef624f42aa2d2526400d763,
-        type: 3}
-      propertyPath: m_Name
-      value: stage01_gem (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69a5b7d71ef624f42aa2d2526400d763, type: 3}

@@ -16,6 +16,11 @@ public class Moving : MonoBehaviour
 
     public string state = "green";
 
+    bool isUp = false;
+    bool isDown = false;
+    bool isLeft = false;
+    bool isRight = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -59,25 +64,34 @@ public class Moving : MonoBehaviour
             Debug.Log("aa");
             h = Input.GetAxisRaw("Horizontal");
             v = Input.GetAxisRaw("Vertical");
-
-            moveDir = (Vector3.up * v) + (Vector3.right * h);
-
-            trans.Translate(moveDir.normalized * moveSpeed * Time.deltaTime, Space.Self);
-            trans.position.Set(trans.position.x, 0, trans.position.z);
-            if (state == "green")
+            if (isUp && v > 0)
+                v = 0;
+            if (isDown && v < 0)
+                v = 0;
+            if (isLeft && h < 0)
+                h = 0;
+            if (isRight && h > 0)
+                h = 0;
+            if (h != 0 || v != 0)
             {
-                greenAnimator.SetFloat("DirX", h);
-                greenAnimator.SetFloat("DirY", v);
-                greenAnimator.SetBool("Walking", true);
-            }
+                moveDir = (Vector3.up * v) + (Vector3.right * h);
 
-            if (state == "white")
-            {
-                whiteAnimator.SetFloat("DirX", h);
-                whiteAnimator.SetFloat("DirY", v);
-                whiteAnimator.SetBool("Walking", true);
-            }
+                trans.Translate(moveDir.normalized * moveSpeed * Time.deltaTime, Space.Self);
+                trans.position.Set(trans.position.x, 0, trans.position.z);
+                if (state == "green")
+                {
+                    greenAnimator.SetFloat("DirX", h);
+                    greenAnimator.SetFloat("DirY", v);
+                    greenAnimator.SetBool("Walking", true);
+                }
 
+                if (state == "white")
+                {
+                    whiteAnimator.SetFloat("DirX", h);
+                    whiteAnimator.SetFloat("DirY", v);
+                    whiteAnimator.SetBool("Walking", true);
+                }
+            }
 
         }
 
@@ -97,4 +111,31 @@ public class Moving : MonoBehaviour
             this.state = "green";
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log(other.tag);
+        if (other.CompareTag("UpWall"))
+            isUp = true;
+        if (other.CompareTag("DownWall"))
+            isDown = true;
+        if (other.CompareTag("LeftWall"))
+            isLeft = true;
+        if (other.CompareTag("RightWall"))
+            isRight = true;
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        Debug.Log(other.tag);
+        if (other.CompareTag("UpWall"))
+            isUp = false;
+        if (other.CompareTag("DownWall"))
+            isDown = false;
+        if (other.CompareTag("LeftWall"))
+            isLeft = false;
+        if (other.CompareTag("RightWall"))
+            isRight = false;
+    }
+
+
 }

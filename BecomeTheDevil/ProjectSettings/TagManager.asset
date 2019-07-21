@@ -9,6 +9,11 @@ TagManager:
   - target
   - Unit
   - Plane
+  - UpWall
+  - DownWall
+  - LeftWall
+  - RightWall
+  - Wall
   layers:
   - Default
   - TransparentFX
