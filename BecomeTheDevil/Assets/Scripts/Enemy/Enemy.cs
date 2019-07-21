@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public Vector2 curLocation;
-    public Vector2 preLocation;
+    private Vector2 curLocation;
+    private Vector2 preLocation;
 
     private Animator enemyAnimator;
 
@@ -13,11 +13,21 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         preLocation = transform.position;
+        enemyAnimator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        curLocation = transform.position;
+        if(preLocation.x <= curLocation.x)
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+        else
+        {
+            transform.localScale = new Vector3(1, 1, -1);
+        }
+        preLocation = transform.position;
     }
 }

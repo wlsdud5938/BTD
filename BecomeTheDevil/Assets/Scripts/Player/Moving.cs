@@ -32,7 +32,14 @@ public class Moving : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        greenAnimator.SetBool("Walking", false);
+        if (state == "green")
+        {
+            greenAnimator.SetBool("Walking", false);
+        }
+        else if (state == "white")
+        {
+            whiteAnimator.SetBool("Walking", false);
+        }
 
         if (Input.GetKeyDown("space"))
         {
