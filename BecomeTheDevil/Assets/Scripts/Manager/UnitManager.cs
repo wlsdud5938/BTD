@@ -25,7 +25,7 @@ public class UnitManager : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.B))
                 isBuild = false;
-            if(Input.GetMouseButtonDown(0)&&grid.length==1)
+            if(Input.GetMouseButtonDown(0)&&grid.length == 2)
                 MouseDown();
         }
         else

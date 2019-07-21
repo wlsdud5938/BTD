@@ -24,13 +24,14 @@ public class GridUnitCreate : MonoBehaviour
         allHit = Physics.RaycastAll(ray, 20.0f);
         //Here acceptableLayer is set to my Ground layer that's what I want to check against
         length = allHit.Length;
-        if (allHit.Length==1&&allHit[0].collider.CompareTag("Map"))
+        string tag = allHit[0].collider.tag;
+        if ((allHit.Length == 2 && allHit[0].collider.CompareTag("Map") && allHit[1].collider.CompareTag("Map")))
         {
             Debug.Log(allHit[0].collider.name);
             int x = Mathf.FloorToInt(allHit[0].point.x / gridSize);
             int z = Mathf.FloorToInt(allHit[0].point.z / gridSize);
 
-            unit.transform.position = new Vector3(x * gridSize, allHit[0].point.y, z * gridSize);
+            unit.transform.position = new Vector3(x * gridSize, 0, z * gridSize);
             
         }
 
