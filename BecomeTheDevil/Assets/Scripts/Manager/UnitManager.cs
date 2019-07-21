@@ -21,23 +21,31 @@ public class UnitManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(isBuild)
+        if(Input.GetMouseButtonDown(0))
         {
-            if (Input.GetKeyDown(KeyCode.B))
-                isBuild = false;
-            if(Input.GetMouseButtonDown(0)&&grid.length == 2)
+            if(isBuild && grid.length == 2 && (grid.curMaxUnit>grid.curRoom.unitList.Count))
                 MouseDown();
         }
-        else
-        {
-            if (Input.GetKeyDown(KeyCode.B))
-                isBuild = true;
-        }
+        if (isBuild && Input.GetKeyDown(KeyCode.B))
+            isBuild = false;
+        else if(!isBuild && Input.GetKeyDown(KeyCode.B))
+            isBuild = true;
     }
 
     private void MouseDown()
     {
         pos = new Vector3(unitPos.position.x, 0.0f, unitPos.position.z);
-        Instantiate(unit, pos, Quaternion.Euler(90.0f, 0.0f, 0.0f));
+        int i = 0;
+        for(i=0;i<grid.curMaxUnit;i++)
+        {
+            if (grid.curRoom.unitList.Count < grid.curMaxUnit)
+                break;
+            if (grid.curRoom.unitList[i] == null)
+                break;
+        }
+        GameObject newUnit = Instantiate(unit, pos, Quaternion.Euler(90.0f, 0.0f, 0.0f));
+        newUnit.GetComponent<Unit>().unitNum = i;
+        grid.curRoom.unitList.Add(newUnit);
+        
     }
 }

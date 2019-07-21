@@ -2589,6 +2589,7 @@ GameObject:
   - component: {fileID: 9202810541039367638}
   - component: {fileID: 6887810831174771572}
   - component: {fileID: 6694245952828241659}
+  - component: {fileID: 2728639959860582640}
   m_Layer: 8
   m_Name: 00_Background
   m_TagString: Map
@@ -8129,6 +8130,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 20, y: 12, z: 0}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2728639959860582640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2687946529147614755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b41a0ffc7e440cd42ae50da82de397da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitList: []
+  maxUnit: 5
+  curUnitCount: 0
 --- !u!1 &3176157485603302266
 GameObject:
   m_ObjectHideFlags: 0

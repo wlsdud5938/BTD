@@ -10,6 +10,9 @@ public class GridUnitCreate : MonoBehaviour
     public float gridSize;
     public RaycastHit[] allHit;
     public int length;
+    public int curUnitCount;
+    public int curMaxUnit;
+    public RoomInfo curRoom;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,9 +30,17 @@ public class GridUnitCreate : MonoBehaviour
         string tag = allHit[0].collider.tag;
         if ((allHit.Length == 2 && allHit[0].collider.CompareTag("Map") && allHit[1].collider.CompareTag("Map")))
         {
-            Debug.Log(allHit[0].collider.name);
-            int x = Mathf.FloorToInt(allHit[0].point.x / gridSize);
-            int z = Mathf.FloorToInt(allHit[0].point.z / gridSize);
+            int i = 0;
+
+            if (allHit[0].collider.name == "Plane")
+                i = 1;
+            else i = 0;
+
+            curRoom = allHit[i].collider.gameObject.GetComponent<RoomInfo>();
+            curUnitCount = curRoom.unitList.Count;
+            curMaxUnit = curRoom.maxUnit;
+            int x = Mathf.FloorToInt(allHit[i].point.x / gridSize);
+            int z = Mathf.FloorToInt(allHit[i].point.z / gridSize);
 
             unit.transform.position = new Vector3(x * gridSize, 0, z * gridSize);
             
