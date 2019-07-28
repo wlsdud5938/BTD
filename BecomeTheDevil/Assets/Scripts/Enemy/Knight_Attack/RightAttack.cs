@@ -19,7 +19,7 @@ public class RightAttack : MonoBehaviour
     {
         if (other.transform.root.tag == "Player" || other.transform.root.tag == "Unit")
         {
-            Debug.Log(root);
+            //Debug.Log(root);
             //root.transform.localScale = new Vector3(1, 1, 1);
             //myAnimator.SetTrigger("Attack");
             myAnimator.SetBool("Attack", true);
@@ -32,8 +32,7 @@ public class RightAttack : MonoBehaviour
     {
         if (other.transform.root.tag == "Player" || other.transform.root.tag == "Unit")
         {
-
-            Debug.Log(root);
+            //Debug.Log(root);
             //root.transform.localScale = new Vector3(-1, 1, 1);
             //myAnimator.SetTrigger("Attack");
             myAnimator.SetBool("Attack", false);

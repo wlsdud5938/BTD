@@ -68,7 +68,7 @@ public class Moving : MonoBehaviour
 
         if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
         {
-            Debug.Log("aa");
+            //Debug.Log("aa");
             h = Input.GetAxisRaw("Horizontal");
             v = Input.GetAxisRaw("Vertical");
             if (isUp && v > 0)
@@ -121,7 +121,7 @@ public class Moving : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.tag);
+        //Debug.Log(other.tag);
         if (other.CompareTag("UpWall"))
             isUp = true;
         if (other.CompareTag("DownWall"))
@@ -133,7 +133,7 @@ public class Moving : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log(other.tag);
+        //Debug.Log(other.tag);
         if (other.CompareTag("UpWall"))
             isUp = false;
         if (other.CompareTag("DownWall"))

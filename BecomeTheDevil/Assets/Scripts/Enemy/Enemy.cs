@@ -22,11 +22,13 @@ public class Enemy : MonoBehaviour
         curLocation = transform.position;
         if(preLocation.x <= curLocation.x)
         {
-            transform.localScale = new Vector3(1, 1, 1);
+            //transform.localScale = new Vector3(1, 1, 1);
+            enemyAnimator.SetFloat("DirX", 1.0f);
         }
         else
         {
-            transform.localScale = new Vector3(-1, 1, 1);
+            //transform.localScale = new Vector3(-1, 1, 1);
+            enemyAnimator.SetFloat("DirX", -1.0f);
         }
         preLocation = transform.position;
     }
