@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1864738408703476189}
   - component: {fileID: 654279155798486306}
   - component: {fileID: 5969096960039665850}
+  - component: {fileID: 3738384556308796444}
   m_Layer: 0
   m_Name: Unit_basic_slime
   m_TagString: Unit
@@ -126,3 +127,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fe516e4a997ff5429dd9b8e733c31e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unitNum: 0
+--- !u!114 &3738384556308796444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1864738408703476186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b15eecaaf7d92544bbf34c8f9535cc14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objAggroStack: 1
+  curRoom: {fileID: 0}

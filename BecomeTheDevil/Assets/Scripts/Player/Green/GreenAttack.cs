@@ -74,7 +74,7 @@ public class GreenAttack : MonoBehaviour
     }
     void GreenBulletAttack()
     {
-        if (angle > -315 && angle <= 45)
+        if ((angle > -315 && angle <= 45)||angle>315)
         {
             newBullet = Instantiate(bullet, greenBulletPoint_up, Quaternion.Euler(90.0f, 0.0f, 0.0f));
             newBullet.GetComponent<Bullet>().target = mousePosition;

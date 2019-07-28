@@ -45,6 +45,8 @@ public class UnitManager : MonoBehaviour
         }
         GameObject newUnit = Instantiate(unit, pos, Quaternion.Euler(90.0f, 0.0f, 0.0f));
         newUnit.GetComponent<Unit>().unitNum = i;
+        newUnit.GetComponent<Status>().curRoom = grid.curRoom.gameObject;
+        
         grid.curRoom.unitList.Add(newUnit);
         
     }

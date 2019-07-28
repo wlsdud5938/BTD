@@ -14,12 +14,12 @@ public class Unit : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (time > 0)
-            time -= 1*Time.deltaTime;
-        else
-        {
-            GameObject.FindGameObjectWithTag("Grid").GetComponent<GridUnitCreate>().curRoom.unitList.Remove(gameObject);
-            Destroy(gameObject);
-        }
+        //if (time > 0)
+        //    time -= 1*Time.deltaTime;
+        //else
+        //{
+        //    GameObject.FindGameObjectWithTag("Grid").GetComponent<GridUnitCreate>().curRoom.unitList.Remove(gameObject);
+        //    Destroy(gameObject);
+        //}
     }
 }
