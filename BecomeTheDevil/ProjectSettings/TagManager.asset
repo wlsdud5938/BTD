@@ -15,6 +15,7 @@ TagManager:
   - RightWall
   - Wall
   - Grid
+  - Inventory
   layers:
   - Default
   - TransparentFX
