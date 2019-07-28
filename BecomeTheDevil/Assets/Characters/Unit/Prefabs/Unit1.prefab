@@ -14,8 +14,9 @@ GameObject:
   - component: {fileID: 654279155798486306}
   - component: {fileID: 5969096960039665850}
   - component: {fileID: 3738384556308796444}
+  - component: {fileID: 3822537042011093474}
   m_Layer: 0
-  m_Name: Unit_basic_slime
+  m_Name: Unit1
   m_TagString: Unit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -142,3 +143,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objAggroStack: 1
   curRoom: {fileID: 0}
+  maxHP: 100
+  curHP: 100
+  attackDMG: 0
+--- !u!208 &3822537042011093474
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1864738408703476186}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.1}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5

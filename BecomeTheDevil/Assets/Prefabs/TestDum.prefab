@@ -48,6 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   w: {x: 0, y: 0, z: 0}
   target: {fileID: 0}
+  aaa: 1
 --- !u!195 &6864128973943668668
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -190,9 +191,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b25c13fdae64344a82bb6dec3d49f5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aggroTarget: {fileID: 0}
+  player: {fileID: 0}
   moveAI: {fileID: 0}
   curRoom: {fileID: 0}
+  core: {fileID: 0}
+  corePath: 1
+  canAttack: 0
+  aggroCal: 0
 --- !u!54 &708702590879769347
 Rigidbody:
   m_ObjectHideFlags: 0

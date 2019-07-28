@@ -7,11 +7,16 @@ public class EnemyAggroAI : MonoBehaviour
     public GameObject player;
     public Move moveAI;
     public RoomInfo curRoom;
+    public GameObject core;
+    public bool corePath  = true;
+    public bool canAttack = false;
+    public float aggroCal;
     // Start is called before the first frame update
     void Start()
     {
         moveAI = gameObject.transform.parent.GetComponent<Move>();
         player = GameObject.FindGameObjectWithTag("Player").gameObject;
+        core = GameObject.FindGameObjectWithTag("Finish").gameObject;
     }
 
     // Update is called once per frame
@@ -21,12 +26,20 @@ public class EnemyAggroAI : MonoBehaviour
     }
     private void LateUpdate()
     {
-        if(curRoom.unitList.Count !=0)
+        if (corePath)
         {
-            moveAI.target = curRoom.unitList[0];
+            moveAI.target = core;
         }
         else
-            moveAI.target = player;
+        {
+            if (curRoom.unitList.Count != 0)
+            {
+                moveAI.target = curRoom.unitList[0];
+            }
+            else
+                moveAI.target = player;
+        }
+
     }
 
     private void OnTriggerStay(Collider other)
