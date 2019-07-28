@@ -20,15 +20,21 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         curLocation = transform.position;
-        if(preLocation.x <= curLocation.x)
+        if(preLocation.x < curLocation.x)
         {
             //transform.localScale = new Vector3(1, 1, 1);
+            enemyAnimator.SetBool("Walking", true);
             enemyAnimator.SetFloat("DirX", 1.0f);
         }
-        else
+        else if(preLocation.x > curLocation.x)
         {
             //transform.localScale = new Vector3(-1, 1, 1);
+            enemyAnimator.SetBool("Walking", true);
             enemyAnimator.SetFloat("DirX", -1.0f);
+        }
+        else if(preLocation.x == curLocation.x)
+        {
+            enemyAnimator.SetBool("Walking", false);
         }
         preLocation = transform.position;
     }

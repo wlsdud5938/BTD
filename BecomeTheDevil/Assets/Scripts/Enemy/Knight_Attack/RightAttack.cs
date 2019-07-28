@@ -36,8 +36,8 @@ public class RightAttack : MonoBehaviour
             //root.transform.localScale = new Vector3(-1, 1, 1);
             //myAnimator.SetTrigger("Attack");
             myAnimator.SetBool("Attack", false);
-            myAnimator.SetFloat("DirX", 1.0f);
-            myAnimator.SetFloat("DirY", 0.0f);
+            //myAnimator.SetFloat("DirX", 1.0f);
+            //myAnimator.SetFloat("DirY", 0.0f);
         }
     }
 }

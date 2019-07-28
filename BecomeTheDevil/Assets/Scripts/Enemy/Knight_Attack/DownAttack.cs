@@ -36,8 +36,8 @@ public class DownAttack : MonoBehaviour
             //root.transform.localScale = new Vector3(-1, 1, 1);
             //myAnimator.SetTrigger("Attack");
             myAnimator.SetBool("Attack", false);
-            myAnimator.SetFloat("DirX", 0.0f);
-            myAnimator.SetFloat("DirY", -1.0f);
+            //myAnimator.SetFloat("DirX", 0.0f);
+            //myAnimator.SetFloat("DirY", -1.0f);
         }
     }
 }

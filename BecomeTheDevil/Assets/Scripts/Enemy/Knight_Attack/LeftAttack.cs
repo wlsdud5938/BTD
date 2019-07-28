@@ -33,9 +33,10 @@ public class LeftAttack : MonoBehaviour
             //Debug.Log(root);
             //root.transform.localScale = new Vector3(-1, 1, 1);
             //myAnimator.SetTrigger("Attack");
+            Debug.Log("왼쪽에서 나감");
             myAnimator.SetBool("Attack", false);
-            myAnimator.SetFloat("DirX", -1.0f);
-            myAnimator.SetFloat("DirY", 0.0f);
+            //myAnimator.SetFloat("DirX", 0.0f);
+            //myAnimator.SetFloat("DirY", 0.0f);
         }
     }
 }
