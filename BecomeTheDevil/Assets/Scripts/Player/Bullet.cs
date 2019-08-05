@@ -7,20 +7,23 @@ public class Bullet : MonoBehaviour
 
     public Vector3 target;
 
-    public float duration = 20f;  //총알활성 시간
-    public float bulletSpeed = 2.0f;
+    public float duration;  //총알활성 시간
+    public float bulletSpeed; //총알 속도
+    public float maxDis;    //총알 사정거리
 
     public Vector3 moveDir;
 
-
+    private Vector3 startPos;
+    private float dis;
 
     IEnumerator MoveBullet()
     {
-        float timer = 0;
+        startPos = transform.position;
+
         while (true)
         {
-            timer += Time.deltaTime;
-            if (timer > duration) break;
+            dis = Vector3.Distance(startPos, transform.position);
+            if (dis > maxDis) break;
 
             transform.Translate(target.normalized * Time.deltaTime * bulletSpeed);
             yield return null;
@@ -29,29 +32,4 @@ public class Bullet : MonoBehaviour
 
         gameObject.SetActive(false);
     }
-
-    /*** 예전 코드
-    public Vector3 target;
-    float bulletSpeed = 2.0f;
-    public Transform trans;
-    public Vector3 startTrans;
-    public Vector3 moveDir;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-        Destroy(gameObject, 5.0f);
-        trans = GetComponent<Transform>();
-        startTrans = trans.position;
-//        target += startTrans;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        startTrans = trans.position;
-        trans.Translate(moveDir.normalized * bulletSpeed * Time.deltaTime, Space.Self);
-    }
-
-    ***/
 }

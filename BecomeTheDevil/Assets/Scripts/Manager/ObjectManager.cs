@@ -24,7 +24,7 @@ public class ObjectManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SetObject(origin[0], 20, "GreenBullet"); // 총알 생성
+        SetObject(origin[0], 20, "GreenBullet"); // Green 총알 생성
     }
 
     private void OnDestroy()

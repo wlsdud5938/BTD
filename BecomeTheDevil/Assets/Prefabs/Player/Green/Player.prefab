@@ -23,7 +23,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 195860497}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -31,8 +31,8 @@ Transform:
   - {fileID: 1281828071}
   - {fileID: 1153324723}
   - {fileID: 831336189}
-  m_Father: {fileID: 1200264803}
-  m_RootOrder: 2
+  m_Father: {fileID: 615265567}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &252290821
 GameObject:
@@ -122,7 +122,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1848698530}
   m_Father: {fileID: 1200264803}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -204,6 +205,7 @@ GameObject:
   - component: {fileID: 615265567}
   - component: {fileID: 615265568}
   - component: {fileID: 615265564}
+  - component: {fileID: 2408653648813504547}
   m_Layer: 0
   m_Name: green_sample
   m_TagString: Untagged
@@ -221,7 +223,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 195860498}
   m_Father: {fileID: 1200264803}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -292,6 +295,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2408653648813504547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 615265562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee099003b0e52c347841ebfa971ffc3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletSpeed: 1
+  bulletDuration: 20
+  AttackCooltime: 0.5
 --- !u!1 &658497415
 GameObject:
   m_ObjectHideFlags: 0
@@ -422,7 +440,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1200264803}
   - component: {fileID: 1200264802}
-  - component: {fileID: 1200264799}
   - component: {fileID: 1419628185511063712}
   - component: {fileID: 8946023309721013705}
   - component: {fileID: 7424257538036354987}
@@ -446,8 +463,6 @@ Transform:
   m_Children:
   - {fileID: 615265567}
   - {fileID: 615265565}
-  - {fileID: 195860498}
-  - {fileID: 1848698530}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
@@ -465,24 +480,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   state: green
---- !u!114 &1200264799
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1200264798}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee099003b0e52c347841ebfa971ffc3e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  angle: 0
-  bullet: {fileID: 2868411932850081480, guid: 4bb66e470744d1b439542f474834fbb3, type: 3}
-  mousePosition: {x: 0, y: 0, z: 0}
-  height: 0
-  width: 0
-  isGreen: 1
 --- !u!65 &1419628185511063712
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -526,6 +523,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objAggroStack: 2
   curRoom: {fileID: 0}
+  maxHP: 0
+  curHP: 0
+  attackDMG: 0
 --- !u!1 &1281828070
 GameObject:
   m_ObjectHideFlags: 0
@@ -579,13 +579,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1848698529}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 658497416}
   - {fileID: 265465024}
   - {fileID: 252290822}
-  m_Father: {fileID: 1200264803}
-  m_RootOrder: 3
+  m_Father: {fileID: 615265565}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
