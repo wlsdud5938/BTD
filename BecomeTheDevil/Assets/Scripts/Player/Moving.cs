@@ -16,10 +16,10 @@ public class Moving : MonoBehaviour
 
     public string state = "green";
 
-    bool isUp = false;
-    bool isDown = false;
-    bool isLeft = false;
-    bool isRight = false;
+    public bool isUp = false;
+    public bool isDown = false;
+    public bool isLeft = false;
+    public bool isRight = false;
 
     // Start is called before the first frame update
     void Start()
@@ -130,6 +130,12 @@ public class Moving : MonoBehaviour
             isLeft = true;
         if (other.CompareTag("RightWall"))
             isRight = true;
+        if (other.CompareTag("Gem"))
+        {
+            other.GetComponent<FieldGem>().background.isClosed = true;
+            Debug.Log("Destroy Gem");
+            Destroy(other.gameObject);
+        }
     }
     private void OnTriggerExit(Collider other)
     {
@@ -142,7 +148,7 @@ public class Moving : MonoBehaviour
             isLeft = false;
         if (other.CompareTag("RightWall"))
             isRight = false;
-    }
 
+    }
 
 }

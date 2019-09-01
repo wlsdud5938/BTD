@@ -50,6 +50,8 @@ public class EnemyAggroAI : MonoBehaviour
                 curRoom = other.gameObject.GetComponent<RoomInfo>();
 
         }
+        if (other.gameObject == moveAI.target)
+            other.GetComponent<Unit>().destroyBool = true;
     }
 
 

@@ -16,6 +16,7 @@ TagManager:
   - Wall
   - Grid
   - Inventory
+  - Gem
   layers:
   - Default
   - TransparentFX

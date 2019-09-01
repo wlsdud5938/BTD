@@ -48,7 +48,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   w: {x: 0, y: 0, z: 0}
   target: {fileID: 0}
+  core: {fileID: 0}
   aaa: 1
+  bbb: 1
 --- !u!195 &6864128973943668668
 NavMeshAgent:
   m_ObjectHideFlags: 0

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Com.LuisPedroFonseca.ProCamera2D;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -41,10 +42,15 @@ public class CreatMapMatrix : MonoBehaviour
     int nowRoom = 0;
     int lastRoom = 0;
     int num;
+
+    public GameObject mainCamera;
+    ProCamera2DRooms_fix cameraRoom;
+
     // Start is called before the first frame update
 
     void Awake()
     {
+        cameraRoom = mainCamera.GetComponent<ProCamera2DRooms_fix>();
         for(int i=0;i<30;i++)
         {
             for (int j = 0; j < 30; j++)
@@ -198,6 +204,8 @@ public class CreatMapMatrix : MonoBehaviour
                 if(mapMatrix[j, i] != 0)
                 {
                     Instantiate(roomList[mapMatrix[j,i]-1], new Vector3((i-14)* 28,0, (-j+14)* 20), Quaternion.Euler(90.0f, 0.0f, 0.0f));
+                    cameraRoom.AddRoom((i - 14) * 28, (-j + 14) * 20, 28, 20);
+                    
                 }
             }
         }

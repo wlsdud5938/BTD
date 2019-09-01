@@ -8145,6 +8145,7 @@ MonoBehaviour:
   unitList: []
   maxUnit: 5
   curUnitCount: 0
+  isClosed: 0
 --- !u!1 &3176157485603302266
 GameObject:
   m_ObjectHideFlags: 0
@@ -10238,58 +10239,6 @@ TilemapRenderer:
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
---- !u!65 &7010888117223718021
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9127725804030312455}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2, y: 2, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &871816904954965144
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9127725804362702436}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2, y: 2, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &7508202809775616678
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9127725804553776764}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2, y: 2, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &6537450993424182841
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9127725804751460576}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2, y: 2, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1179053488
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10301,6 +10250,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: stage01_gem (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9127725805541159892, guid: 69a5b7d71ef624f42aa2d2526400d763,
+        type: 3}
+      propertyPath: m_TagString
+      value: Gem
       objectReference: {fileID: 0}
     - target: {fileID: 9127725805541159895, guid: 69a5b7d71ef624f42aa2d2526400d763,
         type: 3}
@@ -10359,12 +10313,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69a5b7d71ef624f42aa2d2526400d763, type: 3}
---- !u!1 &9127725804362702436 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9127725805541159892, guid: 69a5b7d71ef624f42aa2d2526400d763,
-    type: 3}
-  m_PrefabInstance: {fileID: 1179053488}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &9127725804362702439 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9127725805541159895, guid: 69a5b7d71ef624f42aa2d2526400d763,
@@ -10382,6 +10330,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: stage01_gem
+      objectReference: {fileID: 0}
+    - target: {fileID: 9127725805541159892, guid: 69a5b7d71ef624f42aa2d2526400d763,
+        type: 3}
+      propertyPath: m_TagString
+      value: Gem
       objectReference: {fileID: 0}
     - target: {fileID: 9127725805541159895, guid: 69a5b7d71ef624f42aa2d2526400d763,
         type: 3}
@@ -10440,12 +10393,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69a5b7d71ef624f42aa2d2526400d763, type: 3}
---- !u!1 &9127725804553776764 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9127725805541159892, guid: 69a5b7d71ef624f42aa2d2526400d763,
-    type: 3}
-  m_PrefabInstance: {fileID: 1307205032}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &9127725804553776767 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9127725805541159895, guid: 69a5b7d71ef624f42aa2d2526400d763,
@@ -10463,6 +10410,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: stage01_gem (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9127725805541159892, guid: 69a5b7d71ef624f42aa2d2526400d763,
+        type: 3}
+      propertyPath: m_TagString
+      value: Gem
       objectReference: {fileID: 0}
     - target: {fileID: 9127725805541159895, guid: 69a5b7d71ef624f42aa2d2526400d763,
         type: 3}
@@ -10521,12 +10473,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69a5b7d71ef624f42aa2d2526400d763, type: 3}
---- !u!1 &9127725804751460576 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9127725805541159892, guid: 69a5b7d71ef624f42aa2d2526400d763,
-    type: 3}
-  m_PrefabInstance: {fileID: 1360194356}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &9127725804751460579 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9127725805541159895, guid: 69a5b7d71ef624f42aa2d2526400d763,
@@ -10544,6 +10490,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: stage01_gem (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9127725805541159892, guid: 69a5b7d71ef624f42aa2d2526400d763,
+        type: 3}
+      propertyPath: m_TagString
+      value: Gem
       objectReference: {fileID: 0}
     - target: {fileID: 9127725805541159895, guid: 69a5b7d71ef624f42aa2d2526400d763,
         type: 3}
@@ -10602,12 +10553,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69a5b7d71ef624f42aa2d2526400d763, type: 3}
---- !u!1 &9127725804030312455 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9127725805541159892, guid: 69a5b7d71ef624f42aa2d2526400d763,
-    type: 3}
-  m_PrefabInstance: {fileID: 1779872723}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &9127725804030312452 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9127725805541159895, guid: 69a5b7d71ef624f42aa2d2526400d763,
