@@ -2,19 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class SortingRendering : MonoBehaviour
 {
-    public GameObject player;
-    Status playerStatus;
-    public GameObject[] fieldUnit;
+    
+    SpriteRenderer renderer;
+
     // Start is called before the first frame update
     void Start()
     {
-        playerStatus = player.GetComponent<Status>();
+        renderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        renderer.sortingOrder = 1000 - (int)transform.position.z;
     }
 }

@@ -2,19 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class FieldMonster : MonoBehaviour
 {
-    public GameObject player;
-    Status playerStatus;
-    public GameObject[] fieldUnit;
+    public RoomInfo roominfo;
     // Start is called before the first frame update
     void Start()
-    {
-        playerStatus = player.GetComponent<Status>();
+    {   
     }
 
     // Update is called once per frame
     void Update()
     {
+        
+    }
+    public void die()
+    {
+        roominfo.countFieldUnit--;
+        Destroy(gameObject);
     }
 }

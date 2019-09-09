@@ -134,7 +134,11 @@ public class Moving : MonoBehaviour
         {
             other.GetComponent<FieldGem>().background.isClosed = true;
             Debug.Log("Destroy Gem");
-            Destroy(other.gameObject);
+            other.GetComponent<FieldGem>().die();
+        }
+        if(other.CompareTag("Field"))
+        {
+            other.GetComponent<FieldMonster>().die();
         }
     }
     private void OnTriggerExit(Collider other)

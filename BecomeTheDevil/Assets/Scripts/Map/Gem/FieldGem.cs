@@ -5,10 +5,12 @@ using UnityEngine;
 public class FieldGem : MonoBehaviour
 {
     public RoomInfo background;
+    public GameObject spawnPos;
     // Start is called before the first frame update
     void Start()
     {
         background = transform.parent.Find("00_Background").GetComponent<RoomInfo>();
+        spawnPos = transform.parent.Find("SpawnPostion").gameObject;
     }
 
     // Update is called once per frame
@@ -16,4 +18,10 @@ public class FieldGem : MonoBehaviour
     {
         
     }
+
+    public void die()
+    {
+        spawnPos.GetComponent<RandomCreate>().CreateMonster();
+    }
+
 }

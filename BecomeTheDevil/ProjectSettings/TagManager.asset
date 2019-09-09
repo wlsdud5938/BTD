@@ -17,6 +17,8 @@ TagManager:
   - Grid
   - Inventory
   - Gem
+  - GameManager
+  - Field
   layers:
   - Default
   - TransparentFX

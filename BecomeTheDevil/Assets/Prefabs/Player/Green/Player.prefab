@@ -206,6 +206,7 @@ GameObject:
   - component: {fileID: 615265568}
   - component: {fileID: 615265564}
   - component: {fileID: 2408653648813504547}
+  - component: {fileID: 52767858984239622}
   m_Layer: 0
   m_Name: green_sample
   m_TagString: Untagged
@@ -310,6 +311,19 @@ MonoBehaviour:
   bulletSpeed: 1
   bulletDuration: 20
   AttackCooltime: 0.5
+  maxDis: 6
+--- !u!114 &52767858984239622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 615265562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03caf81c1d3b5fd4886741c7f0ea9e3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &658497415
 GameObject:
   m_ObjectHideFlags: 0
@@ -480,6 +494,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   state: green
+  isUp: 0
+  isDown: 0
+  isLeft: 0
+  isRight: 0
 --- !u!65 &1419628185511063712
 BoxCollider:
   m_ObjectHideFlags: 0

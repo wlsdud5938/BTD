@@ -9,6 +9,7 @@ public class RoomInfo : MonoBehaviour
     public int curUnitCount = 0;
     public bool isClosed = false;
     public float time = 0.0f;
+    public int countFieldUnit = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,10 +23,9 @@ public class RoomInfo : MonoBehaviour
         {
             time += Time.deltaTime;
         }
-        if(time > 10)
+        if(countFieldUnit>0)
         {
-            time = 0;
-            isClosed = false;
+            isClosed = true;
         }
     }
 }

@@ -23,7 +23,7 @@ public class CreatMapMatrix : MonoBehaviour
     }
     public GameObject player;
     public GameObject startpoint;
-
+    GameObject room;
     public int[,] mapMatrix = new int [30,30];
     public int roomCount = 0;
     public GameObject[] roomList;
@@ -42,7 +42,8 @@ public class CreatMapMatrix : MonoBehaviour
     int nowRoom = 0;
     int lastRoom = 0;
     int num;
-
+    List<int[]> pathlist= new List<int[]>();
+    public Queue<int[]> path = new Queue<int[]>();
     public GameObject mainCamera;
     ProCamera2DRooms_fix cameraRoom;
 
@@ -57,6 +58,8 @@ public class CreatMapMatrix : MonoBehaviour
                 mapMatrix[i, j] = 0;
         }
         Tree root = new Tree(14,14);
+        Tree end = new Tree(100,100);
+        root.parent = end;
         trees[nowRoom] = root;
         nowRoom++;
         lastRoom++;
@@ -196,14 +199,36 @@ public class CreatMapMatrix : MonoBehaviour
                 mapMatrix[i, 10] + " " + mapMatrix[i, 11] + " " + mapMatrix[i, 12] + " " + mapMatrix[i,13] + " " + mapMatrix[i,14] + " " + mapMatrix[i, 15] + " " + mapMatrix[i, 16] + " " + mapMatrix[i, 17] + " " + mapMatrix[i, 18] + " " + mapMatrix[i, 19] + " " +
                 mapMatrix[i, 20] + " " + mapMatrix[i, 21] + " " + mapMatrix[i, 22] + " " + mapMatrix[i, 23] + " " + mapMatrix[i, 24] + " " + mapMatrix[i, 25] + " " + mapMatrix[i, 26] + " " + mapMatrix[i, 27] + " " + mapMatrix[i, 28] + " " + mapMatrix[i, 29] + " " );
         }
-
-        for(int i=0;i<30;i++)
+        findParent(trees[roomCount]);
+        int[] com = new int[2];
+        int count = path.Count;
+        for (int i=0;i<count;i++)
+        {
+            com = (int[])path.Dequeue().Clone();
+            pathlist.Add(com);
+        }
+        
+        for (int i=0;i<30;i++)
         {
             for(int j=0;j<30;j++)
             {
                 if(mapMatrix[j, i] != 0)
                 {
-                    Instantiate(roomList[mapMatrix[j,i]-1], new Vector3((i-14)* 28,0, (-j+14)* 20), Quaternion.Euler(90.0f, 0.0f, 0.0f));
+
+                    room = Instantiate(roomList[mapMatrix[j,i]-1], new Vector3((i-14)* 28,0, (-j+14)* 20), Quaternion.Euler(90.0f, 0.0f, 0.0f));
+                    for(int k=0;k<pathlist.Count;k++)
+                    {
+                        int[] a = new int[2] { j, i };
+                        if (pathlist[k][0] == a[0] && pathlist[k][1] == a[1])
+                        {
+                            room.transform.GetChild(4).Find("stage01_gem").gameObject.SetActive(false);
+                            room.transform.GetChild(4).Find("stage01_gem (1)").gameObject.SetActive(false);
+                            room.transform.GetChild(4).Find("stage01_gem (2)").gameObject.SetActive(false);
+                            room.transform.GetChild(4).Find("stage01_gem (3)").gameObject.SetActive(false);
+                        }
+
+                    }
+
                     cameraRoom.AddRoom((i - 14) * 28, (-j + 14) * 20, 28, 20);
                     
                 }
@@ -215,6 +240,8 @@ public class CreatMapMatrix : MonoBehaviour
         findRootNode(trees[lastRoom - 1]);
         Instantiate(core, new Vector3((ii[1]-14) * 28, 0,  (- ii[0]+14) * 20), Quaternion.Euler(90.0f, 0.0f, 0.0f));
         Instantiate(player, startpoint.transform.position, Quaternion.Euler(90.0f, 0.0f, 0.0f));
+
+        
     }
 
     // Update is called once per frame
@@ -348,5 +375,23 @@ public class CreatMapMatrix : MonoBehaviour
             return;
         }
         findRootNode(t.parent);
+    }
+
+    void findParent(Tree t)
+    {
+        int[] a=new int[2];
+        a[0] = t.point[0];
+        a[1] = t.point[1];
+        if (t.parent.point[0] ==100)
+        {
+            Debug.Log(t.point[0].ToString() + t.point[1].ToString());
+
+            path.Enqueue(a);
+            return;
+        }
+        else
+            findParent(t.parent);
+        Debug.Log(t.point[0].ToString() + t.point[1].ToString());
+        path.Enqueue(a);
     }
 }
