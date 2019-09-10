@@ -219,13 +219,13 @@ public class CreatMapMatrix : MonoBehaviour
                     for(int k=0;k<pathlist.Count;k++)
                     {
                         int[] a = new int[2] { j, i };
-                        if (pathlist[k][0] == a[0] && pathlist[k][1] == a[1])
-                        {
-                            room.transform.GetChild(4).Find("stage01_gem").gameObject.SetActive(false);
-                            room.transform.GetChild(4).Find("stage01_gem (1)").gameObject.SetActive(false);
-                            room.transform.GetChild(4).Find("stage01_gem (2)").gameObject.SetActive(false);
-                            room.transform.GetChild(4).Find("stage01_gem (3)").gameObject.SetActive(false);
-                        }
+                        //if (pathlist[k][0] == a[0] && pathlist[k][1] == a[1])
+                        //{
+                        //    room.transform.GetChild(4).Find("stage01_gem").gameObject.SetActive(false);
+                        //    room.transform.GetChild(4).Find("stage01_gem (1)").gameObject.SetActive(false);
+                        //    room.transform.GetChild(4).Find("stage01_gem (2)").gameObject.SetActive(false);
+                        //    room.transform.GetChild(4).Find("stage01_gem (3)").gameObject.SetActive(false);
+                        //}
 
                     }
 

@@ -9,8 +9,8 @@ public class FieldGem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        background = transform.parent.Find("00_Background").GetComponent<RoomInfo>();
-        spawnPos = transform.parent.Find("SpawnPostion").gameObject;
+        background = transform.parent.parent.Find("00_Background").GetComponent<RoomInfo>();
+        spawnPos = transform.parent.parent.Find("SpawnPostion").gameObject;
     }
 
     // Update is called once per frame
