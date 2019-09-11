@@ -7,7 +7,7 @@ using UnityEngine.AI;
 
 public class CreatMapMatrix : MonoBehaviour
 {
-    class Tree
+    public class Tree
     {
         public Tree(int a, int b)
         {
@@ -15,11 +15,15 @@ public class CreatMapMatrix : MonoBehaviour
             this.point[1] = b;
         }
         public int[] point = new int[2];
+        public int roomNum;
         public Tree r;
         public Tree l;
         public Tree t;
         public Tree b;
         public Tree parent;
+        public int parentDoor =0;
+        public int childDoor = 0;
+        public GameObject room;
     }
     public GameObject player;
     public GameObject startpoint;
@@ -38,11 +42,11 @@ public class CreatMapMatrix : MonoBehaviour
     private int[] randomArr2 = new int[8] {1,3,5,7,9,11,13,15};     //왼쪽이 열린 방 목록
     private int[] randomArr3 = new int[8] {8,9,10,11,12,13,14,15};      //윗쪽이 열린 방 목록
     private int[] randomArr4 = new int[8] {4,5,6,7,12,13,14,15};        //아래쪽이 열린 방 목록
-    Tree[] trees = new Tree[20];
+    public Tree[] trees = new Tree[20];
     int nowRoom = 0;
     int lastRoom = 0;
     int num;
-    List<int[]> pathlist= new List<int[]>();
+    public List<int[]> pathlist= new List<int[]>();
     public Queue<int[]> path = new Queue<int[]>();
     public GameObject mainCamera;
     ProCamera2DRooms_fix cameraRoom;
@@ -105,6 +109,11 @@ public class CreatMapMatrix : MonoBehaviour
                     nowRoom = i;
                     trees[lastRoom] = new Tree(en[0], en[1]);
                     trees[lastRoom].parent = trees[nowRoom];
+                    trees[lastRoom].parentDoor = 2;
+                    trees[lastRoom].l = trees[nowRoom]; 
+                    trees[nowRoom].r = trees[lastRoom];
+                    trees[lastRoom].roomNum = mapMatrix[deq[0], deq[1] + 1];
+                    CheckTBLRLink(deq[0], deq[1] + 1, mapMatrix[deq[0], deq[1]+1], lastRoom);
                     lastRoom++;
                 }
             }
@@ -132,6 +141,11 @@ public class CreatMapMatrix : MonoBehaviour
                     nowRoom = i;
                     trees[lastRoom] = new Tree(en[0], en[1]);
                     trees[lastRoom].parent = trees[nowRoom];
+                    trees[lastRoom].parentDoor = 1;
+                    trees[lastRoom].r = trees[nowRoom];
+                    trees[nowRoom].l = trees[lastRoom];
+                    trees[lastRoom].roomNum = mapMatrix[deq[0], deq[1] - 1];
+                    CheckTBLRLink(deq[0], deq[1] - 1, mapMatrix[deq[0], deq[1]-1], lastRoom);
                     lastRoom++;
                 }
             }
@@ -159,6 +173,11 @@ public class CreatMapMatrix : MonoBehaviour
                     nowRoom = i;
                     trees[lastRoom] = new Tree(en[0], en[1]);
                     trees[lastRoom].parent = trees[nowRoom];
+                    trees[lastRoom].parentDoor = 8;
+                    trees[lastRoom].b = trees[nowRoom];
+                    trees[nowRoom].t = trees[lastRoom];
+                    trees[lastRoom].roomNum = mapMatrix[deq[0]+1, deq[1]];
+                    CheckTBLRLink(deq[0] + 1, deq[1], mapMatrix[deq[0] + 1, deq[1]], lastRoom);
                     lastRoom++;
                 }
             }
@@ -186,6 +205,11 @@ public class CreatMapMatrix : MonoBehaviour
                     nowRoom = i;
                     trees[lastRoom] = new Tree(en[0], en[1]);
                     trees[lastRoom].parent = trees[nowRoom];
+                    trees[lastRoom].parentDoor = 4;
+                    trees[lastRoom].t = trees[nowRoom];
+                    trees[nowRoom].b = trees[lastRoom];
+                    trees[lastRoom].roomNum = mapMatrix[deq[0]-1, deq[1]];
+                    CheckTBLRLink(deq[0] - 1, deq[1], mapMatrix[deq[0] - 1, deq[1]], lastRoom);
                     lastRoom++;
                 }
             }
@@ -200,7 +224,7 @@ public class CreatMapMatrix : MonoBehaviour
                 mapMatrix[i, 20] + " " + mapMatrix[i, 21] + " " + mapMatrix[i, 22] + " " + mapMatrix[i, 23] + " " + mapMatrix[i, 24] + " " + mapMatrix[i, 25] + " " + mapMatrix[i, 26] + " " + mapMatrix[i, 27] + " " + mapMatrix[i, 28] + " " + mapMatrix[i, 29] + " " );
         }
         findParent(trees[roomCount]);
-        int[] com = new int[2];
+        int[] com = new int[4];
         int count = path.Count;
         for (int i=0;i<count;i++)
         {
@@ -216,16 +240,25 @@ public class CreatMapMatrix : MonoBehaviour
                 {
 
                     room = Instantiate(roomList[mapMatrix[j,i]-1], new Vector3((i-14)* 28,0, (-j+14)* 20), Quaternion.Euler(90.0f, 0.0f, 0.0f));
+                    int[] b = new int[2] { j, i };
+                    room.transform.GetChild(4).Find("00_Background").GetComponent<RoomInfo>().roomPos = b;
+                    for(int z =0;z<trees.Length;z++)
+                    {
+                        if (trees[z].point[0] == b[0] && trees[z].point[1] == b[1])
+                        {
+                            trees[z].room = room;
+                            break;
+                        }
+                    }
                     for(int k=0;k<pathlist.Count;k++)
                     {
                         int[] a = new int[2] { j, i };
-                        //if (pathlist[k][0] == a[0] && pathlist[k][1] == a[1])
-                        //{
-                        //    room.transform.GetChild(4).Find("stage01_gem").gameObject.SetActive(false);
-                        //    room.transform.GetChild(4).Find("stage01_gem (1)").gameObject.SetActive(false);
-                        //    room.transform.GetChild(4).Find("stage01_gem (2)").gameObject.SetActive(false);
-                        //    room.transform.GetChild(4).Find("stage01_gem (3)").gameObject.SetActive(false);
-                        //}
+                        if (pathlist[k][0] == a[0] && pathlist[k][1] == a[1])
+                        {
+                            room.transform.GetChild(4).Find("00_Background").GetComponent<RoomInfo>().isPath = true;
+                            room.transform.GetChild(4).Find("00_Background").GetComponent<RoomInfo>().parentDoor = pathlist[k][2];
+                            room.transform.GetChild(4).Find("00_Background").GetComponent<RoomInfo>().childDoor = pathlist[k][3];
+                        }
 
                     }
 
@@ -273,6 +306,66 @@ public class CreatMapMatrix : MonoBehaviour
         return number;
     }
 
+    void CheckTBLRLink(int x, int y, int number, int roomnum)     //생성된 위치에서 상하좌우에 열린 길이 있는지 확인하고 열려있다면 그부분이 열린 방으로 바꾼다. 닫혔으면 닫아준다. 예전에 구현 못해서 오랜 루프를 돌게했던 부분
+    {
+        if ((this.mapMatrix[x, y + 1] & 2) == 2)
+        {
+            int i = 0;
+            while (true)
+            {
+                if (trees[i].point[0] == x && trees[i].point[1] == y+1)
+                {
+                    break;
+                }
+                i++;
+            }
+            trees[roomnum].r = trees[i];
+            trees[i].l = trees[roomnum];
+        }
+        if ((this.mapMatrix[x, y - 1] & 1) == 1)
+        {
+            int i = 0;
+            while (true)
+            {
+                if (trees[i].point[0] == x && trees[i].point[1] == y - 1)
+                {
+                    break;
+                }
+                i++;
+            }
+            trees[roomnum].l = trees[i];
+            trees[i].r = trees[roomnum];
+        }
+        if ((this.mapMatrix[x + 1, y] & 8) == 8)
+        {
+            int i = 0;
+            while (true)
+            {
+                if (trees[i].point[0] == x+1 && trees[i].point[1] == y)
+                {
+                    break;
+                }
+                i++;
+            }
+            trees[roomnum].t = trees[i];
+            trees[i].b = trees[roomnum];
+        }
+        if ((this.mapMatrix[x - 1, y] & 4) == 4)
+        {
+            int i = 0;
+            while (true)
+            {
+                if (trees[i].point[0] == x-1 && trees[i].point[1] == y)
+                {
+                    break;
+                }
+                i++;
+            }
+            trees[roomnum].b = trees[i];
+            trees[i].t = trees[roomnum];
+        }
+    }
+
     void CloseOtherRoom()      //방이 10개 이상 생성 된후 열린 부분을 닫기 위한 함수
     {
         while (q.Count != 0)
@@ -290,6 +383,11 @@ public class CreatMapMatrix : MonoBehaviour
                     s.Push(en);
                     trees[lastRoom] = new Tree(en[0], en[1]);
                     trees[lastRoom].parent = trees[nowRoom];
+                    trees[lastRoom].parentDoor = 2;
+                    trees[lastRoom].l = trees[nowRoom];
+                    trees[nowRoom].r = trees[lastRoom];
+                    trees[lastRoom].roomNum = mapMatrix[deq[0], deq[1] + 1];
+                    CheckTBLRLink(deq[0], deq[1] + 1, mapMatrix[deq[0], deq[1]+1], lastRoom);
                     lastRoom++;
                 }
             }
@@ -314,6 +412,11 @@ public class CreatMapMatrix : MonoBehaviour
                     nowRoom = i;
                     trees[lastRoom] = new Tree(en[0], en[1]);
                     trees[lastRoom].parent = trees[nowRoom];
+                    trees[lastRoom].parentDoor = 1;
+                    trees[lastRoom].r = trees[nowRoom];
+                    trees[nowRoom].l = trees[lastRoom];
+                    trees[lastRoom].roomNum = mapMatrix[deq[0], deq[1] - 1];
+                    CheckTBLRLink(deq[0], deq[1] - 1, mapMatrix[deq[0], deq[1]] - 1, lastRoom);
                     lastRoom++;
                 }
             }
@@ -338,6 +441,11 @@ public class CreatMapMatrix : MonoBehaviour
                     nowRoom = i;
                     trees[lastRoom] = new Tree(en[0], en[1]);
                     trees[lastRoom].parent = trees[nowRoom];
+                    trees[lastRoom].parentDoor = 8;
+                    trees[lastRoom].b = trees[nowRoom];
+                    trees[nowRoom].t = trees[lastRoom];
+                    trees[lastRoom].roomNum = mapMatrix[deq[0]+1, deq[1]];
+                    CheckTBLRLink(deq[0] + 1, deq[1], mapMatrix[deq[0] + 1, deq[1]], lastRoom);
                     lastRoom++;
                 }
             }
@@ -362,6 +470,11 @@ public class CreatMapMatrix : MonoBehaviour
                     nowRoom = i;
                     trees[lastRoom] = new Tree(en[0], en[1]);
                     trees[lastRoom].parent = trees[nowRoom];
+                    trees[lastRoom].parentDoor = 4;
+                    trees[lastRoom].t = trees[nowRoom];
+                    trees[nowRoom].b = trees[lastRoom];
+                    trees[lastRoom].roomNum = mapMatrix[deq[0]-1, deq[1]];
+                    CheckTBLRLink(deq[0] - 1, deq[1], mapMatrix[deq[0] - 1, deq[1]], lastRoom);
                     lastRoom++;
                 }
             }
@@ -379,19 +492,36 @@ public class CreatMapMatrix : MonoBehaviour
 
     void findParent(Tree t)
     {
-        int[] a=new int[2];
+        int[] a=new int[4];
         a[0] = t.point[0];
         a[1] = t.point[1];
-        if (t.parent.point[0] ==100)
+        a[2] = t.parentDoor;
+        a[3] = t.childDoor;
+        if (t.parent.point[0] == 100)
         {
             Debug.Log(t.point[0].ToString() + t.point[1].ToString());
-
+            setChildDoor(t.parent, t.parentDoor);
             path.Enqueue(a);
             return;
         }
         else
+        {
+            setChildDoor(t.parent, t.parentDoor);
             findParent(t.parent);
+        }
         Debug.Log(t.point[0].ToString() + t.point[1].ToString());
         path.Enqueue(a);
+    }
+
+    void setChildDoor(Tree t, int parentDoor)
+    {
+        if (parentDoor == 1)
+            t.childDoor = 2;
+        else if (parentDoor == 2)
+            t.childDoor = 1;
+        else if (parentDoor == 4)
+            t.childDoor = 8;
+        else if (parentDoor == 8)
+            t.childDoor = 4;
     }
 }

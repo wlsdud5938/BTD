@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class DoorBlock : MonoBehaviour
 {
-    public bool isBlocked;
+    public int myDoorNum;
+    public bool isBlocked = true;
     RoomInfo roombool;
     public GameObject block;
     Vector3 blockPos;
@@ -13,19 +14,21 @@ public class DoorBlock : MonoBehaviour
     void Start()
     {
         roombool = transform.parent.GetChild(4).transform.Find("00_Background").GetComponent<RoomInfo>();
-        isBlocked = roombool.isClosed;
+
         block = transform.Find("block").gameObject;
         blockPos = new Vector3(block.transform.position.x, block.transform.position.y, block.transform.position.z);
         openPos = new Vector3(block.transform.position.x, block.transform.position.y, -10000.0f);
-    }
+        isBlocked = true;
+}
 
-    // Update is called once per frame
-    void Update()
+// Update is called once per frame
+void Update()
     {
-        isBlocked = roombool.isClosed;
-        if (isBlocked)
+        if (!roombool.isClosed)
+            isBlocked = false;
+        if (isBlocked && !(roombool.parentDoor == myDoorNum || roombool.childDoor == myDoorNum))
             block.transform.position = blockPos;
-        else if (!isBlocked)
+        else
             block.transform.position = openPos;
     }
 }

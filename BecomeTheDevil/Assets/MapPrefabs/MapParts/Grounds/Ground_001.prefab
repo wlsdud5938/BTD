@@ -6009,6 +6009,9 @@ MonoBehaviour:
   isClosed: 0
   time: 0
   countFieldUnit: 0
+  isPath: 0
+  parentDoor: 0
+  childDoor: 0
 --- !u!1 &740659905
 GameObject:
   m_ObjectHideFlags: 0
@@ -10501,6 +10504,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 701cdc7511c7b0e4d94e4b70ff2be8a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ran: 0
+  gemCount: 0
 --- !u!1 &6594221865578795885
 GameObject:
   m_ObjectHideFlags: 0

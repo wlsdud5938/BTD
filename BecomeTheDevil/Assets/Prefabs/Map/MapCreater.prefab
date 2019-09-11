@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8352707705582115289}
   m_Layer: 0
   m_Name: MapCreater
-  m_TagString: Untagged
+  m_TagString: MapCreater
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43,6 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c62f1dde5534268439d558905f477b69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  startpoint: {fileID: 0}
   roomCount: 0
   roomList:
   - {fileID: 5603629928583153121, guid: 2ea2baf0264c5cd4d9f7bf6e2edc39bb, type: 3}
@@ -63,3 +65,4 @@ MonoBehaviour:
   spawnpoint: {fileID: 3150875196988411395, guid: b346c64972e8b8742b668d4e04c5970f,
     type: 3}
   core: {fileID: 2194923770807123677, guid: ec3f3638be429f94a9b997e0d334bf2b, type: 3}
+  mainCamera: {fileID: 0}

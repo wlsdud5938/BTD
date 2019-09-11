@@ -542,7 +542,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc9e7768f34c2534f99dbca5b438cf47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myDoorNum: 1
   isBlocked: 0
+  isPathDoor: 0
   block: {fileID: 0}
 --- !u!1 &1435432566335110023
 GameObject:
@@ -953,6 +955,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7304179546358718374, guid: 6fa688d65d0149845b518c33b5eb96bb,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 7304179547492745729, guid: 6fa688d65d0149845b518c33b5eb96bb,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -964,11 +971,6 @@ PrefabInstance:
       value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 7304179546907836796, guid: 6fa688d65d0149845b518c33b5eb96bb,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 7304179546358718374, guid: 6fa688d65d0149845b518c33b5eb96bb,
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295

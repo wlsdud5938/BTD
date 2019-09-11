@@ -845,7 +845,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc9e7768f34c2534f99dbca5b438cf47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myDoorNum: 8
   isBlocked: 0
+  isPathDoor: 0
   block: {fileID: 0}
 --- !u!1001 &5089512272473249640
 PrefabInstance:

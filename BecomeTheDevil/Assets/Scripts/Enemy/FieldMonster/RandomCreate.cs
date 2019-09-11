@@ -31,7 +31,8 @@ public class RandomCreate : MonoBehaviour
         int count = activePos.transform.childCount;
         for (int i=0;i<activePos.transform.childCount;i++)
         {
-            newMonster=Instantiate(fieldUnit, activePos.transform.GetChild(i).transform.position, Quaternion.Euler(90.0f, 0.0f, 0.0f));
+            int a = activePos.transform.GetChild(i).GetComponent<MonsterNumber>().monsterNum;
+            newMonster =Instantiate(gameManager.fieldUnit[a], activePos.transform.GetChild(i).transform.position, Quaternion.Euler(90.0f, 0.0f, 0.0f));
             newMonster.GetComponent<FieldMonster>().roominfo = roomif;
             roomif.countFieldUnit++;
         }

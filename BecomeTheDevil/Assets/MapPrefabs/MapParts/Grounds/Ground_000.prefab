@@ -8146,6 +8146,9 @@ MonoBehaviour:
   isClosed: 0
   time: 0
   countFieldUnit: 0
+  isPath: 0
+  parentDoor: 0
+  childDoor: 0
 --- !u!1 &3176157485603302266
 GameObject:
   m_ObjectHideFlags: 0
@@ -8384,7 +8387,7 @@ GameObject:
   - component: {fileID: 2108645341659152443}
   - component: {fileID: 8989052597905737842}
   m_Layer: 0
-  m_Name: 06_Gem
+  m_Name: 07_Gem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8420,6 +8423,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 701cdc7511c7b0e4d94e4b70ff2be8a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ran: 0
+  gemCount: 0
 --- !u!1 &5073073069192272730
 GameObject:
   m_ObjectHideFlags: 0

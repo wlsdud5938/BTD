@@ -5,6 +5,7 @@ using UnityEngine;
 public class RandomActive : MonoBehaviour
 {
     public int ran;
+    public int gemCount = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -12,18 +13,22 @@ public class RandomActive : MonoBehaviour
         if((ran&1) == 1)
         {
             transform.GetChild(0).gameObject.SetActive(true);
+            gemCount++;
         }
         if ((ran & 2) == 2)
         {
             transform.GetChild(1).gameObject.SetActive(true);
+            gemCount++;
         }
         if ((ran & 4) == 4)
         {
             transform.GetChild(2).gameObject.SetActive(true);
+            gemCount++;
         }
         if ((ran & 8) == 8)
         {
             transform.GetChild(3).gameObject.SetActive(true);
+            gemCount++;
         }
     }
 
