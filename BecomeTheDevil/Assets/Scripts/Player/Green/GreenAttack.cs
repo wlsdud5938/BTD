@@ -9,7 +9,6 @@ public class GreenAttack : MonoBehaviour
 
     // 마우스 위치
     private Vector3 mousePos;
-
     private Vector3 targetPos;
 
 
@@ -18,15 +17,20 @@ public class GreenAttack : MonoBehaviour
     private float cnt = 0;
 
     //총알
-    public float bulletSpeed = 1f;
-    public float AttackCooltime = 0.5f;
-    public float maxDis = 6f;
-    public float setDis = 0.5f;
+    public float bulletSpeed;
+    public float AttackCooltime;
+    public float maxDis;
 
+    public float setDis = 0.5f;
 
     // Update is called once per frame
     void Update()
-    { 
+    {
+        //Status 에서 값 받아와야함
+        bulletSpeed = 1f;
+        AttackCooltime = 0.5f;
+        maxDis = 6f;
+
         trans = GetComponent<Transform>();
 
         if (!canShoot) cnt += Time.deltaTime;

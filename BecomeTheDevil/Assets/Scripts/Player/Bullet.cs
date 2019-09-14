@@ -18,14 +18,12 @@ public class Bullet : MonoBehaviour
     IEnumerator MoveBullet()
     {
         animatorBullet = GetComponent<Animator>();
-        animatorBullet.SetBool("Boom", false);
         startPos = transform.position;
 
         while (true)
         {
             dis = Vector3.Distance(startPos, transform.position);
             if (dis > maxDis) break;
-            if(dis >= maxDis - 3) animatorBullet.SetBool("Boom", true);
             transform.position += target.normalized * bulletSpeed * Time.deltaTime;
             yield return null;
             
