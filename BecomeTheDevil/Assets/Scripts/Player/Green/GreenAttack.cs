@@ -4,81 +4,39 @@ using UnityEngine;
 
 public class GreenAttack : MonoBehaviour
 {
-    private bool isGreen;
-
     private Transform trans;
     private Vector3 MovePos = Vector3.zero;
 
     // 마우스 위치
     private Vector3 mousePos;
-    private float height;
-    private float width;
 
-    private float angle;
+    private Vector3 targetPos;
+
 
     private bool continuouFire = false;
-
-    //Green Bullet Point
-    Vector3 greenBulletPoint_right;
-    Vector3 greenBulletPoint_up;
-    Vector3 greenBulletPoint_down;
-    Vector3 greenBulletPoint_left;
+    private bool canShoot = true;
+    private float cnt = 0;
 
     //총알
     public float bulletSpeed = 1f;
-    public float bulletDuration = 20f;
     public float AttackCooltime = 0.5f;
     public float maxDis = 6f;
+    public float setDis = 0.5f;
 
-    /**
-    private Transform trans;
-    public float angle;
-    public GameObject bullet;
-    GameObject newBullet;
-    GameObject newBullet1;
-    GameObject newBullet2;
-    GameObject newBullet3;
-    public Vector3 mousePosition;
-    public float height;
-    public float width;
-    public bool isGreen = true;
-    Vector3 greenBulletPoint_right;
-    Vector3 greenBulletPoint_up;
-    Vector3 greenBulletPoint_down;
-    Vector3 greenBulletPoint_left;
-    Vector3 whiteBulletPoint_1;
-    Vector3 whiteBulletPoint_2;
-    Vector3 whiteBulletPoint_3;
-    **/
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-        greenBulletPoint_right = gameObject.transform.Find("GreenBulletPoint").gameObject.transform.Find("right").transform.position;
-        greenBulletPoint_up = gameObject.transform.Find("GreenBulletPoint").gameObject.transform.Find("up").transform.position;
-        greenBulletPoint_down = gameObject.transform.Find("GreenBulletPoint").gameObject.transform.Find("down").transform.position;
-        greenBulletPoint_left = gameObject.transform.Find("GreenBulletPoint").gameObject.transform.Find("left").transform.position;
-
-
-        /**********이전 코드**************
-        whiteBulletPoint_1 = gameObject.transform.Find("WhiteBulletPoint").gameObject.transform.Find("1").transform.position;
-        whiteBulletPoint_2 = gameObject.transform.Find("WhiteBulletPoint").gameObject.transform.Find("2").transform.position;
-        whiteBulletPoint_3 = gameObject.transform.Find("WhiteBulletPoint").gameObject.transform.Find("3").transform.position;
-        **********************************/
-    }
 
     // Update is called once per frame
     void Update()
     { 
         trans = GetComponent<Transform>();
-        KeyCheck();
-    }
 
-    public float CalculateAngle(Vector3 to)
-    {
-        return Quaternion.FromToRotation(Vector3.up, to - trans.position).eulerAngles.z;
+        if (!canShoot) cnt += Time.deltaTime;
+        if (!continuouFire && cnt >= AttackCooltime)
+        {
+            cnt = 0;
+            canShoot = true;
+        }
+
+        KeyCheck();
     }
 
     // 입력키 확인
@@ -92,29 +50,17 @@ public class GreenAttack : MonoBehaviour
 
     void BulletInfoSetting(GameObject _Bullet)
     {
-        
-        if (_Bullet == null) return;
+        mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        if ((angle > -315 && angle <= 45) || angle > 315)
-        {
-            _Bullet.transform.position = transform.position + greenBulletPoint_up;
-        }
-        else if (angle > 45 && angle <= 135)
-        {
-            _Bullet.transform.position = transform.position + greenBulletPoint_left;
-        }
-        else if (angle > 135 && angle <= 225)
-        {
-            _Bullet.transform.position = transform.position + greenBulletPoint_down;
-        }
-        else if (angle > 225 && angle <= 315)
-        {
-            _Bullet.transform.position = transform.position + greenBulletPoint_right;
-        }
-        
+
+        if (_Bullet == null) return;
+        targetPos = new Vector3(mousePos.x - trans.position.x, 0, mousePos.z - trans.position.z);
+
         _Bullet.SetActive(true);
-        _Bullet.GetComponent<Bullet>().target = mousePos;
-        _Bullet.GetComponent<Bullet>().duration = bulletDuration;
+
+        _Bullet.transform.position = trans.position + targetPos.normalized * setDis;
+
+        _Bullet.GetComponent<Bullet>().target = targetPos;
         _Bullet.GetComponent<Bullet>().bulletSpeed = bulletSpeed;
         _Bullet.GetComponent<Bullet>().maxDis = maxDis;
         _Bullet.GetComponent<Bullet>().StartCoroutine("MoveBullet");
@@ -122,42 +68,22 @@ public class GreenAttack : MonoBehaviour
 
     void MouseDown()
     {
-
-        height = Screen.height;
-        width = Screen.width;
-        mousePos = new Vector3(Input.mousePosition.x - (width / 2), Input.mousePosition.y - (height / 2));
-        angle = CalculateAngle(mousePos);
-
-        StartCoroutine("GreenBulletAttack");
-
+        if(canShoot)
+            StartCoroutine("GreenBulletAttack");
     }
 
     IEnumerator GreenBulletAttack()
     {
+        canShoot = false;
         continuouFire =true;
         while (continuouFire)
         {
+            cnt = 0;
             BulletInfoSetting(ObjectManager.Call().GetObject("GreenBullet"));
-            yield return new WaitForSeconds(AttackCooltime);
+            yield return new WaitUntil(() => cnt > AttackCooltime);
         }
     }
 
 
-    /*********************************이전 코드*********************************************
 
-
-    void WhiteBulletAttack()
-    {
-
-        newBullet1 = Instantiate(bullet, whiteBulletPoint_1, Quaternion.Euler(90.0f, 0.0f, 0.0f));
-        newBullet1.GetComponent<Bullet>().target = mousePosition;
-
-        newBullet2 = Instantiate(bullet, whiteBulletPoint_2, Quaternion.Euler(90.0f, 0.0f, 0.0f));
-        newBullet2.GetComponent<Bullet>().target = mousePosition;
-
-        newBullet3 = Instantiate(bullet, whiteBulletPoint_3, Quaternion.Euler(90.0f, 0.0f, 0.0f));
-        newBullet3.GetComponent<Bullet>().target = mousePosition;
-
-    }
-***************************************************/
 }
