@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+using DG.Tweening;
+
 public class WhiteAttack : MonoBehaviour
 {
     private Transform trans;
@@ -22,17 +24,34 @@ public class WhiteAttack : MonoBehaviour
     public float maxDis;
     public float bulletNum;
 
+    public float loadBullet = 1f;
+    public float waitBullet = 1f;
+
     Vector3 whiteBulletPoint_1;
     Vector3 whiteBulletPoint_2;
     Vector3 whiteBulletPoint_3;
     Vector3 whiteBulletPoint_4;
     Vector3 whiteBulletPoint_5;
 
+    Vector3 bulletPos;
+
+    private float angle;
+
+    private Transform b1;
+    private Transform b2;
+    private Transform b3;
+    private Transform b4;
+    private Transform b5;
+
 
     // Start is called before the first frame update
     void Start()
     {
-
+        b1 = gameObject.transform.Find("WhiteBulletPoint").gameObject.transform.Find("1").transform;
+        b2 = gameObject.transform.Find("WhiteBulletPoint").gameObject.transform.Find("2").transform;
+        b3 = gameObject.transform.Find("WhiteBulletPoint").gameObject.transform.Find("3").transform;
+        b4 = gameObject.transform.Find("WhiteBulletPoint").gameObject.transform.Find("4").transform;
+        b5 = gameObject.transform.Find("WhiteBulletPoint").gameObject.transform.Find("5").transform;
     }
 
     // Update is called once per frame
@@ -77,39 +96,47 @@ public class WhiteAttack : MonoBehaviour
 
         if (posNum == 1)
         {
-            whiteBulletPoint_1 = gameObject.transform.Find("WhiteBulletPoint").gameObject.transform.Find("1").transform.position;
-            _Bullet.transform.position = whiteBulletPoint_1;
+            bulletPos = b1.position;
         }
         else if (posNum == 2)
         {
-            whiteBulletPoint_2 = gameObject.transform.Find("WhiteBulletPoint").gameObject.transform.Find("2").transform.position;
-            _Bullet.transform.position = whiteBulletPoint_2;
+            bulletPos = b2.position;
         }
         else if (posNum == 3)
         {
-            whiteBulletPoint_3 = gameObject.transform.Find("WhiteBulletPoint").gameObject.transform.Find("3").transform.position;
-            _Bullet.transform.position = whiteBulletPoint_3;
+            bulletPos = b3.position;
         }
         else if(posNum == 4)
         {
-            whiteBulletPoint_4 = gameObject.transform.Find("WhiteBulletPoint").gameObject.transform.Find("4").transform.position;
-            _Bullet.transform.position = whiteBulletPoint_4;
+            bulletPos = b4.position;
         }
         else if (posNum == 5)
         {
-            whiteBulletPoint_5 = gameObject.transform.Find("WhiteBulletPoint").gameObject.transform.Find("5").transform.position;
-            _Bullet.transform.position = whiteBulletPoint_5;
+            bulletPos = b5.position;
         }
         else
         {
             return;
         }
 
-        targetPos = new Vector3(mousePos.x - _Bullet.transform.position.x, 0, mousePos.z - _Bullet.transform.position.z);
+        targetPos = new Vector3(mousePos.x - bulletPos.x, 0, mousePos.z - bulletPos.z);
 
         _Bullet.GetComponent<Bullet>().target = targetPos;
         _Bullet.GetComponent<Bullet>().bulletSpeed = bulletSpeed;
         _Bullet.GetComponent<Bullet>().maxDis = maxDis;
+
+        angle = Vector3.SignedAngle(transform.up, bulletPos - targetPos, -transform.forward);
+        _Bullet.transform.position = transform.position;
+
+        Sequence seq = DOTween.Sequence();
+        seq.Append(_Bullet.transform.DOMove(bulletPos, loadBullet));
+        seq.Join(_Bullet.transform.DORotate(new Vector3(0, angle, 0), loadBullet));
+        seq.AppendInterval(waitBullet);
+ 
+        seq.Play();
+
+
+        _Bullet.GetComponent<Bullet>().transform.GetChild(0).gameObject.GetComponent<Animator>().Play("white_bullet_basic_shoot");
         _Bullet.GetComponent<Bullet>().StartCoroutine("MoveBullet");
     }
 
