@@ -19,6 +19,7 @@ TagManager:
   - Gem
   - GameManager
   - Field
+  - MapCreater
   layers:
   - Default
   - TransparentFX
