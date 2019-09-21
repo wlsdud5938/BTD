@@ -6,13 +6,13 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Unit_basic_slime_1
+  m_Name: fieldMob_stage1_rockTotem
   serializedVersion: 5
   m_AnimatorParameters: []
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
-    m_StateMachine: {fileID: 1107959428532413496}
+    m_StateMachine: {fileID: 1107925231283771028}
     m_Mask: {fileID: 0}
     m_Motions: []
     m_Behaviours: []
@@ -22,14 +22,14 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
---- !u!1102 &1102415424146912584
+--- !u!1102 &1102614303962391160
 AnimatorState:
   serializedVersion: 5
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: 01_basic_slime_attack
+  m_Name: fieldMob_stage1_rockTotem_idle
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -42,20 +42,20 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 3231f49cb61720b4295bb5b36c481103, type: 2}
+  m_Motion: {fileID: 7400000, guid: 4100c5d47ba0b0748acc2a10222e4515, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &1102534123132015436
+--- !u!1102 &1102756170072786132
 AnimatorState:
   serializedVersion: 5
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: 01_basic_slime_build
+  m_Name: fieldMob_stage1_rockTotem_open
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -68,21 +68,21 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 26ccde7b5d926b84bb6e9573a3db3acd, type: 2}
+  m_Motion: {fileID: 7400000, guid: 49966fd434d05204096a838b8a17a8e4, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &1102619162540617506
+--- !u!1102 &1102859540386369250
 AnimatorState:
   serializedVersion: 5
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: 01_basic_slime_blink
-  m_Speed: 0.1
+  m_Name: fieldMob_stage1_rockTotem_close
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours: []
@@ -94,13 +94,13 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: e0966ee2318d8b843b55ae832f0e8e83, type: 2}
+  m_Motion: {fileID: 7400000, guid: 039f47f1e7d0c2445b8f02e52d39150e, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1107 &1107959428532413496
+--- !u!1107 &1107925231283771028
 AnimatorStateMachine:
   serializedVersion: 5
   m_ObjectHideFlags: 1
@@ -110,14 +110,14 @@ AnimatorStateMachine:
   m_Name: Base Layer
   m_ChildStates:
   - serializedVersion: 1
-    m_State: {fileID: 1102415424146912584}
-    m_Position: {x: 252, y: 24, z: 0}
+    m_State: {fileID: 1102614303962391160}
+    m_Position: {x: 252, y: -12, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 1102619162540617506}
-    m_Position: {x: 252, y: 120, z: 0}
+    m_State: {fileID: 1102756170072786132}
+    m_Position: {x: 252, y: 60, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 1102534123132015436}
-    m_Position: {x: 252, y: 204, z: 0}
+    m_State: {fileID: 1102859540386369250}
+    m_Position: {x: 252, y: 132, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -127,4 +127,4 @@ AnimatorStateMachine:
   m_EntryPosition: {x: 50, y: 120, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: 1102415424146912584}
+  m_DefaultState: {fileID: 1102614303962391160}

@@ -1,18 +1,12 @@
 fileFormatVersion: 2
-guid: 528b991d6a6bd6a45b5d969f6537a676
+guid: 47f77c514873f9f41a79137d28093c7a
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Unit_basic_slime_0
-    21300002: Unit_basic_slime_1
-    21300004: Unit_basic_slime_2
-    21300006: Unit_basic_slime_3
-    21300008: Unit_basic_slime_4
-    21300010: Unit_basic_slime_5
-    21300012: Unit_basic_slime_6
-    21300014: Unit_basic_slime_7
-    21300016: Unit_basic_slime_8
-    21300018: Unit_basic_slime_9
-    21300020: Unit_basic_slime_10
+    21300000: Unit_rock_slime_0
+    21300002: Unit_rock_slime_1
+    21300004: Unit_rock_slime_2
+    21300006: Unit_rock_slime_3
+    21300008: Unit_rock_slime_4
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -139,13 +133,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Unit_basic_slime_0
+      name: Unit_rock_slime_0
       rect:
         serializedVersion: 2
         x: 2
         y: 2
-        width: 72
-        height: 36
+        width: 86
+        height: 84
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,19 +147,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8e181b3b68722914a9d462cb5f57f818
+      spriteID: b028dc891f0d8fa4bb8494287b4557f0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Unit_basic_slime_1
+      name: Unit_rock_slime_1
       rect:
         serializedVersion: 2
-        x: 76
+        x: 90
         y: 2
-        width: 68
-        height: 42
+        width: 86
+        height: 84
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,19 +167,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a6418bed6cf907f4094c3c64758b27f1
+      spriteID: e941f8de0bcbe48438c8544e58d8fb58
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Unit_basic_slime_2
+      name: Unit_rock_slime_2
       rect:
         serializedVersion: 2
-        x: 146
+        x: 178
         y: 2
-        width: 64
-        height: 44
+        width: 86
+        height: 84
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,19 +187,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d3695328ee024f47b60dc553b3a948f
+      spriteID: 0bd80efe6f384854ba7ee6b5b4b8887d
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Unit_basic_slime_3
+      name: Unit_rock_slime_3
       rect:
         serializedVersion: 2
-        x: 212
+        x: 266
         y: 2
-        width: 60
-        height: 46
+        width: 86
+        height: 72
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,19 +207,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b606786594da3bd4bb0aa3dc17355b04
+      spriteID: 0fc10f4359148364a8c953034a78f0a4
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Unit_basic_slime_4
+      name: Unit_rock_slime_4
       rect:
         serializedVersion: 2
-        x: 274
+        x: 354
         y: 2
-        width: 56
-        height: 50
+        width: 86
+        height: 48
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -233,127 +227,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bcda1f27c6bf7d045a5fcab905691170
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Unit_basic_slime_5
-      rect:
-        serializedVersion: 2
-        x: 332
-        y: 2
-        width: 52
-        height: 54
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a22052337cf71854e8834bec48623e08
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Unit_basic_slime_6
-      rect:
-        serializedVersion: 2
-        x: 386
-        y: 2
-        width: 44
-        height: 60
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 91af1bd5500c554458515071280ed6ff
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Unit_basic_slime_7
-      rect:
-        serializedVersion: 2
-        x: 432
-        y: 2
-        width: 20
-        height: 8
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 08470e0b2964a15459d8570092b51713
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Unit_basic_slime_8
-      rect:
-        serializedVersion: 2
-        x: 454
-        y: 2
-        width: 28
-        height: 14
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ee33064c91a9e994f9804fd3f2a3f5dc
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Unit_basic_slime_9
-      rect:
-        serializedVersion: 2
-        x: 484
-        y: 2
-        width: 60
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f3e30b306febc1341b0ddf4a9e413776
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Unit_basic_slime_10
-      rect:
-        serializedVersion: 2
-        x: 546
-        y: 2
-        width: 60
-        height: 46
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c83c1fb482dc7124384ee8d41e4fa866
+      spriteID: cf647116d5fccdd45877f43584e52ab3
       vertices: []
       indices: 
       edges: []
@@ -361,7 +235,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 12dfe6cd3e038ff43a8be35a3771cc4d
+    spriteID: 1ece48c65a89acd4ea45224f38cf24fd
     vertices: []
     indices: 
     edges: []
