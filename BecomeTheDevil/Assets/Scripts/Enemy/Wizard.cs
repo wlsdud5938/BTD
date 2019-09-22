@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class Wizard : Enemy
 {
+    private Animator wizardAnimator;
+
     // Start is called before the first frame update
     void Start()
     {
         base.Start();
+        wizardAnimator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -15,4 +18,6 @@ public class Wizard : Enemy
     {
         base.Update();
     }
+
+
 }
