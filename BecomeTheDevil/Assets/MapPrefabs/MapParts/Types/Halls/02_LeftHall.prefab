@@ -164,7 +164,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2717522768306759406}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12, y: 6, z: 0}
+  m_LocalPosition: {x: -12.5, y: 6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5850926311338968717}
@@ -180,7 +180,7 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 2, y: 4, z: 0.5}
+  m_Extents: {x: 2.5, y: 4, z: 0.5}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
@@ -213,7 +213,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4, y: 8, z: 3}
+  m_Size: {x: 5, y: 8, z: 3}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4532015976311823791
 GameObject:
@@ -242,7 +242,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4532015976311823791}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12, y: -6, z: 0}
+  m_LocalPosition: {x: -12.5, y: -6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5850926311338968717}
@@ -258,7 +258,7 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 2, y: 4, z: 0.5}
+  m_Extents: {x: 2.5, y: 4, z: 0.5}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
@@ -291,7 +291,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4, y: 8, z: 3}
+  m_Size: {x: 5, y: 8, z: 3}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5382615278703632761
 GameObject:
@@ -823,7 +823,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myDoorNum: 2
   isBlocked: 0
-  isPathDoor: 0
   block: {fileID: 0}
 --- !u!1 &7960916139457223215
 GameObject:
@@ -941,11 +940,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7304179546358718374, guid: 6fa688d65d0149845b518c33b5eb96bb,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
     - target: {fileID: 7304179547492745729, guid: 6fa688d65d0149845b518c33b5eb96bb,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -957,6 +951,11 @@ PrefabInstance:
       value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 7304179546907836796, guid: 6fa688d65d0149845b518c33b5eb96bb,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 7304179546358718374, guid: 6fa688d65d0149845b518c33b5eb96bb,
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295

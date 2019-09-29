@@ -16,6 +16,6 @@ public class SortingRendering : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        renderer.sortingOrder = 1000 - (int)transform.position.z;
+        renderer.sortingOrder = 1000000 - (int)(transform.position.z*500);
     }
 }

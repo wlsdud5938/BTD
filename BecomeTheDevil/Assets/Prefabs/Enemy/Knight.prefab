@@ -24,13 +24,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3275555510142650080}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 181342197827286730}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!212 &3727478107363343943
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -89,6 +89,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3310453532319822938}
   - component: {fileID: 9155157344161751226}
+  - component: {fileID: 7773640769375848309}
   m_Layer: 0
   m_Name: EnemyRange
   m_TagString: Untagged
@@ -162,6 +163,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7773640769375848309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3277702111911238360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b25c13fdae64344a82bb6dec3d49f5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  moveAI: {fileID: 0}
+  curRoom: {fileID: 0}
+  core: {fileID: 0}
+  corePath: 1
+  canAttack: 0
+  aggroCal: 0
 --- !u!1 &3940212345593114731
 GameObject:
   m_ObjectHideFlags: 0
@@ -287,6 +307,8 @@ GameObject:
   - component: {fileID: 181342197827286730}
   - component: {fileID: 7144470407570103605}
   - component: {fileID: 5243625632904137833}
+  - component: {fileID: 1624361936881473333}
+  - component: {fileID: 4503213459084579163}
   m_Layer: 0
   m_Name: Knight
   m_TagString: Untagged
@@ -342,6 +364,45 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!195 &1624361936881473333
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5243625632904137834}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &4503213459084579163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5243625632904137834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 031a2185e48bdd84ba593dd6f6669a3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  w: {x: 0, y: 0, z: 0}
+  target: {fileID: 0}
+  core: {fileID: 0}
+  aaa: 1
+  bbb: 1
 --- !u!1 &5797652112055716708
 GameObject:
   m_ObjectHideFlags: 0
