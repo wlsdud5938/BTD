@@ -17,19 +17,22 @@ public class GreenAttack : MonoBehaviour
     private float cnt = 0;
 
     //총알
-    public float bulletSpeed;
-    public float AttackCooltime;
-    public float maxDis;
+    private float bulletSpeed;
+    private float AttackCooltime;
+    private float maxDis;
+    private float maxSpeed;
 
     public float setDis = 0.5f;
+
 
     // Update is called once per frame
     void Update()
     {
         //Status 에서 값 받아와야함
-        bulletSpeed = 1f;
+        bulletSpeed = 6f;
         AttackCooltime = 0.5f;
         maxDis = 6f;
+        maxSpeed = 0f;
 
         trans = GetComponent<Transform>();
 
@@ -64,6 +67,7 @@ public class GreenAttack : MonoBehaviour
 
         _Bullet.transform.position = trans.position + targetPos.normalized * setDis;
 
+        _Bullet.GetComponent<Bullet>().maxSpeed = maxSpeed;
         _Bullet.GetComponent<Bullet>().target = targetPos;
         _Bullet.GetComponent<Bullet>().bulletSpeed = bulletSpeed;
         _Bullet.GetComponent<Bullet>().maxDis = maxDis;

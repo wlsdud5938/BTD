@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-using DG.Tweening;
-
 public class WhiteAttack : MonoBehaviour
 {
     private Transform trans;
@@ -19,21 +17,13 @@ public class WhiteAttack : MonoBehaviour
     private float cnt = 0;
 
     //총알
-    public float bulletSpeed;
-    public float AttackCooltime;
-    public float maxDis;
-    public float bulletNum;
+    private float bulletSpeed;
+    private float AttackCooltime;
+    private float maxDis;
+    private float bulletNum;
+    private float maxSpeed;
 
-    public float loadBullet = 1f;
-    public float waitBullet = 1f;
-
-    Vector3 whiteBulletPoint_1;
-    Vector3 whiteBulletPoint_2;
-    Vector3 whiteBulletPoint_3;
-    Vector3 whiteBulletPoint_4;
-    Vector3 whiteBulletPoint_5;
-
-    Vector3 bulletPos;
+    private Vector3 bulletPos;
 
     private float angle;
 
@@ -42,6 +32,8 @@ public class WhiteAttack : MonoBehaviour
     private Transform b3;
     private Transform b4;
     private Transform b5;
+
+    private Transform[] bulletStartPos;
 
 
     // Start is called before the first frame update
@@ -52,18 +44,21 @@ public class WhiteAttack : MonoBehaviour
         b3 = gameObject.transform.Find("WhiteBulletPoint").gameObject.transform.Find("3").transform;
         b4 = gameObject.transform.Find("WhiteBulletPoint").gameObject.transform.Find("4").transform;
         b5 = gameObject.transform.Find("WhiteBulletPoint").gameObject.transform.Find("5").transform;
+
+        bulletStartPos = new Transform[5] { b1, b2, b3, b4, b5 };
     }
 
     // Update is called once per frame
     void Update()
     {
         //Status 에서 값 받아와야함
-        bulletSpeed = 1f;
+        bulletSpeed = 7f;
         AttackCooltime = 0.5f;
         maxDis = 6f;
         bulletNum = 2f;
+        maxSpeed = 10f;
 
-        trans = GetComponent<Transform>();
+                trans = GetComponent<Transform>();
 
         if (!canShoot) cnt += Time.deltaTime;
         if (!continuouFire && cnt >= AttackCooltime)
@@ -94,30 +89,15 @@ public class WhiteAttack : MonoBehaviour
         _Bullet.SetActive(true);
 
 
-        if (posNum == 1)
-        {
-            bulletPos = b1.position;
-        }
-        else if (posNum == 2)
-        {
-            bulletPos = b2.position;
-        }
-        else if (posNum == 3)
-        {
-            bulletPos = b3.position;
-        }
-        else if(posNum == 4)
-        {
-            bulletPos = b4.position;
-        }
-        else if (posNum == 5)
-        {
-            bulletPos = b5.position;
-        }
-        else
+        if (posNum > 5 || posNum < 1)
         {
             return;
         }
+        else
+        {
+            bulletPos = bulletStartPos[posNum - 1].position;
+        }
+
 
         targetPos = new Vector3(mousePos.x - bulletPos.x, 0, mousePos.z - bulletPos.z);
 
@@ -125,19 +105,13 @@ public class WhiteAttack : MonoBehaviour
         _Bullet.GetComponent<Bullet>().bulletSpeed = bulletSpeed;
         _Bullet.GetComponent<Bullet>().maxDis = maxDis;
 
-        angle = Vector3.SignedAngle(transform.up, bulletPos - targetPos, -transform.forward);
-        _Bullet.transform.position = transform.position;
+        angle = Vector3.SignedAngle(transform.up, targetPos - bulletPos, -transform.forward);
 
-        Sequence seq = DOTween.Sequence();
-        seq.Append(_Bullet.transform.DOMove(bulletPos, loadBullet));
-        seq.Join(_Bullet.transform.DORotate(new Vector3(0, angle, 0), loadBullet));
-        seq.AppendInterval(waitBullet);
- 
-        seq.Play();
+        _Bullet.transform.position = trans.position;
 
-
-        _Bullet.GetComponent<Bullet>().transform.GetChild(0).gameObject.GetComponent<Animator>().Play("white_bullet_basic_shoot");
-        _Bullet.GetComponent<Bullet>().StartCoroutine("MoveBullet");
+        _Bullet.GetComponent<WhiteBullet>().angle = angle;
+        _Bullet.GetComponent<WhiteBullet>().bulletPos = bulletPos;
+        _Bullet.GetComponent<WhiteBullet>().StartCoroutine("LoadBullet");
     }
 
     void MouseDown()

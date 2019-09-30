@@ -25,7 +25,7 @@ public class ObjectManager : MonoBehaviour
     void Start()
     {
         SetObject(origin[0], 20, "GreenBullet"); // Green 총알 생성
-        SetObject(origin[1], 5, "WhiteBullet"); // White 총알 생성
+        SetObject(origin[1], 20, "WhiteBullet"); // White 총알 생성
     }
 
     private void OnDestroy()

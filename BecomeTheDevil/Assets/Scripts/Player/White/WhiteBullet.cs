@@ -4,17 +4,39 @@ using UnityEngine;
 
 using DG.Tweening;
 
+
+
 public class WhiteBullet : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Vector3 bulletPos;
+    public float angle;
 
-    // Update is called once per frame
-    void Update()
+    public bool isLoad;
+
+    private Animator animator;
+
+    private Sequence seq;
+
+    IEnumerator LoadBullet()
     {
-        
+        isLoad = true;
+        animator = transform.GetChild(0).gameObject.GetComponent<Animator>();
+        animator.Play("white_bullet_basic_load");
+        if (angle >= -90 && angle <= 90) angle -= 180;
+
+        Sequence seq = DOTween.Sequence();
+        seq.Prepend(transform.DOMove(bulletPos, 0.8f));
+        seq.Insert(0.55f, transform.DORotate(new Vector3(0, angle, 0), 0.3f));
+
+        seq.Play();
+
+        while (isLoad)
+        {
+            yield return null;
+        }
+
+        animator.Play("white_bullet_basic_shoot");
+        gameObject.GetComponent<Bullet>().StartCoroutine("MoveBullet");
+
     }
 }
