@@ -140,6 +140,8 @@ public class Moving : MonoBehaviour
         {
             other.GetComponent<FieldMonster>().die();
         }
+        if (other.CompareTag("Enemy"))
+            other.GetComponent<Enemy>().die();
     }
     private void OnTriggerExit(Collider other)
     {

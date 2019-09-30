@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     bool waveOn = false;
     bool allSpawn = true;
-    int enemyCount = 0;
+    public int enemyCount = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -60,16 +60,23 @@ public class GameManager : MonoBehaviour
             for (int j = 0; j <= Min(totalSpawn, 5) - 1; j++)
             {
                Instantiate(enemyUnit[0], enemySpawn.transform.GetChild(0).transform.GetChild(Min(totalSpawn, 5) - 1).GetChild(j).transform.position, Quaternion.Euler(90.0f, 0.0f, 0.0f));
+               enemyCount++;
             }
             for (int j = 0; j <= Min(totalSpawn, 5) - 1; j++)
             {
                 Instantiate(enemyUnit[1], enemySpawn.transform.GetChild(1).transform.GetChild(Min(totalSpawn, 5) - 1).GetChild(j).transform.position, Quaternion.Euler(90.0f, 0.0f, 0.0f));
+                enemyCount++;
             }
             for (int j = 0; j <= Min(totalSpawn, 5) - 1; j++)
             {
                 Instantiate(enemyUnit[2], enemySpawn.transform.GetChild(2).transform.GetChild(Min(totalSpawn, 5) - 1).GetChild(j).transform.position, Quaternion.Euler(90.0f, 0.0f, 0.0f));
+                enemyCount++;
             }
             totalSpawn -= 5;
+            if(totalSpawn <=0)
+            {
+                allSpawn = true;
+            }
             yield return new WaitForSeconds(10.0f);
         }
     }

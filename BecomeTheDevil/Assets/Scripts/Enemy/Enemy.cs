@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour
 {
     protected Vector3 curLocation;
     protected Vector3 preLocation;
-
+    GameManager gameManager;
     protected Animator enemyAnimator;
 
     // Start is called before the first frame update
@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour
     {
         preLocation = transform.position;
         enemyAnimator = GetComponent<Animator>();
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -44,4 +45,13 @@ public class Enemy : MonoBehaviour
         preLocation = transform.position;
     }
 
+
+    private void OnDestroy()
+    {
+        gameManager.enemyCount--;
+    }
+    public void die()
+    {
+        Destroy(gameObject);
+    }
 }
