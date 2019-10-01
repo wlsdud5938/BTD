@@ -26,12 +26,12 @@ public class Bullet : MonoBehaviour
 
         startPos = transform.position;
 
-        acceleration = (maxSpeed - bulletSpeed) * (maxSpeed + bulletSpeed) / (2 * maxDis);
+        acceleration = (maxSpeed - bulletSpeed)/maxDis;
 
 
         while (true)
         {
-            if (maxSpeed != 0 && maxSpeed >= bulletSpeed) bulletSpeed += acceleration * Time.deltaTime;
+            if (maxSpeed >= bulletSpeed) bulletSpeed += acceleration * Time.deltaTime;
             dis = Vector3.Distance(startPos, transform.position);
             
             if(dis > maxDis - boomTiming)
@@ -45,6 +45,6 @@ public class Bullet : MonoBehaviour
             
         }
 
-        gameObject.SetActive(false);
+        animator.SetBool("Boom", true);
     }
 }

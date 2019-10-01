@@ -10,6 +10,7 @@ public class WhiteBullet : MonoBehaviour
 {
     public Vector3 bulletPos;
     public float angle;
+    public float posNum;
 
     public bool isLoad;
 
@@ -22,7 +23,9 @@ public class WhiteBullet : MonoBehaviour
         isLoad = true;
         animator = transform.GetChild(0).gameObject.GetComponent<Animator>();
         animator.Play("white_bullet_basic_load");
-        if (angle >= -90 && angle <= 90) angle -= 180;
+        if (angle >= -90 && angle <= 90) angle += 180;
+
+        if(posNum ==2) Debug.Log(angle);
 
         Sequence seq = DOTween.Sequence();
         seq.Prepend(transform.DOMove(bulletPos, 0.8f));
