@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2517374188875496758}
   - component: {fileID: 3727478107363343943}
+  - component: {fileID: 6079289506028503830}
   m_Layer: 0
   m_Name: knight_sprite
   m_TagString: Untagged
@@ -79,6 +80,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6079289506028503830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3275555510142650080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b25c13fdae64344a82bb6dec3d49f5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  moveAI: {fileID: 0}
+  curRoom: {fileID: 0}
+  core: {fileID: 0}
+  corePath: 1
+  canAttack: 0
+  aggroCal: 0
 --- !u!1 &3277702111911238360
 GameObject:
   m_ObjectHideFlags: 0
