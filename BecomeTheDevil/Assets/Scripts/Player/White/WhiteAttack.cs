@@ -17,11 +17,12 @@ public class WhiteAttack : MonoBehaviour
     private float cnt = 0;
 
     //총알
-    private float bulletSpeed;
+    public float bulletSpeed = 7;
+    public float maxSpeed = 15;
+
     private float AttackCooltime;
     private float maxDis;
     private float bulletNum;
-    private float maxSpeed;
 
     private Vector3 bulletPos;
 
@@ -52,11 +53,11 @@ public class WhiteAttack : MonoBehaviour
     void Update()
     {
         //Status 에서 값 받아와야함
-        bulletSpeed = 7f;
+        //bulletSpeed = 7f;
         AttackCooltime = 0.5f;
         maxDis = 6f;
         bulletNum = 2f;
-        maxSpeed = 10f;
+        //maxSpeed = 10f;
 
                 trans = GetComponent<Transform>();
 
@@ -111,6 +112,7 @@ public class WhiteAttack : MonoBehaviour
 
         _Bullet.GetComponent<WhiteBullet>().angle = angle;
         _Bullet.GetComponent<WhiteBullet>().bulletPos = bulletPos;
+        _Bullet.GetComponent<WhiteBullet>().posNum= posNum;
         _Bullet.GetComponent<WhiteBullet>().StartCoroutine("LoadBullet");
     }
 
