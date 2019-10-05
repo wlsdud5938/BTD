@@ -1862,6 +1862,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: UnitManager
       objectReference: {fileID: 0}
+    - target: {fileID: 1034933322595982839, guid: 80675c92e1159754fa3b3c530c32d6fb,
+        type: 3}
+      propertyPath: m_TagString
+      value: UnitManager
+      objectReference: {fileID: 0}
     - target: {fileID: 1034933322595982837, guid: 80675c92e1159754fa3b3c530c32d6fb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2041,7 +2046,7 @@ PrefabInstance:
     - target: {fileID: 1034933322595982838, guid: 80675c92e1159754fa3b3c530c32d6fb,
         type: 3}
       propertyPath: currentUnit
-      value: -1
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80675c92e1159754fa3b3c530c32d6fb, type: 3}

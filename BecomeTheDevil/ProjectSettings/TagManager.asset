@@ -21,6 +21,7 @@ TagManager:
   - Field
   - MapCreater
   - Enemy
+  - UnitManager
   layers:
   - Default
   - TransparentFX
