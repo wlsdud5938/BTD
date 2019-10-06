@@ -18,6 +18,7 @@ public class GreenAttack : MonoBehaviour
 
     //총알
     private float bulletSpeed;
+
     private float AttackCooltime;
     private float maxDis;
     private float maxSpeed;
@@ -55,7 +56,7 @@ public class GreenAttack : MonoBehaviour
     // 입력키 확인
     void KeyCheck()
     {
-        if (Input.GetMouseButtonDown(0) && !unitManager.isBuild)
+        if (Input.GetMouseButtonDown(0) && !unitManager.isBuild) 
             MouseDown();
         else if (Input.GetMouseButtonUp(0))
             continuouFire = false;

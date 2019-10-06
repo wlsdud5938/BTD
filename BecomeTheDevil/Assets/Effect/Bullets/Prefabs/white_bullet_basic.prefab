@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7625893046734184500}
   - component: {fileID: 7625893046734184501}
+  - component: {fileID: 3754047230343299750}
   m_Layer: 0
   m_Name: white_bullet_basic
   m_TagString: Untagged
@@ -52,6 +53,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3754047230343299750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7625893046734184502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c5aa27439b64584889dfc3b02819da1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7625893047811228574
 GameObject:
   m_ObjectHideFlags: 0

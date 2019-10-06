@@ -11,14 +11,12 @@ public class Bullet : MonoBehaviour
     public float maxSpeed;  //총알 최대 속도 (가속을 안하면 0)
     public float maxDis;    //총알 사정거리
 
-    public float boomTiming = 1.2f; //터지는 위치
-
     private Vector3 startPos;
     private float dis;
 
     private Animator animator;
 
-    private float acceleration;
+    private float acceleration = 0;
 
     IEnumerator MoveBullet()
     {
@@ -26,21 +24,16 @@ public class Bullet : MonoBehaviour
 
         startPos = transform.position;
 
-        acceleration = (maxSpeed - bulletSpeed)/maxDis;
+        if (maxSpeed != 0) acceleration = (maxSpeed - bulletSpeed) / maxDis;
 
 
         while (true)
         {
-            if (maxSpeed >= bulletSpeed) bulletSpeed += acceleration * Time.deltaTime;
             dis = Vector3.Distance(startPos, transform.position);
             
-            if(dis > maxDis - boomTiming)
-            {
-                animator.SetBool("Boom", true);
-            }
             if (dis > maxDis) break;
 
-            transform.position += target.normalized * bulletSpeed * Time.deltaTime;
+            transform.position += target.normalized * bulletSpeed * Time.deltaTime * (1 + acceleration);
             yield return null;
             
         }

@@ -18,7 +18,7 @@ public class WhiteAttack : MonoBehaviour
 
     //총알
     public float bulletSpeed = 7;
-    public float maxSpeed = 15;
+    public float maxSpeed = 10;
 
     private float AttackCooltime;
     private float maxDis;
@@ -28,25 +28,13 @@ public class WhiteAttack : MonoBehaviour
 
     private float angle;
 
-    private Transform b1;
-    private Transform b2;
-    private Transform b3;
-    private Transform b4;
-    private Transform b5;
-
-    private Transform[] bulletStartPos;
+    private GameObject magicRune;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        b1 = gameObject.transform.Find("WhiteBulletPoint").gameObject.transform.Find("1").transform;
-        b2 = gameObject.transform.Find("WhiteBulletPoint").gameObject.transform.Find("2").transform;
-        b3 = gameObject.transform.Find("WhiteBulletPoint").gameObject.transform.Find("3").transform;
-        b4 = gameObject.transform.Find("WhiteBulletPoint").gameObject.transform.Find("4").transform;
-        b5 = gameObject.transform.Find("WhiteBulletPoint").gameObject.transform.Find("5").transform;
-
-        bulletStartPos = new Transform[5] { b1, b2, b3, b4, b5 };
+        magicRune = gameObject.transform.Find("white_magicRune").gameObject;
     }
 
     // Update is called once per frame
@@ -59,7 +47,7 @@ public class WhiteAttack : MonoBehaviour
         bulletNum = 2f;
         //maxSpeed = 10f;
 
-                trans = GetComponent<Transform>();
+        trans = GetComponent<Transform>();
 
         if (!canShoot) cnt += Time.deltaTime;
         if (!continuouFire && cnt >= AttackCooltime)
@@ -80,40 +68,24 @@ public class WhiteAttack : MonoBehaviour
             continuouFire = false;
     }
 
-    void BulletInfoSetting(GameObject _Bullet, int posNum)
+    void BulletInfoSetting(GameObject _Bullet)
     {
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
+        bulletPos = magicRune.transform.position;
 
         if (_Bullet == null) return;
-
+        targetPos = new Vector3(mousePos.x - bulletPos.x, 0, mousePos.z - bulletPos.z);
+        angle = Mathf.Atan2(targetPos.x , targetPos.z) * Mathf.Rad2Deg;
         _Bullet.SetActive(true);
 
 
-        if (posNum > 5 || posNum < 1)
-        {
-            return;
-        }
-        else
-        {
-            bulletPos = bulletStartPos[posNum - 1].position;
-        }
-
-
-        targetPos = new Vector3(mousePos.x - bulletPos.x, 0, mousePos.z - bulletPos.z);
-
         _Bullet.GetComponent<Bullet>().target = targetPos;
         _Bullet.GetComponent<Bullet>().bulletSpeed = bulletSpeed;
+        _Bullet.GetComponent<Bullet>().maxSpeed = maxSpeed;
         _Bullet.GetComponent<Bullet>().maxDis = maxDis;
-
-        angle = Vector3.SignedAngle(transform.up, targetPos - bulletPos, -transform.forward);
-
-        _Bullet.transform.position = trans.position;
-
-        _Bullet.GetComponent<WhiteBullet>().angle = angle;
-        _Bullet.GetComponent<WhiteBullet>().bulletPos = bulletPos;
-        _Bullet.GetComponent<WhiteBullet>().posNum= posNum;
-        _Bullet.GetComponent<WhiteBullet>().StartCoroutine("LoadBullet");
+        _Bullet.transform.position = bulletPos;
+        _Bullet.GetComponent<Bullet>().transform.rotation = Quaternion.Euler(0, angle, 0);
     }
 
     void MouseDown()
@@ -130,8 +102,7 @@ public class WhiteAttack : MonoBehaviour
         {
             cnt = 0;
 
-            BulletInfoSetting(ObjectManager.Call().GetObject("WhiteBullet"), 2);
-            BulletInfoSetting(ObjectManager.Call().GetObject("WhiteBullet"), 4);
+            BulletInfoSetting(ObjectManager.Call().GetObject("WhiteBullet"));
 
             yield return new WaitUntil(() => cnt > AttackCooltime);
         }

@@ -1,17 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &7797742365792263721
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7639460001525640660}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c5aa27439b64584889dfc3b02819da1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6370008347601807583
 GameObject:
   m_ObjectHideFlags: 0
@@ -22,8 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2750697715817368837}
   - component: {fileID: 5473076562181521293}
-  - component: {fileID: 5434224678857503213}
-  - component: {fileID: 7575541225247810592}
   m_Layer: 0
   m_Name: WhiteBullet
   m_TagString: Untagged
@@ -42,7 +28,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 7639460001525640662}
+  - {fileID: 543191779863114143}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 360, z: 0}
@@ -63,39 +49,7 @@ MonoBehaviour:
   maxSpeed: 0
   maxDis: 0
   boomTiming: 1.2
---- !u!111 &5434224678857503213
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6370008347601807583}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 00734527ccaaf6b47bf50054eb380dda, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: 00734527ccaaf6b47bf50054eb380dda, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
---- !u!114 &7575541225247810592
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6370008347601807583}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e6b38c3196311644a7a05c1a8561bec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletPos: {x: 0, y: 0, z: 0}
-  angle: 0
-  posNum: 0
-  isLoad: 0
---- !u!1001 &274804479428906466
+--- !u!1001 &7952604159697572267
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -164,15 +118,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13777ec1adb075441a4ef0dad5c02ba5, type: 3}
---- !u!1 &7639460001525640660 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7625893046734184502, guid: 13777ec1adb075441a4ef0dad5c02ba5,
-    type: 3}
-  m_PrefabInstance: {fileID: 274804479428906466}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &7639460001525640662 stripped
+--- !u!4 &543191779863114143 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7625893046734184500, guid: 13777ec1adb075441a4ef0dad5c02ba5,
     type: 3}
-  m_PrefabInstance: {fileID: 274804479428906466}
+  m_PrefabInstance: {fileID: 7952604159697572267}
   m_PrefabAsset: {fileID: 0}
