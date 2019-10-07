@@ -246,6 +246,11 @@ PrefabInstance:
       propertyPath: maxSpeed
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 7992042426109758093, guid: 9dea548b4fea8704c957d49b0a540c10,
+        type: 3}
+      propertyPath: attackTerm
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 615265561, guid: 9dea548b4fea8704c957d49b0a540c10, type: 3}
       propertyPath: m_IsActive
       value: 0

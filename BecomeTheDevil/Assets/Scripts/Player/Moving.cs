@@ -43,8 +43,7 @@ public class Moving : MonoBehaviour
 
         if (Input.GetKeyDown("space"))
         {
-
-            changeState(state);
+            if(!transform.GetChild(1).gameObject.GetComponent<WhiteAttack>().isRuneActive) changeState(state);
 
 
             if (state == "green")
@@ -53,6 +52,7 @@ public class Moving : MonoBehaviour
                 transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().enabled = false;
                 transform.GetChild(0).gameObject.SetActive(true);
                 transform.GetChild(1).gameObject.SetActive(false);
+                transform.GetChild(1).gameObject.transform.GetChild(0).gameObject.SetActive(false);
             }
             if (state == "white")
             {
@@ -60,6 +60,9 @@ public class Moving : MonoBehaviour
                 transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().enabled = false;
                 transform.GetChild(1).gameObject.SetActive(true);
                 transform.GetChild(0).gameObject.SetActive(false);
+               
+                //마법진
+                transform.GetChild(1).gameObject.transform.GetChild(0).gameObject.SetActive(true);
             }
 
 

@@ -32,8 +32,8 @@ public class Bullet : MonoBehaviour
             dis = Vector3.Distance(startPos, transform.position);
             
             if (dis > maxDis) break;
-
-            transform.position += target.normalized * bulletSpeed * Time.deltaTime * (1 + acceleration);
+            bulletSpeed += acceleration * Time.fixedDeltaTime;
+            transform.position += target.normalized * bulletSpeed * Time.deltaTime;
             yield return null;
             
         }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7870446003065899994}
   - component: {fileID: 5508272618417061596}
   - component: {fileID: 926111515076772830}
+  - component: {fileID: 3214356868286129025}
   m_Layer: 0
   m_Name: white_magicRune
   m_TagString: Untagged
@@ -100,6 +101,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3214356868286129025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2727702678443846243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19bc13dc91096754b841a209b07e5a17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6970860310222655185
 GameObject:
   m_ObjectHideFlags: 0

@@ -17,10 +17,12 @@ public class WhiteAttack : MonoBehaviour
     private float cnt = 0;
 
     //총알
-    public float bulletSpeed = 7;
-    public float maxSpeed = 10;
+    public float bulletSpeed;
+    public float maxSpeed;
 
-    private float AttackCooltime;
+    public float AttackCoolTime;
+    public float BulletGapTime;
+
     private float maxDis;
     private float bulletNum;
 
@@ -28,13 +30,32 @@ public class WhiteAttack : MonoBehaviour
 
     private float angle;
 
-    private GameObject magicRune;
+    public bool isRuneActive;
 
+    private GameObject magicRune;
+    private Animator magicRuneAnimator;
+
+    public float attackTerm;
+
+    private float termCnt;
+    private float shotBulletCnt;
 
     // Start is called before the first frame update
     void Start()
     {
         magicRune = gameObject.transform.Find("white_magicRune").gameObject;
+        magicRuneAnimator = magicRune.GetComponent<Animator>();
+
+        isRuneActive = false;
+
+
+        bulletSpeed = 7;
+        maxSpeed = 10;
+
+        AttackCoolTime = 0.5f;
+        BulletGapTime = 0.2f;
+
+        attackTerm = 3f;
     }
 
     // Update is called once per frame
@@ -42,7 +63,7 @@ public class WhiteAttack : MonoBehaviour
     {
         //Status 에서 값 받아와야함
         //bulletSpeed = 7f;
-        AttackCooltime = 0.5f;
+        //AttackCoolTime = 0.5f;
         maxDis = 6f;
         bulletNum = 2f;
         //maxSpeed = 10f;
@@ -50,7 +71,14 @@ public class WhiteAttack : MonoBehaviour
         trans = GetComponent<Transform>();
 
         if (!canShoot) cnt += Time.deltaTime;
-        if (!continuouFire && cnt >= AttackCooltime)
+        else if(isRuneActive) termCnt += Time.deltaTime;
+
+
+        if (termCnt >= attackTerm) {
+            MagicRuneOFF();
+        }
+
+        if (!continuouFire && cnt >= AttackCoolTime)
         {
             cnt = 0;
             canShoot = true;
@@ -91,7 +119,18 @@ public class WhiteAttack : MonoBehaviour
     void MouseDown()
     {
         if (canShoot)
-            StartCoroutine("WhiteBulletAttack");
+        {
+            if (isRuneActive)
+            {
+                StartCoroutine("WhiteBulletAttack");
+            }
+            else
+            {
+                termCnt = 0;
+                shotBulletCnt = 0;
+                MagicRuneON();
+            }
+        }
     }
 
     IEnumerator WhiteBulletAttack()
@@ -101,10 +140,27 @@ public class WhiteAttack : MonoBehaviour
         while (continuouFire)
         {
             cnt = 0;
+            termCnt = 0;
 
             BulletInfoSetting(ObjectManager.Call().GetObject("WhiteBullet"));
 
-            yield return new WaitUntil(() => cnt > AttackCooltime);
+            if (!Input.GetMouseButton(0)) continuouFire = false;
+            shotBulletCnt++;
+            if (shotBulletCnt % bulletNum != 0) yield return new WaitUntil(() => cnt > BulletGapTime);
+            else
+                yield return new WaitUntil(() => cnt > AttackCoolTime);
         }
+    }
+
+    void MagicRuneOFF()
+    {
+        magicRuneAnimator.SetBool("Wait", true);
+        magicRuneAnimator.SetBool("RuneActive",false);
+    }
+
+    void MagicRuneON()
+    {
+        magicRuneAnimator.SetBool("RuneActive", true);
+        magicRuneAnimator.SetBool("Wait", false);
     }
 }
