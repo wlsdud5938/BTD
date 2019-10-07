@@ -29,7 +29,7 @@ public class GreenAttack : MonoBehaviour
 
     private void Start()
     {
-        //unitManager = GameObject.FindGameObjectWithTag("UnitManager").GetComponent<UnitManager>();
+        unitManager = GameObject.FindGameObjectWithTag("UnitManager").GetComponent<UnitManager>();
     }
 
     // Update is called once per frame
@@ -56,7 +56,7 @@ public class GreenAttack : MonoBehaviour
     // 입력키 확인
     void KeyCheck()
     {
-        if (Input.GetMouseButtonDown(0)) //&& !unitManager.isBuild
+        if (Input.GetMouseButtonDown(0) && !unitManager.isBuild)
             MouseDown();
         else if (Input.GetMouseButtonUp(0))
             continuouFire = false;
