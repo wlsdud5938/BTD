@@ -9,6 +9,8 @@ public class Knight : MonoBehaviour
 
     protected Animator enemyAnimator;
 
+    private KnightAttack knightAttack;
+
     //private bool wasRight = false;
     private bool wasLeft = false;
 
@@ -17,6 +19,7 @@ public class Knight : MonoBehaviour
     {
         preLocation = transform.position;
         enemyAnimator = GetComponent<Animator>();
+        knightAttack = transform.GetChild(0).GetComponent<KnightAttack>();
     }
 
     // Update is called once per frame
@@ -95,4 +98,8 @@ public class Knight : MonoBehaviour
         preLocation = transform.position;
     }
     
+    public void Attack()
+    {
+        knightAttack.Attack();
+    }
 }
