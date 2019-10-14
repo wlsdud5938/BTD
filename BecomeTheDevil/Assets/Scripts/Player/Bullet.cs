@@ -24,13 +24,12 @@ public class Bullet : MonoBehaviour
 
         startPos = transform.position;
 
-        if (maxSpeed != 0) acceleration = (maxSpeed - bulletSpeed) / maxDis;
-
-
         while (true)
         {
             dis = Vector3.Distance(startPos, transform.position);
-            
+
+            if (maxSpeed != 0 && maxSpeed>=bulletSpeed) acceleration = (maxSpeed - bulletSpeed) * (bulletSpeed / maxDis);
+
             if (dis > maxDis) break;
             bulletSpeed += acceleration * Time.fixedDeltaTime;
             transform.position += target.normalized * bulletSpeed * Time.deltaTime;

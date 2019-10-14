@@ -6,12 +6,14 @@ public class WhiteRune : MonoBehaviour
 {
 
     GameObject white;
+
     Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
-        white = transform.parent.gameObject;
+        white = gameObject.transform.parent.gameObject;
+        
         animator = GetComponent<Animator>();
     }
 
