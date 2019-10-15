@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2517374188875496758}
   - component: {fileID: 3727478107363343943}
-  - component: {fileID: 6079289506028503830}
+  - component: {fileID: 8259530012008987436}
+  - component: {fileID: 5342977680085069598}
   m_Layer: 0
   m_Name: knight_sprite
   m_TagString: Untagged
@@ -80,7 +81,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6079289506028503830
+--- !u!114 &8259530012008987436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3275555510142650080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03caf81c1d3b5fd4886741c7f0ea9e3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5342977680085069598
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -109,7 +122,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3310453532319822938}
   - component: {fileID: 9155157344161751226}
-  - component: {fileID: 7773640769375848309}
   m_Layer: 0
   m_Name: EnemyRange
   m_TagString: Untagged
@@ -183,25 +195,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7773640769375848309
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3277702111911238360}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b25c13fdae64344a82bb6dec3d49f5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  moveAI: {fileID: 0}
-  curRoom: {fileID: 0}
-  core: {fileID: 0}
-  corePath: 1
-  canAttack: 0
-  aggroCal: 0
 --- !u!1 &3940212345593114731
 GameObject:
   m_ObjectHideFlags: 0
@@ -331,6 +324,8 @@ GameObject:
   - component: {fileID: 4503213459084579163}
   - component: {fileID: 6543537810232816468}
   - component: {fileID: 7857505739518304951}
+  - component: {fileID: 3619684037714684499}
+  - component: {fileID: 1909300358453901450}
   m_Layer: 0
   m_Name: Knight
   m_TagString: Enemy
@@ -400,7 +395,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -454,6 +449,43 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3619684037714684499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5243625632904137834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8468208565b7bf54ab1339a8166e00e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nav: {fileID: 0}
+  attackTimer: 0.1
+  target: {fileID: 0}
+  unitTarget: {fileID: 0}
+  isTargetIn: 0
+--- !u!114 &1909300358453901450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5243625632904137834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b15eecaaf7d92544bbf34c8f9535cc14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objAggroStack: 0
+  curRoom: {fileID: 0}
+  maxHP: 0
+  curHP: 0
+  attackDMG: 5
+  attackSpeed: 0
+  attackCoolTime: 0
+  attackRange: 0
 --- !u!1 &5797652112055716708
 GameObject:
   m_ObjectHideFlags: 0

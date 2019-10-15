@@ -98,8 +98,5 @@ public class Knight : MonoBehaviour
         preLocation = transform.position;
     }
     
-    public void Attack()
-    {
-        knightAttack.Attack();
-    }
+
 }

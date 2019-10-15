@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 2360458907900347221}
   - component: {fileID: 8244595140665430789}
   - component: {fileID: 8130384124126735667}
-  - component: {fileID: 4664253149701855987}
+  - component: {fileID: 4066638497343836338}
   m_Layer: 0
-  m_Name: KnightSword
+  m_Name: TestBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2563374460276023992}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 2.863162, y: 0.45804238, z: -0.541692}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -111,7 +111,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4664253149701855987
+--- !u!114 &4066638497343836338
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,9 +120,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2563374460276023992}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e6082d8425c6604781d762ed84e750d, type: 3}
+  m_Script: {fileID: 11500000, guid: c57392ad528a18d42ac970c92fe5289e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 0
-  attackRange: 1
+  attackRange: 0
   status: {fileID: 0}
