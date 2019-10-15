@@ -2,15 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Sword : MonoBehaviour
+public class TestBall : MonoBehaviour
 {
     private Moving target;
-    private KnightAttack parent;
     private Status unitTarget;
 
     // 사거리 관련.
-    private Vector3 unitPosition;   // 검을 휘두를 때 Knight 위치.
-    public float distance;  // 검 발사체와 Knight 사이의 거리, 사거리에 사용.
+    private Vector3 unitPosition;
+    public float distance;
     public float attackRange;
 
     public Status status;
@@ -18,12 +17,10 @@ public class Sword : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // 지울예정.
-        //GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 1);
-        //Destroy(this.gameObject, swordRange / swordSpeed);
-        status = parent.transform.parent.GetComponent<Status>();
+
+        status = transform.parent.GetComponent<Status>();
         //Debug.Log(status.attackDMG);
-        unitPosition = parent.transform.position;
+        unitPosition = transform.parent.position;
         attackRange = status.attackRange;
     }
 
@@ -46,13 +43,6 @@ public class Sword : MonoBehaviour
         }
     }
 
-    public void Initialize(KnightAttack parent)
-    {
-        // 총알을 쏜 적으로 초기화.
-        this.parent = parent;
-        this.unitTarget = parent.unitTarget;
-        //bulletTime = parent.Range / parent.BulletSpeed;
-    }
 
     private void MoveToTarget()
     {

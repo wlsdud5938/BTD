@@ -1,18 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Wizard_attack : MonoBehaviour
 {
     private Animator myAnimator;
     private GameObject root;
-    
+    NavMeshAgent nav;
 
     public bool canAttack = true;
     private float aTime = 0.0f;
     public float AttackCooltime = 2.0f;
 
-    private bool isStay = false;
+    public bool isStay = false;
     private bool charge = false;
     private float cTime = 0.0f;
     public float ChargeTime = 2.0f;
@@ -23,6 +24,7 @@ public class Wizard_attack : MonoBehaviour
     {
         myAnimator = transform.parent.GetComponent<Animator>();
         root = transform.parent.gameObject;
+        nav = transform.parent.GetComponent<NavMeshAgent>();
     }
 
     void Update()
@@ -130,4 +132,5 @@ public class Wizard_attack : MonoBehaviour
         //yield return new WaitForSeconds(2.0f);
         //myAnimator.SetBool("AttackComplete", true);
     //}
+
 }

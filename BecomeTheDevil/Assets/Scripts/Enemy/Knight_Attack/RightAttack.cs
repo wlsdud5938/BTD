@@ -7,12 +7,14 @@ public class RightAttack : MonoBehaviour
 
     private Animator myAnimator;
     private GameObject root;
-
+    KnightAttack attack;
     // Start is called before the first frame update
     void Start()
     {
         myAnimator = transform.parent.transform.parent.GetComponent<Animator>();
         root = transform.parent.transform.parent.gameObject;
+
+        attack = transform.parent.parent.GetComponent<KnightAttack>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -22,6 +24,7 @@ public class RightAttack : MonoBehaviour
             //Debug.Log(root);
             //root.transform.localScale = new Vector3(1, 1, 1);
             //myAnimator.SetTrigger("Attack");
+            attack.isTargetIn = true;
             myAnimator.SetBool("Attack", true);
             myAnimator.SetFloat("AttackX", 1.0f);
             myAnimator.SetFloat("AttackY", 0.0f);
@@ -35,9 +38,11 @@ public class RightAttack : MonoBehaviour
             //Debug.Log(root);
             //root.transform.localScale = new Vector3(-1, 1, 1);
             //myAnimator.SetTrigger("Attack");
-            myAnimator.SetBool("Attack", false);
+            //myAnimator.SetBool("Attack", false);
             //myAnimator.SetFloat("DirX", 1.0f);
             //myAnimator.SetFloat("DirY", 0.0f);
+            attack.isTargetIn = false;
+            myAnimator.SetBool("Attack", false);
         }
     }
 }
