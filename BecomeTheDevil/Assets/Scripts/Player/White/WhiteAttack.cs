@@ -14,7 +14,8 @@ public class WhiteAttack : MonoBehaviour
 
     private bool continuouFire = false;
     private bool canShoot = true;
-    private float cnt = 0;
+    private float gapCnt = 0;
+    private float coolCnt = 0;
 
     //총알
     public float bulletSpeed;
@@ -24,7 +25,7 @@ public class WhiteAttack : MonoBehaviour
     public float bulletGapTime;
 
     private float maxDis;
-    private float bulletNum;
+    public float bulletNum;
 
     private Vector3 bulletPos;
 
@@ -41,7 +42,7 @@ public class WhiteAttack : MonoBehaviour
 
     public float attackTerm;
 
-    private float termCnt;
+    private float runeActiveCnt;
     private float shotBulletCnt;
 
     // Start is called before the first frame update
@@ -56,13 +57,16 @@ public class WhiteAttack : MonoBehaviour
         isRuneActive = false;
 
 
-        bulletSpeed = 7;
-        maxSpeed = 10;
+        bulletSpeed = 5;
+        maxSpeed = 30;
 
         AttackCoolTime = 0.5f;
         bulletGapTime = 0.1f;
 
         attackTerm = 3f;
+
+        bulletNum = 2f;
+
     }
 
     // Update is called once per frame
@@ -72,22 +76,27 @@ public class WhiteAttack : MonoBehaviour
         //bulletSpeed = 7f;
         //AttackCoolTime = 0.5f;
         maxDis = 6f;
-        bulletNum = 2f;
+        //bulletNum = 2f;
         //maxSpeed = 10f;
 
         trans = GetComponent<Transform>();
 
-        if (!canShoot) cnt += Time.deltaTime;
-        else if(isRuneActive) termCnt += Time.deltaTime;
+        if (!canShoot)
+        {
+            gapCnt += Time.deltaTime;
+            coolCnt += Time.deltaTime;
+        }
+        else if (isRuneActive) runeActiveCnt += Time.deltaTime;
 
 
-        if (termCnt >= attackTerm) {
+        if (runeActiveCnt >= attackTerm) {
             MagicRuneOFF();
         }
 
-        if (!continuouFire && cnt >= AttackCoolTime)
+        if (!continuouFire && coolCnt >= AttackCoolTime)
         {
-            cnt = 0;
+            coolCnt = 0;
+            gapCnt = 0;
             canShoot = true;
         }
 
@@ -135,7 +144,7 @@ public class WhiteAttack : MonoBehaviour
             }
             else
             {
-                termCnt = 0;
+                runeActiveCnt = 0;
 
                 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 angleWhite = Mathf.Atan2(mousePos.x - trans.position.x, mousePos.z - trans.position.z) * Mathf.Rad2Deg;
@@ -150,20 +159,33 @@ public class WhiteAttack : MonoBehaviour
         }
     }
 
-    IEnumerator WhiteBulletAttack()
+    IEnumerator WhiteBulletShoot()
     {
-        canShoot = false;
-        continuouFire = true;
         shotBulletCnt = 0;
 
         while (shotBulletCnt < bulletNum)
         {
-            cnt = 0;
+            gapCnt = 0;
 
             BulletInfoSetting(ObjectManager.Call().GetObject("WhiteBullet"));
             shotBulletCnt++;
 
-            yield return new WaitUntil(() => cnt > bulletGapTime);
+            yield return new WaitUntil(() =>gapCnt > bulletGapTime);
+        }
+    }
+
+    IEnumerator WhiteBulletAttack()
+    {
+        canShoot = false;
+        continuouFire = true;
+
+        while (continuouFire)
+        {
+            coolCnt = 0;
+
+            StartCoroutine("WhiteBulletShoot");
+
+            yield return new WaitUntil(() => coolCnt > AttackCoolTime);
         }
     }
 
