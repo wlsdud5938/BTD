@@ -4,18 +4,13 @@ using UnityEngine;
 
 public class SortingRendering : MonoBehaviour
 {
-    
-    SpriteRenderer renderer;
+    public SpriteRenderer[] sprites;
+    public float positionOffset = 0.0f;     // 위치 기준점 조정 오프셋
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        renderer = GetComponent<SpriteRenderer>();
-    }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
-        renderer.sortingOrder = 1000000 - (int)(transform.position.z*500);
+        for(int i = 0; i < sprites.Length; ++i)
+            sprites[i].sortingOrder = 1000000 - (int)((transform.position.z + positionOffset) * 500);
     }
 }
