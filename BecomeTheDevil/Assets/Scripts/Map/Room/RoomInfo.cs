@@ -29,6 +29,7 @@ public class RoomInfo : MonoBehaviour
 
     void LateUpdate()
     {
+        ListClear();
         if(gem.gemCount == 0)
         {
             isClosed = false;
@@ -59,6 +60,18 @@ public class RoomInfo : MonoBehaviour
                     }
                     break;
                 }
+            }
+        }
+    }
+
+    void ListClear()
+    {
+        for(int i=0;i<unitList.Count;i++)
+        {
+            if(unitList[i] == null)
+            {
+                unitList.RemoveAt(i);
+                i--;
             }
         }
     }

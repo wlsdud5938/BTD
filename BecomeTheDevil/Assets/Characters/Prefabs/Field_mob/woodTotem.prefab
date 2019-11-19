@@ -30,6 +30,66 @@ Transform:
   m_Father: {fileID: 8533184833868944677}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8230211779117020756
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2865420368475674284}
+  - component: {fileID: 1009449772213373174}
+  - component: {fileID: 8249172744665137078}
+  m_Layer: 0
+  m_Name: attack_range
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2865420368475674284
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8230211779117020756}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8533184832986408326}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &1009449772213373174
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8230211779117020756}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 6
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8249172744665137078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8230211779117020756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ed482b5eb0e9e14b8a48e72599a8297, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyList: []
+  target: {fileID: 0}
+  hasTarget: 0
 --- !u!1 &8533184832986408320
 GameObject:
   m_ObjectHideFlags: 0
@@ -44,6 +104,8 @@ GameObject:
   - component: {fileID: 98394657909664115}
   - component: {fileID: 3379080822182441490}
   - component: {fileID: 3860505155162254402}
+  - component: {fileID: 5606942772159128665}
+  - component: {fileID: 95629858107155173}
   m_Layer: 0
   m_Name: woodTotem
   m_TagString: Field
@@ -62,6 +124,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 2865420368475674284}
   - {fileID: 8533184833868944677}
   - {fileID: 8533184833962945960}
   m_Father: {fileID: 0}
@@ -144,6 +207,42 @@ MonoBehaviour:
   - {fileID: 8533184833868944683}
   - {fileID: 8533184833081297724}
   positionOffset: -0.2
+--- !u!114 &5606942772159128665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8533184832986408320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b15eecaaf7d92544bbf34c8f9535cc14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objAggroStack: 0
+  curRoom: {fileID: 0}
+  maxHP: 0
+  curHP: 0
+  attackDMG: 0
+  attackSpeed: 0
+  attackCoolTime: 0
+  attackRange: 0
+--- !u!208 &95629858107155173
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8533184832986408320}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &8533184833081297726
 GameObject:
   m_ObjectHideFlags: 0
@@ -254,7 +353,7 @@ Transform:
   - {fileID: 8533184833081297725}
   - {fileID: 6892920570630448660}
   m_Father: {fileID: 8533184832986408326}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8533184833868944683
 SpriteRenderer:
@@ -333,7 +432,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8533184832986408326}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8533184833962945967
 SpriteRenderer:

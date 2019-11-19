@@ -16,7 +16,7 @@ public class Move : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         target = GameObject.FindGameObjectWithTag("target");
-        aggAI = gameObject.transform.GetChild(0).GetComponent<EnemyAggroAI>();
+        aggAI = gameObject.GetComponent<EnemyAggroAI>();
         core = GameObject.FindGameObjectWithTag("Finish").gameObject;
     }
 

@@ -25,7 +25,6 @@ public class CreatMapMatrix : MonoBehaviour
         public int childDoor = 0;
         public GameObject room;
     }
-    public GameObject player;
     public GameObject startpoint;
     GameObject room;
     public int[,] mapMatrix = new int [30,30];
@@ -272,9 +271,7 @@ public class CreatMapMatrix : MonoBehaviour
         Debug.Log(trees[lastRoom-1].point[0].ToString()+ trees[lastRoom - 1].point[1].ToString());
         findRootNode(trees[lastRoom - 1]);
         Instantiate(core, new Vector3((ii[1]-14) * 30, 0,  (- ii[0]+14) * 20), Quaternion.Euler(90.0f, 0.0f, 0.0f));
-        Instantiate(player, startpoint.transform.position, Quaternion.Euler(90.0f, 0.0f, 0.0f));
 
-        
     }
 
     // Update is called once per frame

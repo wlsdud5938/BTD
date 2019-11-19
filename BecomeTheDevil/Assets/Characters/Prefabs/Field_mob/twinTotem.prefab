@@ -30,6 +30,66 @@ Transform:
   m_Father: {fileID: 7637812454108699035}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5810572245559485701
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6744512782786531197}
+  - component: {fileID: 8395036796695651514}
+  - component: {fileID: 3834935545383865013}
+  m_Layer: 0
+  m_Name: attack_range
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6744512782786531197
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5810572245559485701}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7637812453120780600}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &8395036796695651514
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5810572245559485701}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 6
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3834935545383865013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5810572245559485701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ed482b5eb0e9e14b8a48e72599a8297, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyList: []
+  target: {fileID: 0}
+  hasTarget: 0
 --- !u!1 &7637812453120780606
 GameObject:
   m_ObjectHideFlags: 0
@@ -44,6 +104,8 @@ GameObject:
   - component: {fileID: 2218184423436068301}
   - component: {fileID: 3562887759443181228}
   - component: {fileID: 4306356523476123261}
+  - component: {fileID: 4329604720340532027}
+  - component: {fileID: 6673157421670511439}
   m_Layer: 0
   m_Name: twinTotem
   m_TagString: Field
@@ -62,6 +124,7 @@ Transform:
   m_LocalPosition: {x: 0, y: -0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 6744512782786531197}
   - {fileID: 7637812454108699035}
   - {fileID: 7637812454082928918}
   m_Father: {fileID: 0}
@@ -144,6 +207,42 @@ MonoBehaviour:
   - {fileID: 7637812454108699029}
   - {fileID: 7637812453354080130}
   positionOffset: -0.2
+--- !u!114 &4329604720340532027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7637812453120780606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b15eecaaf7d92544bbf34c8f9535cc14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objAggroStack: 0
+  curRoom: {fileID: 0}
+  maxHP: 0
+  curHP: 0
+  attackDMG: 0
+  attackSpeed: 0
+  attackCoolTime: 0
+  attackRange: 0
+--- !u!208 &6673157421670511439
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7637812453120780606}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &7637812453354080128
 GameObject:
   m_ObjectHideFlags: 0
@@ -252,7 +351,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7637812453120780600}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7637812454082928913
 SpriteRenderer:
@@ -333,7 +432,7 @@ Transform:
   - {fileID: 7637812453354080131}
   - {fileID: 4629015617031072426}
   m_Father: {fileID: 7637812453120780600}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7637812454108699029
 SpriteRenderer:

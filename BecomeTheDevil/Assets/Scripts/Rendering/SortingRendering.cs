@@ -11,6 +11,6 @@ public class SortingRendering : MonoBehaviour
     private void FixedUpdate()
     {
         for(int i = 0; i < sprites.Length; ++i)
-            sprites[i].sortingOrder = 1000000 - (int)((transform.position.z + positionOffset) * 500);
+            sprites[i].sortingOrder = 10000 - (int)((transform.position.z + positionOffset) * 100) - (int)(transform.position.x + positionOffset);
     }
 }

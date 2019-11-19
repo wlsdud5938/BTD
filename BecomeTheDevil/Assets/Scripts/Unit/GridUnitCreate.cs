@@ -13,6 +13,8 @@ public class GridUnitCreate : MonoBehaviour
     public int curUnitCount;
     public int curMaxUnit;
     public RoomInfo curRoom;
+    bool otherColl = true;
+    int mapNum = -1;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,20 +29,28 @@ public class GridUnitCreate : MonoBehaviour
         allHit = Physics.RaycastAll(ray, 20.0f);
         //Here acceptableLayer is set to my Ground layer that's what I want to check against
         length = allHit.Length;
-        string tag = allHit[0].collider.tag;
-        if ((allHit.Length == 2 && allHit[0].collider.CompareTag("Map") && allHit[1].collider.CompareTag("Map")))
+        mapNum = -1;
+        otherColl = true;
+        for(int i=0;i<length;i++)
         {
-            int i = 0;
-
-            if (allHit[0].collider.name == "Plane")
-                i = 1;
-            else i = 0;
-
-            curRoom = allHit[i].collider.gameObject.GetComponent<RoomInfo>();
+            string tag = allHit[i].collider.tag;
+            if (tag == "Enemy" || tag == "Player" || tag == "Wall" || tag == "Unit")
+            {
+                otherColl = false;
+                break;
+            }
+            if (tag == "Map")
+                mapNum = i;
+        }
+        
+        if (otherColl && mapNum != -1)
+        {
+            
+            curRoom = allHit[mapNum].collider.gameObject.GetComponent<RoomInfo>();
             curUnitCount = curRoom.unitList.Count;
             curMaxUnit = curRoom.maxUnit;
-            int x = Mathf.FloorToInt(allHit[i].point.x / gridSize);
-            int z = Mathf.FloorToInt(allHit[i].point.z / gridSize);
+            int x = Mathf.FloorToInt(allHit[mapNum].point.x / gridSize);
+            int z = Mathf.FloorToInt(allHit[mapNum].point.z / gridSize);
 
             unit.transform.position = new Vector3(x * gridSize, 0, z * gridSize);
             

@@ -1,13 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class FieldMonster : MonoBehaviour
+public class uitest : MonoBehaviour
 {
-    public RoomInfo roominfo;
     // Start is called before the first frame update
     void Start()
-    {   
+    {
+        
     }
 
     // Update is called once per frame
@@ -15,9 +16,9 @@ public class FieldMonster : MonoBehaviour
     {
         
     }
-    public void die()
+    public void onClick()
     {
-        roominfo.countFieldUnit--;
-        Destroy(gameObject);
+        Application.Quit();
     }
+
 }
