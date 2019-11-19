@@ -183,6 +183,8 @@ public class WhiteAttack : MonoBehaviour
         {
             coolCnt = 0;
 
+            if (!Input.GetMouseButton(0)) continuouFire = false;
+
             StartCoroutine("WhiteBulletShoot");
 
             yield return new WaitUntil(() => coolCnt > AttackCoolTime);

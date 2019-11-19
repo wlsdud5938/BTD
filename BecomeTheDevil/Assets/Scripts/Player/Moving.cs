@@ -27,11 +27,13 @@ public class Moving : MonoBehaviour
         trans = GetComponent<Transform>();
         greenAnimator = transform.GetChild(0).gameObject.GetComponent<Animator>();
         whiteAnimator = transform.GetChild(1).gameObject.GetComponent<Animator>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
+    
         if (state == "green")
         {
             greenAnimator.SetBool("Walking", false);
@@ -45,9 +47,9 @@ public class Moving : MonoBehaviour
         {
             if(!transform.GetChild(1).gameObject.GetComponent<WhiteAttack>().isRuneActive) changeState(state);
 
-
             if (state == "green")
             {
+
                 transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().enabled = true;
                 transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().enabled = false;
                 transform.GetChild(0).gameObject.SetActive(true);
@@ -56,6 +58,7 @@ public class Moving : MonoBehaviour
             }
             if (state == "white")
             {
+
                 transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().enabled = true;
                 transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().enabled = false;
                 transform.GetChild(1).gameObject.SetActive(true);
@@ -64,8 +67,6 @@ public class Moving : MonoBehaviour
                 //마법진
                 transform.GetChild(1).gameObject.transform.GetChild(0).gameObject.SetActive(true);
             }
-
-
         }
 
 
@@ -159,5 +160,4 @@ public class Moving : MonoBehaviour
             isRight = false;
 
     }
-
 }

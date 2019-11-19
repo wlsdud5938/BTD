@@ -28,8 +28,4 @@ public class BulletControl : MonoBehaviour
     {
         animator.SetBool("isBulletActive", false);
     }
-
-    public void IsShoot(){ Debug.Log("Shoot"); }
-    public void IsBoom(){ Debug.Log("Boom"); }
-    public void IsLoad(){ Debug.Log("Load"); }
 }

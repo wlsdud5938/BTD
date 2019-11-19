@@ -321,6 +321,8 @@ MonoBehaviour:
   isDown: 0
   isLeft: 0
   isRight: 0
+  CharacterPortrait: {fileID: 7042708350374528823, guid: 7bf3d5ae51b48de4996bec8e12127dbe,
+    type: 3}
 --- !u!65 &1419628185511063712
 BoxCollider:
   m_ObjectHideFlags: 0
