@@ -12,13 +12,14 @@ public class ObjectManager : MonoBehaviour
     public List<GameObject> Manager;    // 생성된 객체들 저장할 리스트
 
     //public Inven IV;
+    public Unit_Slots unitSlots;
 
 
     void Awake()
     {
         st = this;
         //IV = GameObject.FindGameObjectWithTag("Inventory").GetComponent<Inven>();
-
+        unitSlots = GameObject.FindGameObjectWithTag("Unit_Slots").GetComponent<Unit_Slots>();
     }
 
     // Start is called before the first frame update

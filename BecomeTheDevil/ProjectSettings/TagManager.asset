@@ -22,6 +22,8 @@ TagManager:
   - MapCreater
   - Enemy
   - UnitManager
+  - UnitSlots
+  - DragImg
   layers:
   - Default
   - TransparentFX
