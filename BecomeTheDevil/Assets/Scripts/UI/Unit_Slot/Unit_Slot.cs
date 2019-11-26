@@ -45,13 +45,7 @@ public class Unit_Slot : MonoBehaviour
         // 폰트의 크기를 부모 객체의 x지름 / 2 만큼으로 지정해준다.
         ItemImg = transform.GetChild(2).GetComponent<Image>();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    
     public void AddItem(ItemObject item)
     {
         // 스택에 아이템 추가.
