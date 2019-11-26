@@ -6,42 +6,29 @@ public class RightAttack : MonoBehaviour
 {
 
     private Animator myAnimator;
-    private GameObject root;
-    KnightAttack attack;
+    Attack attack;
     // Start is called before the first frame update
     void Start()
     {
         myAnimator = transform.parent.transform.parent.GetComponent<Animator>();
-        root = transform.parent.transform.parent.gameObject;
 
-        attack = transform.parent.parent.GetComponent<KnightAttack>();
+        attack = transform.root.GetComponent<Attack>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.transform.root.tag == "Player" || other.transform.root.tag == "Unit")
+        if (other.gameObject == attack.target)
         {
-            //Debug.Log(root);
-            //root.transform.localScale = new Vector3(1, 1, 1);
-            //myAnimator.SetTrigger("Attack");
-            attack.isTargetIn = true;
             myAnimator.SetBool("Attack", true);
             myAnimator.SetFloat("AttackX", 1.0f);
-            myAnimator.SetFloat("AttackY", 0.0f);
+            myAnimator.SetFloat("AttackY", -1.0f);
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.transform.root.tag == "Player" || other.transform.root.tag == "Unit")
+        if (other.gameObject == attack.target)
         {
-            //Debug.Log(root);
-            //root.transform.localScale = new Vector3(-1, 1, 1);
-            //myAnimator.SetTrigger("Attack");
-            //myAnimator.SetBool("Attack", false);
-            //myAnimator.SetFloat("DirX", 1.0f);
-            //myAnimator.SetFloat("DirY", 0.0f);
-            attack.isTargetIn = false;
             myAnimator.SetBool("Attack", false);
         }
     }

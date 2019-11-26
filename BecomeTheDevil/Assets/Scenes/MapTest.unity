@@ -2115,25 +2115,25 @@ PrefabInstance:
         type: 3}
       propertyPath: units.Array.data[0]
       value: 
-      objectReference: {fileID: 3019630119555173031, guid: 91c3d1452506689428b6cc3793218385,
+      objectReference: {fileID: 3019630119555173031, guid: 61e3dea5f5192df4f9fa777ce2ff4c44,
         type: 3}
     - target: {fileID: 1034933322595982838, guid: 80675c92e1159754fa3b3c530c32d6fb,
         type: 3}
       propertyPath: units.Array.data[1]
       value: 
-      objectReference: {fileID: 2198491126247409128, guid: c88c2f165a155ed41bff3294dc31879f,
+      objectReference: {fileID: 2198491126247409128, guid: d57c6afe5d9660a4591a49fef4d3e5e7,
         type: 3}
     - target: {fileID: 1034933322595982838, guid: 80675c92e1159754fa3b3c530c32d6fb,
         type: 3}
       propertyPath: units.Array.data[2]
       value: 
-      objectReference: {fileID: 1098375334499432957, guid: fee91f4190c03d5408c1625024143126,
+      objectReference: {fileID: 1098375334499432957, guid: eb51021487bdf4540ad83ba4018d99c2,
         type: 3}
     - target: {fileID: 1034933322595982838, guid: 80675c92e1159754fa3b3c530c32d6fb,
         type: 3}
       propertyPath: units.Array.data[3]
       value: 
-      objectReference: {fileID: 1912665405476248300, guid: 9e1a3e0a2ecb3114f9dc7fc53faee68e,
+      objectReference: {fileID: 1912665405476248300, guid: 03eb6df180eb54c4f9d324c33dbae66c,
         type: 3}
     - target: {fileID: 1034933322595982838, guid: 80675c92e1159754fa3b3c530c32d6fb,
         type: 3}
@@ -3585,9 +3585,9 @@ MonoBehaviour:
   fieldUnit:
   - {fileID: 8533184832986408320, guid: 28defcfaedca02d469ccfb326930925a, type: 3}
   enemyUnit:
-  - {fileID: 5243625632904137834, guid: bb02232c43f60ab4886ae1bdf3f3b2a2, type: 3}
-  - {fileID: 5243625632904137834, guid: bb02232c43f60ab4886ae1bdf3f3b2a2, type: 3}
-  - {fileID: 4259025602953067204, guid: 6c9c2ab53dcd5104cbd1f78517b4cc9d, type: 3}
+  - {fileID: 5243625632904137834, guid: da9d673defdf46d4d9f0e2be3ebb8e39, type: 3}
+  - {fileID: 5243625632904137834, guid: da9d673defdf46d4d9f0e2be3ebb8e39, type: 3}
+  - {fileID: 4259025602953067204, guid: c47868011456df3408937f94debf0a59, type: 3}
   enemySpawn: {fileID: 1127645547}
   playTime: 0
   waveTime: 0

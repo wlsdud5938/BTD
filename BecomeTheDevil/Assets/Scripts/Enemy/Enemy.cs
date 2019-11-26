@@ -40,7 +40,7 @@ public class Enemy : MonoBehaviour
         }
         else if (preLocation.x == curLocation.x && preLocation.z == curLocation.z)
         {
-            enemyAnimator.SetBool("Walking", false);
+            //enemyAnimator.SetBool("Walking", false);
         }
         preLocation = transform.position;
     }
@@ -52,6 +52,8 @@ public class Enemy : MonoBehaviour
     }
     public void die()
     {
+        gameManager.enemyCount--;
         gameObject.SetActive(false);
+
     }
 }

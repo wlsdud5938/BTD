@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public GameObject player;
-    Status playerStatus;
+    Health playerStatus;
     public GameObject[] fieldUnit;
     public GameObject[] enemyUnit;
     public GameObject enemySpawn;
@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerStatus = player.GetComponent<Status>();
+        playerStatus = player.GetComponent<Health>();
     }
 
     // Update is called once per frame

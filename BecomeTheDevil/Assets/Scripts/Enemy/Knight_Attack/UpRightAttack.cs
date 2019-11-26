@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LeftAttack : MonoBehaviour
+public class UpRightAttack : MonoBehaviour
 {
     private Animator myAnimator;
     private GameObject root;
@@ -11,7 +11,6 @@ public class LeftAttack : MonoBehaviour
     void Start()
     {
         myAnimator = transform.parent.transform.parent.GetComponent<Animator>();
-        root = transform.root.gameObject;
 
         attack = transform.root.GetComponent<Attack>();
     }
@@ -21,8 +20,8 @@ public class LeftAttack : MonoBehaviour
         if (other.gameObject == attack.target)
         {
             myAnimator.SetBool("Attack", true);
-            myAnimator.SetFloat("AttackX", -1.0f);
-            myAnimator.SetFloat("AttackY", -1.0f);
+            myAnimator.SetFloat("AttackX", 1.0f);
+            myAnimator.SetFloat("AttackY", 1.0f);
         }
     }
 

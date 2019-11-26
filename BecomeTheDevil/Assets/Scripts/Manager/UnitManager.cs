@@ -41,7 +41,7 @@ public class UnitManager : MonoBehaviour
             num = 6;
         if (Input.GetMouseButtonDown(0))
         {
-            if(isBuild && grid.length == 2 && (grid.curMaxUnit>grid.curRoom.unitList.Count))
+            if(isBuild &&  (grid.curMaxUnit>grid.curRoom.unitList.Count))
                 MouseDown();
         }
         if (Input.GetMouseButtonDown(1) && !isBuild)
@@ -77,8 +77,8 @@ public class UnitManager : MonoBehaviour
                 break;
         }
         GameObject newUnit = Instantiate(units[currentUnit-1], pos, Quaternion.Euler(90.0f, 0.0f, 0.0f));
-        newUnit.GetComponent<Unit>().unitNum = i;
-        newUnit.GetComponent<Status>().curRoom = grid.curRoom.gameObject;
+        newUnit.GetComponent<AggroType>().aggroType = i;
+        newUnit.GetComponent<FindAggroTarget>().currentRoom = grid.curRoom.gameObject.GetComponent<RoomInfo>();
         
         grid.curRoom.unitList.Add(newUnit);
         

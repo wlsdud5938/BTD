@@ -70,8 +70,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3019630119555173026}
   - component: {fileID: 4112762033117324895}
-  - component: {fileID: 7120611181515180999}
-  - component: {fileID: 281027311673007969}
   - component: {fileID: 363490865902236319}
   - component: {fileID: 1070180831439427521}
   - component: {fileID: 6762858962640188742}
@@ -112,40 +110,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 0.5}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7120611181515180999
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3019630119555173031}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fe516e4a997ff5429dd9b8e733c31e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  unitNum: 1
-  attackTarget: {fileID: 0}
---- !u!114 &281027311673007969
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3019630119555173031}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b15eecaaf7d92544bbf34c8f9535cc14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objAggroStack: 1
-  curRoom: {fileID: 0}
-  maxHP: 100
-  curHP: 100
-  attackDMG: 0
-  attackSpeed: 0
-  attackCoolTime: 0
-  attackRange: 0
 --- !u!208 &363490865902236319
 NavMeshObstacle:
   m_ObjectHideFlags: 0

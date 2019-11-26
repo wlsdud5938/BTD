@@ -118,9 +118,13 @@ GameObject:
   - component: {fileID: 349558284}
   - component: {fileID: 2333310973113843312}
   - component: {fileID: 7922724149284110901}
-  - component: {fileID: 4009046135159401473}
   - component: {fileID: 6125722265272792389}
   - component: {fileID: 4663563231470949193}
+  - component: {fileID: 3196293275300308161}
+  - component: {fileID: 4797018815114328824}
+  - component: {fileID: 2879091191654196924}
+  - component: {fileID: 1998255875909993556}
+  - component: {fileID: 6158355946963446040}
   m_Layer: 0
   m_Name: wizard
   m_TagString: Enemy
@@ -207,23 +211,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &4009046135159401473
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4259025602953067204}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 031a2185e48bdd84ba593dd6f6669a3e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  w: {x: 0, y: 0, z: 0}
-  target: {fileID: 0}
-  core: {fileID: 0}
-  aaa: 1
-  bbb: 1
 --- !u!65 &6125722265272792389
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -251,8 +238,86 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &3196293275300308161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4259025602953067204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4530d5a1f4cfe6e4cbb1f96660724ad9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 0
+  target: {fileID: 0}
+  moveTarget: {fileID: 0}
+  targetType: 0
+  hitCoefficient: 0
+  collisionCoefficient: 0
+  skillCoefficient: 0
+  hasTarget: 0
+  corePath: 0
+  enemyList: []
+  currentRoom: {fileID: 0}
+--- !u!114 &4797018815114328824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4259025602953067204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b70bd8f4e28e8f4b8f9f2b3f50fc810, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aggroType: 101
+  aggro: 1
+--- !u!114 &2879091191654196924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4259025602953067204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac6cc5557f39f6948877d330ef29db3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 100
+  currentHP: 0
+  defensive: 0.5
+  durability: 0
+--- !u!114 &1998255875909993556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4259025602953067204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69eae4d65540752459308a96f3e7383d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6158355946963446040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4259025602953067204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2463b8ebb2d26bf4ebee604508936060, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
 --- !u!1 &6159814528926654913
 GameObject:
   m_ObjectHideFlags: 0
@@ -372,7 +437,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7928845050135792675}
   - component: {fileID: 7928845050135792674}
-  - component: {fileID: 6953851360992667914}
   - component: {fileID: 8778819765689759658}
   m_Layer: 0
   m_Name: wizard_sprite
@@ -444,30 +508,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6953851360992667914
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7928845050135792700}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b25c13fdae64344a82bb6dec3d49f5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  moveAI: {fileID: 0}
-  curRoom: {fileID: 0}
-  core: {fileID: 0}
-  corePath: 1
-  canAttack: 0
-  aggroCal: 0
-  target: {fileID: 0}
-  coreWeight: 50
-  playerWeight: 1
-  unitWeight: 1
-  targetNum: -1
 --- !u!114 &8778819765689759658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -480,6 +520,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03caf81c1d3b5fd4886741c7f0ea9e3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sprites: []
+  positionOffset: 0
 --- !u!1001 &5915313640621815390
 PrefabInstance:
   m_ObjectHideFlags: 0

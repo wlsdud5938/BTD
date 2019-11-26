@@ -13,7 +13,7 @@ public class Wizard : Enemy
 
     GameObject firePos;
 
-    EnemyAggroAI aggro;
+    FindAggroTarget aggro;
 
     public bool canAttack = true;
     public float aTime = 0.0f;
@@ -43,7 +43,7 @@ public class Wizard : Enemy
         wizardAnimator = GetComponent<Animator>();
         nav = GetComponent<NavMeshAgent>();
         firePos = transform.GetChild(2).gameObject;
-        aggro = GetComponent<EnemyAggroAI>();
+        aggro = GetComponent<FindAggroTarget>();
         wand = transform.GetChild(2).gameObject;
         wandPos = wand.transform.position;
     }
