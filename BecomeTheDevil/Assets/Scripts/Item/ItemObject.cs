@@ -19,13 +19,7 @@ public class ItemObject : MonoBehaviour
        DefaultImg = transform.GetComponent<SpriteRenderer>().sprite;
 
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    
     void AddItem()
     {
         //Inven iv = ObjectManager.Call().IV;
