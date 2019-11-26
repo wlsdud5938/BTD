@@ -57,8 +57,6 @@ public class DataManager : MonoBehaviour
 
     public void DataTest()
     {
-        DeleteEveryData();
-
         userData_item.EarnMoney(100);
         userData_item.EarnItem("test item", 10);
         userData_item.EarnItem("test item2", 5);
