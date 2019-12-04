@@ -8,19 +8,7 @@ public class CustomGrid : MonoBehaviour
     public GameObject unit;
     Vector3 truePos;
     public float gridSize;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-
+    
 
     // Update is called once per frame
     void LateUpdate()

@@ -6,13 +6,8 @@ public abstract class UserData
 {
     // 데이터들의 세이브&로드를 위한 추상 클래스
 
-    private static BayatGames.SaveGameFree.Serializers.SaveGameJsonSerializer serializer;
-
-    public UserData()
-    {
-        serializer = new BayatGames.SaveGameFree.Serializers.SaveGameJsonSerializer();
-    }
-    
+    private static BayatGames.SaveGameFree.Serializers.SaveGameJsonSerializer serializer = new BayatGames.SaveGameFree.Serializers.SaveGameJsonSerializer();
+        
     public void Save<T>(string identifier, T data)
     {
         BayatGames.SaveGameFree.SaveGame.Save<T>(identifier, data, serializer);

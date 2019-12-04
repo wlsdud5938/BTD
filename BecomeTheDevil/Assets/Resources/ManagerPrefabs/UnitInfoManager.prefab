@@ -44,6 +44,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitList:
-  - {fileID: 7009416368139298177, guid: 757a57f1ecbc7134b84cf458331c58f6, type: 3}
-  - {fileID: 7009416368139298177, guid: 6fcdab5d19be7e54ea05a155c7ce6571, type: 3}
-  - {fileID: 7009416368139298177, guid: 8334b0e205937394faf99a21047ae19d, type: 3}
+  - {fileID: 4650744559965876187, guid: 61e3dea5f5192df4f9fa777ce2ff4c44, type: 3}
+  - {fileID: 4650744559965876187, guid: 9d46c61c598f1f4408ced547c7cf2f6f, type: 3}
+  - {fileID: 273696165195368008, guid: 03eb6df180eb54c4f9d324c33dbae66c, type: 3}
+  - {fileID: 737871251496078342, guid: d57c6afe5d9660a4591a49fef4d3e5e7, type: 3}
+  - {fileID: 2731928644165593813, guid: eb51021487bdf4540ad83ba4018d99c2, type: 3}

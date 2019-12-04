@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RoomInfo : MonoBehaviour
 {
+    public bool isTestMap = false;
     public int[] roomPos = new int[2];
     int roomNum;
     CreatMapMatrix.Tree[] trees;
@@ -20,6 +21,10 @@ public class RoomInfo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        unitList = new List<GameObject>();
+
+        if (isTestMap) return;
+
         gem = transform.parent.Find("07_Gem").GetComponent<RandomActive>();
         isClosed = true;
         trees  = GameObject.FindGameObjectWithTag("MapCreater").GetComponent<CreatMapMatrix>().trees;
@@ -29,6 +34,8 @@ public class RoomInfo : MonoBehaviour
 
     void LateUpdate()
     {
+        if (isTestMap) return;
+
         ListClear();
         if(gem.gemCount == 0)
         {

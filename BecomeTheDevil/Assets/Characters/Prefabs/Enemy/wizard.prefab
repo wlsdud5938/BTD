@@ -263,6 +263,8 @@ MonoBehaviour:
   corePath: 0
   enemyList: []
   currentRoom: {fileID: 0}
+  aaa: 0
+  bbb: 0
 --- !u!114 &4797018815114328824
 MonoBehaviour:
   m_ObjectHideFlags: 0

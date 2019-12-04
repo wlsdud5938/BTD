@@ -14,6 +14,8 @@ public class DataManager : MonoBehaviour
     public UserItemData userData_item;
     [HideInInspector]
     public UserSettingData userData_setting;
+    [HideInInspector]
+    public UserStatusData userData_status;
     
     private List<UserData> datas;
 
@@ -28,10 +30,12 @@ public class DataManager : MonoBehaviour
 
         userData_item = new UserItemData();
         userData_setting = new UserSettingData();
+        userData_status = new UserStatusData();
 
         datas = new List<UserData>();
         datas.Add(userData_item);
         datas.Add(userData_setting);
+        datas.Add(userData_status);
 
         DataTest(); // 임시 데이터 입력
     }
@@ -55,18 +59,29 @@ public class DataManager : MonoBehaviour
         return count;
     }
 
+    // 해당 유닛의 건설 재료(돈+아이템)를 소모
+    public void UseUnitBuildMaterial(int unitIndex)
+    {
+        // 재료 부족이면 리턴
+        if (BuildableUnitCount(unitIndex) <= 0) return;
+
+        userData_item.UseMoney(UnitInfoManager.Instance.unitList[unitIndex].buildMoney);
+        userData_item.UseItem(UnitInfoManager.Instance.unitList[unitIndex].buildMaterial);
+    }
+
     public void DataTest()
     {
-        userData_item.EarnMoney(100);
-        userData_item.EarnItem("test item", 10);
-        userData_item.EarnItem("test item2", 5);
+        DeleteEveryData();
 
         userData_setting.SetSlot(0, 1);
-        userData_setting.SetSlot(2, 1);
-        userData_setting.SetSlot(3, 1);
         userData_setting.SetSlot(1, 2);
+        userData_setting.SetSlot(2, 3);
+        userData_setting.SetSlot(3, 4);
 
-        userData_setting.SetSlot(2, 1, 2);
-        userData_setting.SetActivatedSlotGroupIndex(2);
+        userData_item.EarnItem(UnitInfoManager.Instance.unitList[1].buildMaterial, 10);
+        userData_item.EarnItem(UnitInfoManager.Instance.unitList[2].buildMaterial, 10);
+        userData_item.EarnItem(UnitInfoManager.Instance.unitList[3].buildMaterial, 10);
+        userData_item.EarnItem(UnitInfoManager.Instance.unitList[4].buildMaterial, 10);
+        userData_item.EarnMoney(10000);
     }
 }

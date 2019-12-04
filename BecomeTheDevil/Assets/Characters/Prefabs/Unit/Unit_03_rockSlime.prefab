@@ -104,10 +104,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7190824168297214918}
-  - component: {fileID: 514256362895066810}
-  - component: {fileID: 6005976961489748961}
+  - component: {fileID: 737871251496078342}
   m_Layer: 0
-  m_Name: rock_slime
+  m_Name: Unit_03_rockSlime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -129,7 +128,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!114 &514256362895066810
+--- !u!114 &737871251496078342
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -138,31 +137,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 2198491126247409128}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fe516e4a997ff5429dd9b8e733c31e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 67cd8e6a97ea57a44a3929435a4c85be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitNum: 2
-  destroyBool: 0
---- !u!114 &6005976961489748961
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2198491126247409128}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b15eecaaf7d92544bbf34c8f9535cc14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objAggroStack: 0
-  curRoom: {fileID: 0}
-  maxHP: 0
-  curHP: 0
-  attackDMG: 0
-  attackSpeed: 0
-  attackCoolTime: 0
-  attackRange: 0
+  unitName: Rock Slime
+  unitIndex: 3
+  unitSprite: {fileID: 21300000, guid: 47f77c514873f9f41a79137d28093c7a, type: 3}
+  buildMoney: 100
+  buildMaterial: Rock Gem
 --- !u!1 &7972002751387962248
 GameObject:
   m_ObjectHideFlags: 0

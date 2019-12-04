@@ -9,6 +9,7 @@ public class StartUpInitializer
     
         // 1. 해당 프리팹의 경로 선언
     private const string MANAGER_PATH_UnitInfoManager = "ManagerPrefabs/UnitInfoManager";
+    private const string MANAGER_PATH_ItemInfoManager = "ManagerPrefabs/ItemInfoManager";
     private const string MANAGER_PATH_UserDataManager = "ManagerPrefabs/UserDataManager";
 
 
@@ -17,6 +18,7 @@ public class StartUpInitializer
     {
         // 2. 해당 경로로 ManagerInit 함수 호출 
         ManagerInit(MANAGER_PATH_UnitInfoManager);
+        ManagerInit(MANAGER_PATH_ItemInfoManager);
         ManagerInit(MANAGER_PATH_UserDataManager);
     }
 

@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 313688996442596410}
   - component: {fileID: 3573613064497609344}
+  - component: {fileID: 273696165195368008}
   m_Layer: 0
-  m_Name: twin_slime
+  m_Name: unit_02_twinSlime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52,6 +53,23 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &273696165195368008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1912665405476248300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67cd8e6a97ea57a44a3929435a4c85be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitName: Twin Slime
+  unitIndex: 2
+  unitSprite: {fileID: 21300006, guid: 41c0a403b404b1d4986713d5cd21dc34, type: 3}
+  buildMoney: 100
+  buildMaterial: Twin Gem
 --- !u!1 &3246336782537701045
 GameObject:
   m_ObjectHideFlags: 0

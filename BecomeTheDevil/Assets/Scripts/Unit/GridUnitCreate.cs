@@ -4,23 +4,17 @@ using UnityEngine;
 
 public class GridUnitCreate : MonoBehaviour
 {
-    public GameObject target;   //보여지는 유닛의 위치를 지정해줍니다.(현재 조정이 살짝 필요합니다.)
-    public GameObject unit; //보여질 유닛들의 부모오브젝트
-    public float gridSize;  //칸의 크기를 지정합니다(기본으로 1로 지정합니다)
-    public RaycastHit[] allHit; //마우스가 클릭한 모든 것을 배열에 저장합니다.
-    public int length;  //allHit의 길이를 알아보기위해 public으로 뺐습니다.
-    public int curUnitCount;    //현재 방의 유닛수를 지정해줍니다.
-    public int curMaxUnit;  //현재 방의 최대 유닛수를 알려줍니다.
-    public RoomInfo curRoom;    //현재방의 roominfo를 받아옵니다.
-    bool otherColl = true;  //마우스가 클릭했을때 그 위치에 다른 객체가 존재하는지 판단하는 bool변수입니다.
-    int mapNum = -1;    //map이 몇번째 allHit에 존재하는지 알려주는 변수입니다. -1일때 map이 잡히지 않은것 입니다.
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
+    public GameObject target;       // 보여지는 유닛의 위치를 지정해줍니다.(현재 조정이 살짝 필요합니다.)
+    public GameObject unit;         // 보여질 유닛들의 부모오브젝트
+    public float gridSize;          // 칸의 크기를 지정합니다(기본으로 1로 지정합니다)
+    public RaycastHit[] allHit;     // 마우스가 클릭한 모든 것을 배열에 저장합니다.
+    public int length;              // allHit의 길이를 알아보기위해 public으로 뺐습니다.
+    public int curUnitCount;        // 현재 방의 유닛수를 지정해줍니다.
+    public int curMaxUnit;          // 현재 방의 최대 유닛수를 알려줍니다.
+    public RoomInfo curRoom;        // 현재방의 roominfo를 받아옵니다.
+    bool otherColl = true;          // 마우스가 클릭했을때 그 위치에 다른 객체가 존재하는지 판단하는 bool변수입니다.
+    int mapNum = -1;                // map이 몇번째 allHit에 존재하는지 알려주는 변수입니다. -1일때 map이 잡히지 않은것 입니다.
+    
     void Update()
     {
         //Raycast from the mouse position
