@@ -18,14 +18,20 @@ public class Attack : MonoBehaviour
     public GameObject target;
     FindAggroTarget aggroTarget;
 
-    Vector3 targetPos;
-    Animator animator;
+    public bool isChargeUnit = false;
+    public float chargeTime = 0f;
 
+    public Vector3 targetPos;
+    Animator animator;
+    public Vector3 pos;
+    public bool targetIn = false;
     //Bullet
     float maxDis = 6;
     float maxSpeed = 6;
 
     float setDis = 0.5f;
+
+    public Transform attackPosition;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,9 +48,12 @@ public class Attack : MonoBehaviour
             if (!gameObject.CompareTag("Player") && aggroTarget.hasTarget)
             {
                 target = aggroTarget.target;
-                if (canAttack)
+                if (canAttack && targetIn)
                 {
                     animator.SetBool("Attack", true);
+                    if(isChargeUnit)
+                        animator.SetBool("Charge", true);
+
                 }
 
             }
@@ -101,17 +110,28 @@ public class Attack : MonoBehaviour
     void BulletInfoSetting(GameObject _Bullet)
     {
         if (_Bullet == null) return;
-        targetPos = new Vector3(target.transform.position.x - transform.position.x, 0, target.transform.position.z - transform.position.z);
+        if (attackPosition == null)
+        {
+            targetPos = new Vector3(target.transform.position.x - transform.position.x, 0, target.transform.position.z - transform.position.z);
+            pos = new Vector3(transform.position.x, 0, transform.position.z);
+        }
+        else
+        {
+            targetPos = new Vector3(target.transform.position.x - attackPosition.position.x, 0, target.transform.position.z - attackPosition.position.z);
+            pos = new Vector3(attackPosition.position.x, 0, attackPosition.position.z);
+
+        }
+
 
         _Bullet.SetActive(true);
-
-        _Bullet.transform.position = transform.position + targetPos.normalized * setDis;
+        _Bullet.transform.position = pos + targetPos.normalized * setDis;
 
         _Bullet.GetComponent<Bullet>().damage = attackDamage;
         _Bullet.GetComponent<Bullet>().maxSpeed = maxSpeed;
         _Bullet.GetComponent<Bullet>().target = targetPos;
         _Bullet.GetComponent<Bullet>().bulletSpeed = bulletSpeed;
         _Bullet.GetComponent<Bullet>().maxDis = maxDis;
+        _Bullet.GetComponent<Bullet>().chargeTime = chargeTime;
         _Bullet.GetComponent<Bullet>().StartCoroutine("MoveBullet");
     }
 
@@ -120,7 +140,20 @@ public class Attack : MonoBehaviour
         canAttack = false;
         for (int i = 0; i < attackCount; i++)
         {
-            BulletInfoSetting(ObjectManager.Call().GetObject("GreenBullet"));
+            if (gameObject.CompareTag("Unit") || gameObject.CompareTag("Player"))
+                BulletInfoSetting(ObjectManager.Call().GetObject("GreenBullet"));
+            else
+                BulletInfoSetting(ObjectManager.Call().GetObject("EnemyBullet"));
+            if (isChargeUnit)
+            {
+                animator.SetBool("Charge", true);
+                Debug.Log("chargeb");
+                yield return new WaitForSeconds(chargeTime);
+                Debug.Log("chargef");
+                animator.SetBool("Charge", false);
+                animator.SetBool("ChargeDone", true);
+
+            }
             yield return new WaitForSeconds(0.1f);
         }
     }

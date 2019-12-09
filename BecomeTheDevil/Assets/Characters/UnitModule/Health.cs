@@ -10,7 +10,7 @@ public class Health : MonoBehaviour
     public int durability; //내구도
 
     float defWeight = 1f; // 방어력 가중치(가중치가 작으면 낮은 방어력 기울기 낮음)
-    bool isDie = false;
+    public bool isDie = false;
     AnimationControlScript animation;
     // Start is called before the first frame update
     void Start()
@@ -18,7 +18,7 @@ public class Health : MonoBehaviour
         currentHP = maxHP;
         animation = GetComponent<AnimationControlScript>();
     }
-    
+
     public void GetDamage(float attackDamage)
     {
         if (currentHP - attackDamage > 0)
@@ -29,12 +29,12 @@ public class Health : MonoBehaviour
             isDie = true;
         }
 
-        if(currentHP <= 0)
+        if (!isDie && currentHP <= 0)
         {
+            isDie = true;
             animation.Die();
         }
     }
-
     public float DamageCalculator(float damage)
     {
         if(damage - (1 - Mathf.Sqrt(defWeight * defensive)) >= 0)

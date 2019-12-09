@@ -5,11 +5,17 @@ using UnityEngine;
 public class UnitAttackTarget : MonoBehaviour
 {
     public FindAggroTarget aggroTarget;
-    public List<GameObject> list = new List<GameObject>();
+    Attack attack;
     // Start is called before the first frame update
     void Start()
     {
         aggroTarget = transform.parent.GetComponent<FindAggroTarget>();
+        attack = transform.parent.GetComponent<Attack>();
+    }
+    private void Update()
+    {
+        if (aggroTarget.enemyList.Count > 0)
+            attack.targetIn = true;
     }
 
     // Update is called once per frame

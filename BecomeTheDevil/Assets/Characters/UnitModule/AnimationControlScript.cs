@@ -33,6 +33,8 @@ public class AnimationControlScript : MonoBehaviour
 
     public IEnumerator Die()
     {
+        if (gameObject.CompareTag("Enemy"))
+            GameManager.instance.enemyCount--;
         // 밝아진다
         for (int i = 0; i < sprites.Length; ++i) sprites[i].material.DOFloat(2, "_Brightness", 0.2f);
         yield return new WaitForSeconds(0.2f);
@@ -46,8 +48,8 @@ public class AnimationControlScript : MonoBehaviour
         for (int i = 0; i < unitInfo.dropItem.Length; ++i)
             ItemManager.Instance.ItemDrop(transform.position, unitInfo.dropItem[i].itemIndex, unitInfo.dropItem[i].itemChange);
 
-
         yield return new WaitForSeconds(2.0f);
+
         gameObject.SetActive(false);
     }
 }

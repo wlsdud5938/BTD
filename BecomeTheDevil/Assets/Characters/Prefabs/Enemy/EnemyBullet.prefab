@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4923081204103804488}
   - component: {fileID: 758004176746900334}
+  - component: {fileID: 3088353557754105480}
+  - component: {fileID: 3466135604304786684}
   m_Layer: 0
   m_Name: EnemyBullet
   m_TagString: EnemyBullet
@@ -45,6 +47,52 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.52, y: 0.52, z: 0.52}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &3088353557754105480
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5561737218344481815}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!114 &3466135604304786684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5561737218344481815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58c70882aa211ca4f84ee7975a2178f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {x: 0, y: 0, z: 0}
+  bulletSpeed: 6
+  maxSpeed: 0
+  maxDis: 6
+  damage: 10
+  chargeTime: 0
+--- !u!114 &1667591489342739357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6092664343241474548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c5aa27439b64584889dfc3b02819da1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4628757874321831202
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -114,6 +162,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c82c9e202ea15ae489a0795b88409b9b, type: 3}
+--- !u!1 &6092664343241474548 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1491213966555641046, guid: c82c9e202ea15ae489a0795b88409b9b,
+    type: 3}
+  m_PrefabInstance: {fileID: 4628757874321831202}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6092664343241474547 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1491213966555641041, guid: c82c9e202ea15ae489a0795b88409b9b,

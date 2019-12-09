@@ -20,6 +20,7 @@ public class UpLeftAttack : MonoBehaviour
             myAnimator.SetBool("Attack", true);
             myAnimator.SetFloat("AttackX", -1.0f);
             myAnimator.SetFloat("AttackY", 1.0f);
+            attack.targetIn = true;
         }
     }
 

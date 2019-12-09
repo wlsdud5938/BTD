@@ -90,10 +90,9 @@ GameObject:
   - component: {fileID: 1491213966555641041}
   - component: {fileID: 1491213966555641040}
   - component: {fileID: 1491213966555641047}
-  - component: {fileID: 1821362184701038389}
   - component: {fileID: 2917303064925163675}
   m_Layer: 0
-  m_Name: WizardBullet
+  m_Name: WizardBullet1
   m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -182,22 +181,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1821362184701038389
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1491213966555641046}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eaf98e2f2f498d54da9e7110eff3001f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {x: 0, y: 0, z: 0}
-  bulletSpeed: 0
-  maxSpeed: 0
-  maxDis: 0
 --- !u!114 &2917303064925163675
 MonoBehaviour:
   m_ObjectHideFlags: 0
