@@ -105,7 +105,7 @@ public class FindAggroTarget : MonoBehaviour
         NavMeshPath path = new NavMeshPath();
         aaa = agent.CalculatePath(core.transform.position, path);
         bbb = path.status != NavMeshPathStatus.PathPartial;
-        if (aaa)
+        if (aaa && bbb)
             moveTarget = core;
         else
             moveTarget = target;

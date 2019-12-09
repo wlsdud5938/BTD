@@ -19,7 +19,7 @@ public class ObjectManager : MonoBehaviour
     {
         st = this;
         //IV = GameObject.FindGameObjectWithTag("Inventory").GetComponent<Inven>();
-        unitSlots = GameObject.FindGameObjectWithTag("Unit_Slots").GetComponent<Unit_Slots>();
+        //unitSlots = GameObject.FindGameObjectWithTag("Unit_Slots").GetComponent<Unit_Slots>();
     }
 
     // Start is called before the first frame update

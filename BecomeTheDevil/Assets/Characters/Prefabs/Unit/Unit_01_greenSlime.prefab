@@ -226,6 +226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2463b8ebb2d26bf4ebee604508936060, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackDamage: 10
   target: {fileID: 0}
 --- !u!114 &4650744559965876187
 MonoBehaviour:
@@ -341,7 +342,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03caf81c1d3b5fd4886741c7f0ea9e3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprites: []
+  sprites:
+  - {fileID: 7950785462697952999}
+  - {fileID: 470261616868974320}
   positionOffset: 0
 --- !u!1001 &1516249908041357101
 PrefabInstance:
@@ -415,6 +418,12 @@ PrefabInstance:
 --- !u!4 &8610350766367366036 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7094525269914995897, guid: aae5ce6b0370eb644992e0bf4aad5b36,
+    type: 3}
+  m_PrefabInstance: {fileID: 1516249908041357101}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &7950785462697952999 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 8888997368837804490, guid: aae5ce6b0370eb644992e0bf4aad5b36,
     type: 3}
   m_PrefabInstance: {fileID: 1516249908041357101}
   m_PrefabAsset: {fileID: 0}

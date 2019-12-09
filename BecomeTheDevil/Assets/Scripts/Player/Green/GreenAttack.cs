@@ -26,10 +26,11 @@ public class GreenAttack : MonoBehaviour
     public float setDis = 0.5f;
 
     UnitManager unitManager;
-
+    Attack rootAttack;
     private void Start()
     {
         unitManager = GameObject.FindGameObjectWithTag("UnitManager").GetComponent<UnitManager>();
+        rootAttack = transform.root.GetComponent<Attack>();
     }
 
     // Update is called once per frame
@@ -75,6 +76,7 @@ public class GreenAttack : MonoBehaviour
         _Bullet.transform.position = trans.position + targetPos.normalized * setDis;
 
         _Bullet.GetComponent<Bullet>().maxSpeed = maxSpeed;
+        _Bullet.GetComponent<Bullet>().damage = rootAttack.attackDamage;
         _Bullet.GetComponent<Bullet>().target = targetPos;
         _Bullet.GetComponent<Bullet>().bulletSpeed = bulletSpeed;
         _Bullet.GetComponent<Bullet>().maxDis = maxDis;

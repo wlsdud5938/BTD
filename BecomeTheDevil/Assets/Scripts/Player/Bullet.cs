@@ -10,6 +10,7 @@ public class Bullet : MonoBehaviour
     public float bulletSpeed; //총알 속도
     public float maxSpeed;  //총알 최대 속도 (가속을 안하면 0)
     public float maxDis;    //총알 사정거리
+    public float damage;
 
     private Vector3 startPos;
     private float dis;
@@ -39,4 +40,30 @@ public class Bullet : MonoBehaviour
 
         animator.SetBool("Boom", true);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log(other.name);
+        if (gameObject.CompareTag("FriendlyBullet"))
+        {
+            if (other.transform.root.GetComponent<Health>() != null && (other.CompareTag("Enemy") || other.CompareTag("Field")))
+            {
+                other.transform.root.GetComponent<Health>().GetDamage(damage);
+                maxDis = 0;
+                animator.SetBool("Boom", true);
+            }
+        }
+        if (gameObject.CompareTag("EnemyBullet"))
+        {
+            if (other.transform.root.GetComponent<Health>() != null && (other.CompareTag("Unit") || other.CompareTag("Player")))
+            {
+                other.transform.root.GetComponent<Health>().GetDamage(damage);
+                maxDis = 0;
+
+                animator.SetBool("Boom", true);
+            }
+        }
+    }
+
+
 }
