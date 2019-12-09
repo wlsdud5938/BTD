@@ -5,15 +5,15 @@ using UnityEngine;
 public class Attack : MonoBehaviour
 {
     bool isTargeting;
-    float attackRange = 6;
+    public float attackRange = 6;
     public float attackDamage = 10;
-    float attackCooldown = 1;
-    bool canMoveingAttack = false;
-    int attackCount = 1;
-    float bulletSpeed = 6;
-    float bulletAcceleration = 6;
-    bool isKnockback = false;
-    float knockbackPower = 1;
+    public float attackCooldown = 1;
+    public bool canMoveingAttack = false;
+    public int attackCount = 1;
+    public  float bulletSpeed = 6;
+    public float bulletAcceleration = 6;
+    public bool isKnockback = false;
+    public float knockbackPower = 1;
     bool canAttack = false;
     public GameObject target;
     FindAggroTarget aggroTarget;
@@ -79,8 +79,8 @@ public class Attack : MonoBehaviour
     }
     public void RangedAttack()
     {
-        if (canAttack)
-            BulletInfoSetting(ObjectManager.Call().GetObject("GreenBullet"));
+            if (canAttack && target != null && target.activeSelf)
+                StartCoroutine("BulletAttack");
     }
 
     void BulletInfoSetting(GameObject _Bullet)
@@ -98,5 +98,15 @@ public class Attack : MonoBehaviour
         _Bullet.GetComponent<Bullet>().bulletSpeed = bulletSpeed;
         _Bullet.GetComponent<Bullet>().maxDis = maxDis;
         _Bullet.GetComponent<Bullet>().StartCoroutine("MoveBullet");
+    }
+
+    IEnumerator BulletAttack()
+    {
+        canAttack = false;
+        for (int i = 0; i < attackCount; i++)
+        {
+            BulletInfoSetting(ObjectManager.Call().GetObject("GreenBullet"));
+            yield return new WaitForSeconds(0.1f);
+        }
     }
 }

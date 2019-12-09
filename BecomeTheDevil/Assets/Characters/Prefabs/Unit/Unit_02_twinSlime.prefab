@@ -1,5 +1,64 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6530284520321915
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4420374411676076831}
+  - component: {fileID: 5699705256383586120}
+  - component: {fileID: 294101483106438419}
+  m_Layer: 0
+  m_Name: attack_range
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4420374411676076831
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6530284520321915}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 313688996442596410}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &5699705256383586120
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6530284520321915}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 6
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &294101483106438419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6530284520321915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8d8842e36dfc5142b8a3692676793b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aggroTarget: {fileID: 0}
+  list: []
 --- !u!1 &1912665405476248300
 GameObject:
   m_ObjectHideFlags: 0
@@ -35,6 +94,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7577625987514225199}
+  - {fileID: 4420374411676076831}
   - {fileID: 8667906885996832434}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -94,7 +154,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2463b8ebb2d26bf4ebee604508936060, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackRange: 6
   attackDamage: 10
+  attackCooldown: 1
+  canMoveingAttack: 0
+  attackCount: 2
+  bulletSpeed: 6
+  bulletAcceleration: 6
+  isKnockback: 0
+  knockbackPower: 1
   target: {fileID: 0}
 --- !u!114 &8254639199739238107
 MonoBehaviour:
@@ -308,7 +376,7 @@ PrefabInstance:
     - target: {fileID: 7094525269914995897, guid: aae5ce6b0370eb644992e0bf4aad5b36,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7094525269914995897, guid: aae5ce6b0370eb644992e0bf4aad5b36,
         type: 3}
