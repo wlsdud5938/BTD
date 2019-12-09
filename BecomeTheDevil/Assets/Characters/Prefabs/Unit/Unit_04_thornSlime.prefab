@@ -11,6 +11,11 @@ GameObject:
   - component: {fileID: 475993080841806863}
   - component: {fileID: 2155663697131932327}
   - component: {fileID: 2731928644165593813}
+  - component: {fileID: 5501408219046247432}
+  - component: {fileID: 3229897646275309156}
+  - component: {fileID: 5364107386884086665}
+  - component: {fileID: 722569459096808181}
+  - component: {fileID: 631824301852607329}
   m_Layer: 0
   m_Name: Unit_04_thornSlime
   m_TagString: Untagged
@@ -74,6 +79,87 @@ MonoBehaviour:
   dropItem:
   - itemIndex: 4
     itemChange: 20
+--- !u!114 &5501408219046247432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1098375334499432957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2463b8ebb2d26bf4ebee604508936060, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackDamage: 10
+  target: {fileID: 0}
+--- !u!114 &3229897646275309156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1098375334499432957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69eae4d65540752459308a96f3e7383d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5364107386884086665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1098375334499432957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac6cc5557f39f6948877d330ef29db3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 100
+  currentHP: 0
+  defensive: 0
+  durability: 0
+--- !u!114 &722569459096808181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1098375334499432957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b70bd8f4e28e8f4b8f9f2b3f50fc810, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aggroType: 0
+  aggro: 0
+--- !u!114 &631824301852607329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1098375334499432957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4530d5a1f4cfe6e4cbb1f96660724ad9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 0
+  target: {fileID: 0}
+  moveTarget: {fileID: 0}
+  targetType: 0
+  hitCoefficient: 0
+  collisionCoefficient: 0
+  skillCoefficient: 0
+  hasTarget: 0
+  corePath: 0
+  enemyList: []
+  currentRoom: {fileID: 0}
+  aaa: 0
+  bbb: 0
 --- !u!1 &4903701709557434603
 GameObject:
   m_ObjectHideFlags: 0

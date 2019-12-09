@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     GameObject knightSpawn;
     GameObject wizardSpawn;
 
+    public RoomInfo rootRoom;
+
     [SerializeField]
     float playTime = 0.0f;
     int wave = 0;

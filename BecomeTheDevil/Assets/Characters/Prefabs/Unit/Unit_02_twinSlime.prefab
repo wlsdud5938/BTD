@@ -11,6 +11,11 @@ GameObject:
   - component: {fileID: 313688996442596410}
   - component: {fileID: 3573613064497609344}
   - component: {fileID: 273696165195368008}
+  - component: {fileID: 4634239341146160581}
+  - component: {fileID: 8254639199739238107}
+  - component: {fileID: 3109144442215654868}
+  - component: {fileID: 4839364742934260393}
+  - component: {fileID: 5153096686752174528}
   m_Layer: 0
   m_Name: Unit_02_twinSlime
   m_TagString: Untagged
@@ -77,6 +82,87 @@ MonoBehaviour:
     itemChange: 50
   - itemIndex: 2
     itemChange: 20
+--- !u!114 &4634239341146160581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1912665405476248300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2463b8ebb2d26bf4ebee604508936060, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackDamage: 10
+  target: {fileID: 0}
+--- !u!114 &8254639199739238107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1912665405476248300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4530d5a1f4cfe6e4cbb1f96660724ad9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 0
+  target: {fileID: 0}
+  moveTarget: {fileID: 0}
+  targetType: 0
+  hitCoefficient: 0
+  collisionCoefficient: 0
+  skillCoefficient: 0
+  hasTarget: 0
+  corePath: 0
+  enemyList: []
+  currentRoom: {fileID: 0}
+  aaa: 0
+  bbb: 0
+--- !u!114 &3109144442215654868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1912665405476248300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b70bd8f4e28e8f4b8f9f2b3f50fc810, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aggroType: 0
+  aggro: 0
+--- !u!114 &4839364742934260393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1912665405476248300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac6cc5557f39f6948877d330ef29db3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 100
+  currentHP: 0
+  defensive: 0
+  durability: 0
+--- !u!114 &5153096686752174528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1912665405476248300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69eae4d65540752459308a96f3e7383d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3246336782537701045
 GameObject:
   m_ObjectHideFlags: 0

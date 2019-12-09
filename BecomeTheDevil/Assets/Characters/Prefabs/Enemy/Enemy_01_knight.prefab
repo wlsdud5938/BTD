@@ -228,6 +228,7 @@ GameObject:
   - component: {fileID: 2654267159105869986}
   - component: {fileID: 5434673677736306814}
   - component: {fileID: 9204126178287216726}
+  - component: {fileID: 8417778865858466805}
   m_Layer: 0
   m_Name: Enemy_01_knight
   m_TagString: Enemy
@@ -364,7 +365,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 100
   currentHP: 0
-  defensive: 0.5
+  defensive: 0
   durability: 0
 --- !u!114 &2654267159105869986
 MonoBehaviour:
@@ -419,6 +420,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackDamage: 10
   target: {fileID: 0}
+--- !u!114 &8417778865858466805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5243625632904137834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69eae4d65540752459308a96f3e7383d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5874322459873966350
 GameObject:
   m_ObjectHideFlags: 0

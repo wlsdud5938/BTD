@@ -18,9 +18,13 @@ public class RoomInfo : MonoBehaviour
     public int childDoor = 0;
     bool openFirst = true;
     RandomActive gem;
+    public bool isRootRoom = false;
+
+    GameManager gameManager;
     // Start is called before the first frame update
     void Start()
     {
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         unitList = new List<GameObject>();
 
         if (isTestMap) return;
@@ -82,4 +86,15 @@ public class RoomInfo : MonoBehaviour
             }
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Respawn"))
+        {
+            isRootRoom = true;
+            gameManager.rootRoom = gameObject.GetComponent<RoomInfo>();
+        }
+    }
+
+
 }

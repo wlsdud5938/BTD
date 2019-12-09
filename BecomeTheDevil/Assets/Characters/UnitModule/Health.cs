@@ -50,8 +50,9 @@ public class Health : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if ((other.CompareTag("EnemyBullet") && (!gameObject.CompareTag("Enemy") || !gameObject.CompareTag("Field")))
-            || other.CompareTag("FriendlyBullet") && (!gameObject.CompareTag("Unit") || !gameObject.CompareTag("Player")))
+        Debug.Log(other.name);
+        if (!gameObject.CompareTag("Player") && (other.CompareTag("EnemyBullet") && (!gameObject.CompareTag("Enemy") && !gameObject.CompareTag("Field")))
+            || (other.CompareTag("FriendlyBullet") && (!gameObject.CompareTag("Unit"))))
             GetDamage(other.GetComponent<Bullet>().damage);
     }
 

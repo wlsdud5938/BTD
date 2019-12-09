@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class UnitAttackTarget : MonoBehaviour
 {
-    FindAggroTarget aggroTarget;
+    public FindAggroTarget aggroTarget;
+    public List<GameObject> list = new List<GameObject>();
     // Start is called before the first frame update
     void Start()
     {
-        aggroTarget = transform.root.GetComponent<FindAggroTarget>();
+        aggroTarget = transform.parent.GetComponent<FindAggroTarget>();
     }
 
     // Update is called once per frame
     void Update()
     {
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -29,6 +31,7 @@ public class UnitAttackTarget : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             aggroTarget.RemoveList(other.gameObject);
+
         }
     }
     

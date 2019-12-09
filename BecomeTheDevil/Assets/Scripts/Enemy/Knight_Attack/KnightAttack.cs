@@ -12,10 +12,12 @@ public class KnightAttack : MonoBehaviour
     bool isSearch = false;
     private Animator myAnimator;
     public bool isTargetIn = false;
+    
     // Start is called before the first frame update
     void Start()
     {
-
+        myAnimator = transform.GetComponent<Animator>();
+        nav = transform.GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
@@ -34,6 +36,10 @@ public class KnightAttack : MonoBehaviour
             nav.speed = 3.5f;
             myAnimator.SetBool("Walking", true);
         }
+
+    }
+    void TakeDamage()
+    {
 
     }
 }

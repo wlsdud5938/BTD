@@ -46,7 +46,7 @@ public class Bullet : MonoBehaviour
         Debug.Log(other.name);
         if (gameObject.CompareTag("FriendlyBullet"))
         {
-            if (other.transform.root.GetComponent<Health>() != null && (other.CompareTag("Enemy") || other.CompareTag("Field")))
+            if (other.GetComponent<Health>() != null && (other.CompareTag("Enemy") || other.CompareTag("Field")))
             {
                 other.transform.root.GetComponent<Health>().GetDamage(damage);
                 maxDis = 0;
@@ -55,7 +55,7 @@ public class Bullet : MonoBehaviour
         }
         if (gameObject.CompareTag("EnemyBullet"))
         {
-            if (other.transform.root.GetComponent<Health>() != null && (other.CompareTag("Unit") || other.CompareTag("Player")))
+            if (other.GetComponent<Health>() != null && (other.CompareTag("Unit") || other.CompareTag("Player")))
             {
                 other.transform.root.GetComponent<Health>().GetDamage(damage);
                 maxDis = 0;

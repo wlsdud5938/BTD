@@ -105,6 +105,11 @@ GameObject:
   m_Component:
   - component: {fileID: 7190824168297214918}
   - component: {fileID: 737871251496078342}
+  - component: {fileID: 6722875994930931915}
+  - component: {fileID: 1724013378660299889}
+  - component: {fileID: 162701548189516009}
+  - component: {fileID: 3533684345910946690}
+  - component: {fileID: 2373612990152765476}
   m_Layer: 0
   m_Name: Unit_03_rockSlime
   m_TagString: Untagged
@@ -150,6 +155,87 @@ MonoBehaviour:
   dropItem:
   - itemIndex: 3
     itemChange: 20
+--- !u!114 &6722875994930931915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2198491126247409128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69eae4d65540752459308a96f3e7383d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1724013378660299889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2198491126247409128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b70bd8f4e28e8f4b8f9f2b3f50fc810, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aggroType: 0
+  aggro: 0
+--- !u!114 &162701548189516009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2198491126247409128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4530d5a1f4cfe6e4cbb1f96660724ad9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 0
+  target: {fileID: 0}
+  moveTarget: {fileID: 0}
+  targetType: 0
+  hitCoefficient: 0
+  collisionCoefficient: 0
+  skillCoefficient: 0
+  hasTarget: 0
+  corePath: 0
+  enemyList: []
+  currentRoom: {fileID: 0}
+  aaa: 0
+  bbb: 0
+--- !u!114 &3533684345910946690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2198491126247409128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac6cc5557f39f6948877d330ef29db3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 100
+  currentHP: 0
+  defensive: 0
+  durability: 0
+--- !u!114 &2373612990152765476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2198491126247409128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2463b8ebb2d26bf4ebee604508936060, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackDamage: 10
+  target: {fileID: 0}
 --- !u!1 &7972002751387962248
 GameObject:
   m_ObjectHideFlags: 0

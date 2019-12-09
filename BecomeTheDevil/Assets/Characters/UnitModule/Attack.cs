@@ -49,7 +49,14 @@ public class Attack : MonoBehaviour
 
             }
         }
-        target = aggroTarget.target;
+        if (!gameObject.CompareTag("Player"))
+        {
+            target = aggroTarget.target;
+            if (target == null || target.activeSelf == false)
+                animator.SetBool("Attack", false);
+        }
+
+
     }
 
     //공격 쿨타임에 따른 공격 가능 여부 확인
@@ -79,7 +86,7 @@ public class Attack : MonoBehaviour
     void BulletInfoSetting(GameObject _Bullet)
     {
         if (_Bullet == null) return;
-        targetPos = new Vector3(target.transform.position.x, 0, target.transform.position.z);
+        targetPos = new Vector3(target.transform.position.x - transform.position.x, 0, target.transform.position.z - transform.position.z);
 
         _Bullet.SetActive(true);
 

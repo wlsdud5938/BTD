@@ -14,6 +14,8 @@ public class FindAggroTarget : MonoBehaviour
     public float skillCoefficient; //스킬 계수
     public bool hasTarget = false; //현재 타겟 유무 확인
 
+    GameManager gm;
+
     public bool corePath = false;
     GameObject core;
     NavMeshAgent agent;
@@ -26,15 +28,20 @@ public class FindAggroTarget : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        enemyList = new List<GameObject>();
         aggroType = GetComponent<AggroType>();
         core = GameObject.FindGameObjectWithTag("Finish").gameObject;
         if (gameObject.CompareTag("Enemy"))
             agent = GetComponent<NavMeshAgent>();
+        if (gameObject.CompareTag("Enemy"))
+            currentRoom = gm.rootRoom;
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
+
         if (enemyList.Count > 0)
             EmptyClear();
 
@@ -44,7 +51,8 @@ public class FindAggroTarget : MonoBehaviour
             SaerchTarget(enemyList);
         if (gameObject.CompareTag("Enemy"))
             FindMoveTarget();
-
+        if (target != null && !target.activeSelf)
+            RemoveList(target);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -66,6 +74,10 @@ public class FindAggroTarget : MonoBehaviour
 
     void SaerchTarget(List<GameObject> list)
     {
+        if(enemyList.Count == 0)
+        {
+            target = null;
+        }
         GameObject tempTarget = null;
         float tempAggroStack = 0;
         for (int i = 0; i < list.Count; i++)
