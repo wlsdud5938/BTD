@@ -66,11 +66,26 @@ public class Attack : MonoBehaviour
         if (attackCooldown >= 1)
             canAttack = true;
         else
+        {
             canAttack = false;
-    }
+            animator.SetBool("Attack", false);
 
+        }
+    }
+    public void CloseAreaAttack()
+    {
+        if (canAttack)
+        {
+            attackCooldown = 0;
+            for (int i = 0; i < aggroTarget.enemyList.Count; i++)
+            {
+                aggroTarget.enemyList[i].GetComponent<Health>().GetDamage(attackDamage);
+            }
+        }
+    }
     public void CloseAttack()
     {
+        attackCooldown = 0;
         target.GetComponent<Health>().GetDamage(attackDamage);
     }
     public void EndAttack()

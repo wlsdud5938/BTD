@@ -20,10 +20,7 @@ public class Health : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
     public void GetDamage(float attackDamage)
     {
         if (currentHP - attackDamage > 0)
