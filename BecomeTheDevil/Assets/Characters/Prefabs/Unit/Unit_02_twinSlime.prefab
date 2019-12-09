@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3573613064497609344}
   - component: {fileID: 273696165195368008}
   m_Layer: 0
-  m_Name: unit_02_twinSlime
+  m_Name: Unit_02_twinSlime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -65,11 +65,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67cd8e6a97ea57a44a3929435a4c85be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unitType: 0
   unitName: Twin Slime
   unitIndex: 2
   unitSprite: {fileID: 21300006, guid: 41c0a403b404b1d4986713d5cd21dc34, type: 3}
   buildMoney: 100
   buildMaterial: Twin Gem
+  dropMoney: 4
+  dropItem:
+  - itemIndex: 1
+    itemChange: 50
+  - itemIndex: 2
+    itemChange: 20
 --- !u!1 &3246336782537701045
 GameObject:
   m_ObjectHideFlags: 0

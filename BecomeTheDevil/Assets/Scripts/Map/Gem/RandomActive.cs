@@ -31,10 +31,4 @@ public class RandomActive : MonoBehaviour
             gemCount++;
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

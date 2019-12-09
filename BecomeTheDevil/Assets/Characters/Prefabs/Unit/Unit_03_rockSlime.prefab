@@ -140,11 +140,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67cd8e6a97ea57a44a3929435a4c85be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unitType: 0
   unitName: Rock Slime
   unitIndex: 3
   unitSprite: {fileID: 21300000, guid: 47f77c514873f9f41a79137d28093c7a, type: 3}
   buildMoney: 100
   buildMaterial: Rock Gem
+  dropMoney: 4
+  dropItem:
+  - itemIndex: 3
+    itemChange: 20
 --- !u!1 &7972002751387962248
 GameObject:
   m_ObjectHideFlags: 0

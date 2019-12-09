@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 2060687153962700474}
   - component: {fileID: 4650744559965876187}
   m_Layer: 0
-  m_Name: green_slime
+  m_Name: Unit_01_greenSlime
   m_TagString: Unit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -239,11 +239,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67cd8e6a97ea57a44a3929435a4c85be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unitType: 0
   unitName: Green Slime
   unitIndex: 1
   unitSprite: {fileID: 21300006, guid: 528b991d6a6bd6a45b5d969f6537a676, type: 3}
   buildMoney: 50
   buildMaterial: Green Gem
+  dropMoney: 2
+  dropItem:
+  - itemIndex: 1
+    itemChange: 20
 --- !u!1 &3515812906626809636
 GameObject:
   m_ObjectHideFlags: 0
