@@ -6,33 +6,33 @@ using DG.Tweening;
 
 public class CharacterPortrait : MonoBehaviour
 {
-    public GameObject player;
-
     public Slider hpBar;
-
-    public string currentPlayerState;
-    private string playerState;
-
-    public Sprite[] playerPannels;  // 0 그린 스텐딩, 1 화이트, 2 그린 슬라임
+    public Image portrait, barImage;
+    public Sprite greenBar, whiteBar;
+    
+    public Sprite[] playerPannels;  // 0 그린 스탠딩, 1 화이트, 2 그린 슬라임
 
     public float currentHP;
     public float maxHP;
     public float slidingTimeHP = 0.5f;
 
-    // Start is called before the first frame update
+    private GameObject player;
+
+    public static CharacterPortrait Instance;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     void Start()
     {
-        playerState = "green";
-   
         player = GameObject.Find("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
-        currentPlayerState = player.GetComponent<Moving>().state;
-        if (playerState != currentPlayerState) SetPannels();
-
         if(maxHP != player.GetComponent<Health>().maxHP)
         {
             maxHP = player.GetComponent<Health>().maxHP;
@@ -46,19 +46,31 @@ public class CharacterPortrait : MonoBehaviour
     }
 
 
-    void SetPannels()
+    public void SetPannels(int index)
     {
-        playerState = currentPlayerState;
-        if (playerState == "green")
+        // 얼굴과 바 이미지 세팅
+        portrait.sprite = playerPannels[index];
+        barImage.sprite = index == 1 ? whiteBar : greenBar;
+
+        if (index == 0)
         {
-            gameObject.GetComponent<Image>().sprite = playerPannels[0];
+            // 그린의 경우
+            SetMaxHP(DataManager.Instance.userData_status.greenHealth.getMaxHP());
+            SetCurrentHP(DataManager.Instance.userData_status.greenHealth.getCurrentHP());
         }
-        else if (playerState == "white") {
-            gameObject.GetComponent<Image>().sprite = playerPannels[1];
+        else if (index == 1)
+        {
+            // 화이트의 경우
+            SetMaxHP(DataManager.Instance.userData_status.whiteHealth.getMaxHP());
+            SetCurrentHP(DataManager.Instance.userData_status.whiteHealth.getCurrentHP());
         }
-        else {
-            gameObject.GetComponent<Image>().sprite = playerPannels[2];
+        else if (index == 2)
+        {
+            // 그린 슬라임의 경우
+            SetMaxHP(DataManager.Instance.userData_status.greenHealth.getMaxHP()*4);
+            SetCurrentHP(DataManager.Instance.userData_status.greenHealth.getCurrentHP()*4);
         }
+
     }
 
     void SetMaxHP(float maxHP)
@@ -71,7 +83,7 @@ public class CharacterPortrait : MonoBehaviour
         //hpBar.maxValue = maxHP;
     }
 
-    void SetCurrentHP(float currentHP)
+    public void SetCurrentHP(float currentHP)
     {
         DOTween.To(() => hpBar.value, x => hpBar.value = x, currentHP, slidingTimeHP);
         //hpBar.value = currentHP;

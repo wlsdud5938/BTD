@@ -203,21 +203,12 @@ Tilemap:
       m_ColliderType: 1
   - first: {x: 7, y: -7, z: 0}
     second:
-      m_TileIndex: 1
+      m_TileIndex: 4
       m_TileSpriteIndex: 13
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
-      m_TileFlags: 3
-      m_ColliderType: 1
-  - first: {x: 8, y: -7, z: 0}
-    second:
-      m_TileIndex: 1
-      m_TileSpriteIndex: 11
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_ObjectToInstantiate: {fileID: 0}
-      m_TileFlags: 3
+      m_TileFlags: 1
       m_ColliderType: 1
   - first: {x: -10, y: -6, z: 0}
     second:
@@ -383,21 +374,12 @@ Tilemap:
       m_ColliderType: 1
   - first: {x: 8, y: -6, z: 0}
     second:
-      m_TileIndex: 1
+      m_TileIndex: 4
       m_TileSpriteIndex: 13
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
-      m_TileFlags: 3
-      m_ColliderType: 1
-  - first: {x: 9, y: -6, z: 0}
-    second:
-      m_TileIndex: 1
-      m_TileSpriteIndex: 11
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_ObjectToInstantiate: {fileID: 0}
-      m_TileFlags: 3
+      m_TileFlags: 1
       m_ColliderType: 1
   - first: {x: -10, y: -5, z: 0}
     second:
@@ -572,21 +554,12 @@ Tilemap:
       m_ColliderType: 1
   - first: {x: 9, y: -5, z: 0}
     second:
-      m_TileIndex: 1
+      m_TileIndex: 4
       m_TileSpriteIndex: 13
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
-      m_TileFlags: 3
-      m_ColliderType: 1
-  - first: {x: 10, y: -5, z: 0}
-    second:
-      m_TileIndex: 1
-      m_TileSpriteIndex: 11
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_ObjectToInstantiate: {fileID: 0}
-      m_TileFlags: 3
+      m_TileFlags: 1
       m_ColliderType: 1
   - first: {x: -10, y: -4, z: 0}
     second:
@@ -768,15 +741,6 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 3
       m_ColliderType: 1
-  - first: {x: 10, y: -4, z: 0}
-    second:
-      m_TileIndex: 1
-      m_TileSpriteIndex: 11
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_ObjectToInstantiate: {fileID: 0}
-      m_TileFlags: 3
-      m_ColliderType: 1
   - first: {x: -10, y: -3, z: 0}
     second:
       m_TileIndex: 0
@@ -917,24 +881,6 @@ Tilemap:
       m_TileIndex: 0
       m_TileSpriteIndex: 1
       m_TileMatrixIndex: 2
-      m_TileColorIndex: 0
-      m_ObjectToInstantiate: {fileID: 0}
-      m_TileFlags: 3
-      m_ColliderType: 1
-  - first: {x: 10, y: -3, z: 0}
-    second:
-      m_TileIndex: 1
-      m_TileSpriteIndex: 15
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_ObjectToInstantiate: {fileID: 0}
-      m_TileFlags: 3
-      m_ColliderType: 1
-  - first: {x: 11, y: -3, z: 0}
-    second:
-      m_TileIndex: 1
-      m_TileSpriteIndex: 15
-      m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 3
@@ -1915,12 +1861,14 @@ Tilemap:
   m_TileAssetArray:
   - m_RefCount: 175
     m_Data: {fileID: 11400000, guid: bf8ff6ae1891d7740903fae55bc7670a, type: 2}
-  - m_RefCount: 25
+  - m_RefCount: 16
     m_Data: {fileID: 11400000, guid: 1f5426761ec365642b3dca72972302e8, type: 2}
   - m_RefCount: 6
     m_Data: {fileID: 11400000, guid: 8f17e7c4b6f46934dbd5e8eaf7c50133, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 873816bc7c4d3e04d9da1d04fd810025, type: 2}
+  - m_RefCount: 3
+    m_Data: {fileID: 11400000, guid: 6b6a076cb42cddc48aded2597f43dc1e, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 19
     m_Data: {fileID: 21300006, guid: c505fa1efd128f541a77d0515933d400, type: 3}
@@ -1944,18 +1892,18 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 4
-    m_Data: {fileID: 21300038, guid: c505fa1efd128f541a77d0515933d400, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 15
     m_Data: {fileID: 21300026, guid: c505fa1efd128f541a77d0515933d400, type: 3}
   - m_RefCount: 3
     m_Data: {fileID: 21300034, guid: c505fa1efd128f541a77d0515933d400, type: 3}
   - m_RefCount: 6
     m_Data: {fileID: 21300030, guid: c505fa1efd128f541a77d0515933d400, type: 3}
-  - m_RefCount: 19
+  - m_RefCount: 17
     m_Data: {fileID: 21300032, guid: c505fa1efd128f541a77d0515933d400, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 140
+  - m_RefCount: 134
     m_Data:
       e00: 1
       e01: 0
@@ -2028,7 +1976,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 207
+  - m_RefCount: 201
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -9337,11 +9285,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9127725805541159892, guid: 69a5b7d71ef624f42aa2d2526400d763,
         type: 3}
-      propertyPath: m_TagString
-      value: Gem
-      objectReference: {fileID: 0}
-    - target: {fileID: 9127725805541159892, guid: 69a5b7d71ef624f42aa2d2526400d763,
-        type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -9419,11 +9362,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: stage01_gem (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 9127725805541159892, guid: 69a5b7d71ef624f42aa2d2526400d763,
-        type: 3}
-      propertyPath: m_TagString
-      value: Gem
       objectReference: {fileID: 0}
     - target: {fileID: 9127725805541159892, guid: 69a5b7d71ef624f42aa2d2526400d763,
         type: 3}
@@ -9507,11 +9445,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9127725805541159892, guid: 69a5b7d71ef624f42aa2d2526400d763,
         type: 3}
-      propertyPath: m_TagString
-      value: Gem
-      objectReference: {fileID: 0}
-    - target: {fileID: 9127725805541159892, guid: 69a5b7d71ef624f42aa2d2526400d763,
-        type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -9589,11 +9522,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: stage01_gem (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 9127725805541159892, guid: 69a5b7d71ef624f42aa2d2526400d763,
-        type: 3}
-      propertyPath: m_TagString
-      value: Gem
       objectReference: {fileID: 0}
     - target: {fileID: 9127725805541159892, guid: 69a5b7d71ef624f42aa2d2526400d763,
         type: 3}

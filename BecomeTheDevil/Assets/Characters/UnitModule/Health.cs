@@ -18,9 +18,7 @@ public class Health : MonoBehaviour
         currentHP = maxHP;
         animation = GetComponent<AnimationControlScript>();
     }
-
-    // Update is called once per frame
-
+    
     public void GetDamage(float attackDamage)
     {
         if (currentHP - attackDamage > 0)
@@ -34,11 +32,10 @@ public class Health : MonoBehaviour
         if(currentHP <= 0)
         {
             animation.Die();
-            gameObject.SetActive(false);
         }
     }
 
-    float DamageCalculator(float damage)
+    public float DamageCalculator(float damage)
     {
         if(damage - (1 - Mathf.Sqrt(defWeight * defensive)) >= 0)
             return damage * (1 - Mathf.Sqrt(defWeight * defensive));

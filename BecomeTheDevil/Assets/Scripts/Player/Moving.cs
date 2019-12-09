@@ -13,8 +13,9 @@ public class Moving : MonoBehaviour
 
     private Animator greenAnimator;
     private Animator whiteAnimator;
+    private WhiteAttack whiteAttack;
 
-    public string state = "green";
+    public int state = 0;           // 0:그린, 1:화이트, 2:그린 슬라임
 
     public bool isUp = false;
     public bool isDown = false;
@@ -27,46 +28,25 @@ public class Moving : MonoBehaviour
         trans = GetComponent<Transform>();
         greenAnimator = transform.GetChild(0).gameObject.GetComponent<Animator>();
         whiteAnimator = transform.GetChild(1).gameObject.GetComponent<Animator>();
-
+        whiteAttack = transform.GetChild(1).gameObject.GetComponent<WhiteAttack>();
     }
 
     // Update is called once per frame
     void Update()
     {
     
-        if (state == "green")
+        if (state == 0)
         {
             greenAnimator.SetBool("Walking", false);
         }
-        else if (state == "white")
+        else if (state == 1)
         {
             whiteAnimator.SetBool("Walking", false);
         }
 
         if (Input.GetKeyDown("space"))
         {
-            if(!transform.GetChild(1).gameObject.GetComponent<WhiteAttack>().isRuneActive) changeState(state);
-
-            if (state == "green")
-            {
-
-                transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().enabled = true;
-                transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().enabled = false;
-                transform.GetChild(0).gameObject.SetActive(true);
-                transform.GetChild(1).gameObject.SetActive(false);
-                transform.GetChild(1).gameObject.transform.GetChild(0).gameObject.SetActive(false);
-            }
-            if (state == "white")
-            {
-
-                transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().enabled = true;
-                transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().enabled = false;
-                transform.GetChild(1).gameObject.SetActive(true);
-                transform.GetChild(0).gameObject.SetActive(false);
-               
-                //마법진
-                transform.GetChild(1).gameObject.transform.GetChild(0).gameObject.SetActive(true);
-            }
+            if(!whiteAttack.isRuneActive) changeState();            
         }
 
 
@@ -89,14 +69,14 @@ public class Moving : MonoBehaviour
 
                 trans.Translate(moveDir.normalized * moveSpeed * Time.deltaTime, Space.Self);
                 trans.position.Set(trans.position.x, 0, trans.position.z);
-                if (state == "green")
+                if (state == 0)
                 {
                     greenAnimator.SetFloat("DirX", h);
                     greenAnimator.SetFloat("DirY", v);
                     greenAnimator.SetBool("Walking", true);
                 }
 
-                if (state == "white")
+                if (state == 1)
                 {
                     whiteAnimator.SetFloat("DirX", h);
                     whiteAnimator.SetFloat("DirY", v);
@@ -110,17 +90,33 @@ public class Moving : MonoBehaviour
 
     }
 
-    void changeState(string state)
+    // 그린 <-> 화이트 체인지
+    void changeState()
     {
-        if (state == "green")
+        if (state == 0)
         {
-            this.state = "white";
+            state = 1;
+            DataManager.Instance.userData_status.SetPlayingChara(1);
+            CharacterPortrait.Instance.SetPannels(1);
+
+            transform.GetChild(1).gameObject.SetActive(true);
+            transform.GetChild(0).gameObject.SetActive(false);
+
+            //마법진
+            transform.GetChild(1).gameObject.transform.GetChild(0).gameObject.SetActive(true);
         }
 
-        else if (state == "white")
+        else if (state == 1)
         {
-            this.state = "green";
+            state = 0;
+            DataManager.Instance.userData_status.SetPlayingChara(0);
+            CharacterPortrait.Instance.SetPannels(0);
+
+            transform.GetChild(0).gameObject.SetActive(true);
+            transform.GetChild(1).gameObject.SetActive(false);
+            transform.GetChild(1).gameObject.transform.GetChild(0).gameObject.SetActive(false);
         }
+
     }
 
     private void OnTriggerEnter(Collider other)
