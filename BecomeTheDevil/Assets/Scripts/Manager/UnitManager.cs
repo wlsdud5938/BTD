@@ -12,8 +12,8 @@ public class UnitManager : MonoBehaviour
     public int currentUnit = 1;             // 현재 생성될(표시된) 유닛의 번호(사람들은 1부터 누르기때문에 1로 초기화해서 사용)
     Vector3 pos;                            // 유닛 포지션에서 y를 0으로 초기화한 위치
 
+    [HideInInspector]
     public GridUnitCreate grid;             // 유닛 생성에 필요한 위치를 잡아주는 오브젝트
-    int lastUnit = 0;                       // 이전에 선택되어있던 유닛을 가지고있는 변수
     
     private UnitInfo[][] unitPool;          // 유닛 오브젝트 풀
     private int[] unitPointer;              // 유닛 풀 포인터

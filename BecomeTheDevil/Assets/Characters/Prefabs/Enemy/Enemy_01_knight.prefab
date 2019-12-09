@@ -229,6 +229,7 @@ GameObject:
   - component: {fileID: 5434673677736306814}
   - component: {fileID: 9204126178287216726}
   - component: {fileID: 8417778865858466805}
+  - component: {fileID: 5516061301832899151}
   m_Layer: 0
   m_Name: Enemy_01_knight
   m_TagString: Enemy
@@ -360,13 +361,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 5243625632904137834}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac6cc5557f39f6948877d330ef29db3a, type: 3}
+  m_Script: {fileID: 11500000, guid: e08b763f4ee02bb4b8e8199cc00cb954, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 100
   currentHP: 0
   defensive: 0
   durability: 0
+  defWeight: 1
+  isDie: 0
 --- !u!114 &2654267159105869986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -418,8 +421,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2463b8ebb2d26bf4ebee604508936060, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackRange: 6
   attackDamage: 10
+  attackCooldown: 1
+  canMoveingAttack: 0
+  attackCount: 1
+  bulletSpeed: 6
+  bulletAcceleration: 6
+  isKnockback: 0
+  knockbackPower: 1
   target: {fileID: 0}
+  isChargeUnit: 0
+  chargeTime: 0
+  targetPos: {x: 0, y: 0, z: 0}
+  pos: {x: 0, y: 0, z: 0}
+  targetIn: 0
+  attackPosition: {fileID: 0}
 --- !u!114 &8417778865858466805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -432,6 +449,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69eae4d65540752459308a96f3e7383d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 3727478107363343943}
+  shadowSprite: {fileID: 6275220467223994260}
+--- !u!114 &5516061301832899151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5243625632904137834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67cd8e6a97ea57a44a3929435a4c85be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitType: 2
+  unitName: Knight
+  unitIndex: 1
+  unitSprite: {fileID: 0}
+  buildMoney: 0
+  buildMaterial: 
+  dropMoney: 2
+  dropItem: []
 --- !u!1 &5874322459873966350
 GameObject:
   m_ObjectHideFlags: 0
@@ -701,6 +741,12 @@ PrefabInstance:
 --- !u!4 &5638171260644016871 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7094525269914995897, guid: aae5ce6b0370eb644992e0bf4aad5b36,
+    type: 3}
+  m_PrefabInstance: {fileID: 3191398224008056414}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &6275220467223994260 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 8888997368837804490, guid: aae5ce6b0370eb644992e0bf4aad5b36,
     type: 3}
   m_PrefabInstance: {fileID: 3191398224008056414}
   m_PrefabAsset: {fileID: 0}

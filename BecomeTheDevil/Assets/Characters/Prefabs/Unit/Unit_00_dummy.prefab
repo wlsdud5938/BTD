@@ -57,6 +57,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8d8842e36dfc5142b8a3692676793b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aggroTarget: {fileID: 0}
 --- !u!1 &3019630119555173031
 GameObject:
   m_ObjectHideFlags: 0
@@ -156,13 +157,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 3019630119555173031}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac6cc5557f39f6948877d330ef29db3a, type: 3}
+  m_Script: {fileID: 11500000, guid: e08b763f4ee02bb4b8e8199cc00cb954, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 100
   currentHP: 0
-  defensive: 0.5
+  defensive: 0
   durability: 0
+  defWeight: 1
+  isDie: 0
 --- !u!114 &7616472144753840331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,6 +217,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69eae4d65540752459308a96f3e7383d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sprites: []
+  shadowSprite: {fileID: 0}
 --- !u!114 &2060687153962700474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,7 +231,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2463b8ebb2d26bf4ebee604508936060, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackRange: 6
+  attackDamage: 10
+  attackCooldown: 1
+  canMoveingAttack: 0
+  attackCount: 1
+  bulletSpeed: 6
+  bulletAcceleration: 6
+  isKnockback: 0
+  knockbackPower: 1
   target: {fileID: 0}
+  isChargeUnit: 0
+  chargeTime: 0
+  targetPos: {x: 0, y: 0, z: 0}
+  pos: {x: 0, y: 0, z: 0}
+  targetIn: 0
+  attackPosition: {fileID: 0}
 --- !u!114 &4650744559965876187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,8 +266,7 @@ MonoBehaviour:
   buildMoney: 1
   buildMaterial: dummy
   dropMoney: 0
-  dropItem: 0
-  dropChance: 50
+  dropItem: []
 --- !u!1 &3515812906626809636
 GameObject:
   m_ObjectHideFlags: 0

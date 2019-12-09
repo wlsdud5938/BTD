@@ -11,6 +11,7 @@ public class Moving : MonoBehaviour
     public float moveSpeed = 10.0f;
     Vector3 moveDir;
 
+    private PlayerHealth playerHealth;
     private Animator greenAnimator;
     private Animator whiteAnimator;
     private WhiteAttack whiteAttack;
@@ -26,6 +27,7 @@ public class Moving : MonoBehaviour
     void Start()
     {
         trans = GetComponent<Transform>();
+        playerHealth = gameObject.GetComponent<PlayerHealth>();
         greenAnimator = transform.GetChild(0).gameObject.GetComponent<Animator>();
         whiteAnimator = transform.GetChild(1).gameObject.GetComponent<Animator>();
         whiteAttack = transform.GetChild(1).gameObject.GetComponent<WhiteAttack>();
@@ -91,7 +93,7 @@ public class Moving : MonoBehaviour
     }
 
     // 그린 <-> 화이트 체인지
-    void changeState()
+    public void changeState()
     {
         if (state == 0)
         {
@@ -117,6 +119,8 @@ public class Moving : MonoBehaviour
             transform.GetChild(1).gameObject.transform.GetChild(0).gameObject.SetActive(false);
         }
 
+        // 해당 캐릭터로 체력 세팅
+        playerHealth.AssignCharacter();
     }
 
     private void OnTriggerEnter(Collider other)

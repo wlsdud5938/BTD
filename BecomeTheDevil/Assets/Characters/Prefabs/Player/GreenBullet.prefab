@@ -51,6 +51,7 @@ MonoBehaviour:
   maxSpeed: 0
   maxDis: 0
   damage: 0
+  chargeTime: 0
 --- !u!65 &2533893765544131200
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -87,11 +88,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1605163972962008578}
     m_Modifications:
-    - target: {fileID: 4197127849047601385, guid: 3149b923649b6bc458035ab1bf496cc2,
-        type: 3}
-      propertyPath: m_Name
-      value: green_bullet_basic
-      objectReference: {fileID: 0}
     - target: {fileID: 4197127849047601390, guid: 3149b923649b6bc458035ab1bf496cc2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -146,6 +142,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4197127849047601385, guid: 3149b923649b6bc458035ab1bf496cc2,
+        type: 3}
+      propertyPath: m_Name
+      value: green_bullet_basic
       objectReference: {fileID: 0}
     - target: {fileID: 4197127849814965535, guid: 3149b923649b6bc458035ab1bf496cc2,
         type: 3}

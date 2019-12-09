@@ -170,6 +170,7 @@ MonoBehaviour:
   targetPos: {x: 0, y: 0, z: 0}
   pos: {x: 0, y: 0, z: 0}
   targetIn: 0
+  attackPosition: {fileID: 0}
 --- !u!114 &8254639199739238107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,13 +219,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1912665405476248300}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac6cc5557f39f6948877d330ef29db3a, type: 3}
+  m_Script: {fileID: 11500000, guid: e08b763f4ee02bb4b8e8199cc00cb954, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 100
   currentHP: 0
   defensive: 0
   durability: 0
+  defWeight: 1
+  isDie: 0
 --- !u!114 &5153096686752174528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,6 +240,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69eae4d65540752459308a96f3e7383d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 5599998513441596391}
+  shadowSprite: {fileID: 7017266022535510977}
 --- !u!65 &5988779346374921155
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -433,6 +439,12 @@ PrefabInstance:
 --- !u!4 &8667906885996832434 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7094525269914995897, guid: aae5ce6b0370eb644992e0bf4aad5b36,
+    type: 3}
+  m_PrefabInstance: {fileID: 1891026161703594507}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &7017266022535510977 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 8888997368837804490, guid: aae5ce6b0370eb644992e0bf4aad5b36,
     type: 3}
   m_PrefabInstance: {fileID: 1891026161703594507}
   m_PrefabAsset: {fileID: 0}

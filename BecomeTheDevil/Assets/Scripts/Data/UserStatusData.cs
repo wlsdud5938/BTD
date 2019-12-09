@@ -7,19 +7,19 @@ public class UserStatusData : UserData
     [System.Serializable]
     public class HealthInfo
     {
-        private int maxHP;
-        private int currentHP;
+        private float maxHP;
+        private float currentHP;
 
-        public HealthInfo(int max, int current)
+        public HealthInfo(float max, float current)
         {
             maxHP = max;
             currentHP = current;
         }
 
-        public int getMaxHP() { return maxHP; }
-        public int getCurrentHP() { return currentHP; }
-        public void setMaxHP(int hp) { maxHP = hp; }
-        public void setCurrentHP(int hp) { currentHP = hp; }
+        public float getMaxHP() { return maxHP; }
+        public float getCurrentHP() { return currentHP; }
+        public void setMaxHP(float hp) { maxHP = hp; }
+        public void setCurrentHP(float hp) { currentHP = hp; }
     }
 
     private bool isBuildMode;
@@ -56,6 +56,21 @@ public class UserStatusData : UserData
         else return whiteHealth;
     }
 
+    // 캐릭터가 살아있는지(특정 캐릭터 확인)
+    public bool IsCharacterAlive(int index)
+    {
+        if (index == 0) return greenHealth.getCurrentHP() != 0;
+        else if (index == 1) return whiteHealth.getCurrentHP() != 0;
+
+        return false;
+    }
+
+    // 캐릭터들이 살아있는지(둘 중 누구라도)
+    public bool IsCharacterAlive()
+    {
+        return greenHealth.getCurrentHP() != 0 || whiteHealth.getCurrentHP() != 0;
+    }
+
     public void BuildModeOnOff(bool onOff)
     {
         isBuildMode = onOff;
@@ -74,7 +89,7 @@ public class UserStatusData : UserData
         Save<int>(identifier_playingChara, playingChara);
     }
 
-    public void SetHealth(int state, int hp)
+    public void SetHealth(int state, float hp)
     {
         if (state == 0) greenHealth.setCurrentHP(hp);
         if (state == 1) whiteHealth.setCurrentHP(hp);
@@ -82,7 +97,7 @@ public class UserStatusData : UserData
         SaveData();
     }
 
-    public void SetHealth(int hp)
+    public void SetHealth(float hp)
     {
         if (playingChara == 0) greenHealth.setCurrentHP(hp);
         if (playingChara == 1) whiteHealth.setCurrentHP(hp);

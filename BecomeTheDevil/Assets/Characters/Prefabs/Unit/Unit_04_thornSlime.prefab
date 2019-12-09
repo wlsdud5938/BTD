@@ -167,6 +167,7 @@ MonoBehaviour:
   targetPos: {x: 0, y: 0, z: 0}
   pos: {x: 0, y: 0, z: 0}
   targetIn: 0
+  attackPosition: {fileID: 0}
 --- !u!114 &3229897646275309156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,6 +180,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69eae4d65540752459308a96f3e7383d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 2383968858920298770}
+  shadowSprite: {fileID: 0}
 --- !u!114 &5364107386884086665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,13 +192,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1098375334499432957}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac6cc5557f39f6948877d330ef29db3a, type: 3}
+  m_Script: {fileID: 11500000, guid: e08b763f4ee02bb4b8e8199cc00cb954, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 100
   currentHP: 0
   defensive: 0
   durability: 0
+  defWeight: 1
+  isDie: 0
 --- !u!114 &722569459096808181
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -141,6 +141,7 @@ GameObject:
   - component: {fileID: 2879091191654196924}
   - component: {fileID: 1998255875909993556}
   - component: {fileID: 6158355946963446040}
+  - component: {fileID: 549597578581130911}
   m_Layer: 0
   m_Name: Enemy_02_wizard
   m_TagString: Enemy
@@ -285,13 +286,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 4259025602953067204}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac6cc5557f39f6948877d330ef29db3a, type: 3}
+  m_Script: {fileID: 11500000, guid: e08b763f4ee02bb4b8e8199cc00cb954, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 100
   currentHP: 0
-  defensive: 0.5
+  defensive: 0
   durability: 0
+  defWeight: 1
   isDie: 0
 --- !u!114 &1998255875909993556
 MonoBehaviour:
@@ -305,8 +307,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69eae4d65540752459308a96f3e7383d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprites: []
-  shadowSprite: {fileID: 0}
+  sprites:
+  - {fileID: 7928845050135792674}
+  - {fileID: 7928845048241003478}
+  shadowSprite: {fileID: 1651705214290891171}
 --- !u!114 &6158355946963446040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -335,6 +339,26 @@ MonoBehaviour:
   pos: {x: 0, y: 0, z: 0}
   targetIn: 0
   attackPosition: {fileID: 2138029875229202761}
+--- !u!114 &549597578581130911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4259025602953067204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67cd8e6a97ea57a44a3929435a4c85be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitType: 2
+  unitName: Wizard
+  unitIndex: 2
+  unitSprite: {fileID: 0}
+  buildMoney: 0
+  buildMaterial: 
+  dropMoney: 2
+  dropItem: []
 --- !u!1 &6159814528926654913
 GameObject:
   m_ObjectHideFlags: 0
@@ -576,11 +600,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1712742034937262101}
     m_Modifications:
-    - target: {fileID: 1048652696171670793, guid: 6296980ac7d5c8846be2faea40323f39,
-        type: 3}
-      propertyPath: m_Name
-      value: shadow_32
-      objectReference: {fileID: 0}
     - target: {fileID: 6760926040263260814, guid: 6296980ac7d5c8846be2faea40323f39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -636,11 +655,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1048652696171670793, guid: 6296980ac7d5c8846be2faea40323f39,
+        type: 3}
+      propertyPath: m_Name
+      value: shadow_32
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6296980ac7d5c8846be2faea40323f39, type: 3}
 --- !u!4 &1136252925423471824 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6760926040263260814, guid: 6296980ac7d5c8846be2faea40323f39,
+    type: 3}
+  m_PrefabInstance: {fileID: 5915313640621815390}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1651705214290891171 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 4970675802391783421, guid: 6296980ac7d5c8846be2faea40323f39,
     type: 3}
   m_PrefabInstance: {fileID: 5915313640621815390}
   m_PrefabAsset: {fileID: 0}

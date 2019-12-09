@@ -28,23 +28,9 @@ public class CharacterPortrait : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player");
+        SetPannels(DataManager.Instance.userData_status.GetPlayingChara());
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if(maxHP != player.GetComponent<Health>().maxHP)
-        {
-            maxHP = player.GetComponent<Health>().maxHP;
-            SetMaxHP(maxHP);
-        }
-        if (currentHP != player.GetComponent<Health>().currentHP)
-        {
-            currentHP = player.GetComponent<Health>().currentHP;
-            SetCurrentHP(currentHP);
-        }
-    }
-
+    
 
     public void SetPannels(int index)
     {
@@ -57,12 +43,14 @@ public class CharacterPortrait : MonoBehaviour
             // 그린의 경우
             SetMaxHP(DataManager.Instance.userData_status.greenHealth.getMaxHP());
             SetCurrentHP(DataManager.Instance.userData_status.greenHealth.getCurrentHP());
+            //StartCoroutine(changeBar(DataManager.Instance.userData_status.greenHealth.getMaxHP(), DataManager.Instance.userData_status.greenHealth.getCurrentHP()));
         }
         else if (index == 1)
         {
             // 화이트의 경우
             SetMaxHP(DataManager.Instance.userData_status.whiteHealth.getMaxHP());
             SetCurrentHP(DataManager.Instance.userData_status.whiteHealth.getCurrentHP());
+            //StartCoroutine(changeBar(DataManager.Instance.userData_status.whiteHealth.getMaxHP(), DataManager.Instance.userData_status.whiteHealth.getCurrentHP()));
         }
         else if (index == 2)
         {
@@ -88,4 +76,11 @@ public class CharacterPortrait : MonoBehaviour
         DOTween.To(() => hpBar.value, x => hpBar.value = x, currentHP, slidingTimeHP);
         //hpBar.value = currentHP;
     }
+    /*
+    public IEnumerator changeBar(float maxHP, float currentHP)
+    {
+        SetMaxHP(maxHP);
+        yield return new WaitForSeconds(1.5f);
+        SetCurrentHP(currentHP);
+    }*/
 }

@@ -76,7 +76,7 @@ public class GreenAttack : MonoBehaviour
         _Bullet.transform.position = trans.position + targetPos.normalized * setDis;
 
         _Bullet.GetComponent<Bullet>().maxSpeed = maxSpeed;
-        _Bullet.GetComponent<Bullet>().damage = rootAttack.attackDamage;
+        _Bullet.GetComponent<Bullet>().damage = 10;
         _Bullet.GetComponent<Bullet>().target = targetPos;
         _Bullet.GetComponent<Bullet>().bulletSpeed = bulletSpeed;
         _Bullet.GetComponent<Bullet>().maxDis = maxDis;

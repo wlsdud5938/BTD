@@ -9,9 +9,11 @@ public class ObjectManager : MonoBehaviour
     public static ObjectManager Call() { return st; }
 
     public GameObject[] origin;     // 프리팹 원본
+    [HideInInspector]
     public List<GameObject> Manager;    // 생성된 객체들 저장할 리스트
 
     //public Inven IV;
+    [HideInInspector]
     public Unit_Slots unitSlots;
 
 
