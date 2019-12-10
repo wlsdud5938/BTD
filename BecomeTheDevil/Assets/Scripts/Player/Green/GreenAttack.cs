@@ -37,7 +37,7 @@ public class GreenAttack : MonoBehaviour
     void Update()
     {
         //Status 에서 값 받아와야함
-        bulletSpeed = 6f;
+        bulletSpeed = 8f;
         AttackCooltime = 0.5f;
         maxDis = 6f;
         maxSpeed = 0f;

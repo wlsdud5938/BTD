@@ -112,6 +112,7 @@ GameObject:
   - component: {fileID: 2373612990152765476}
   - component: {fileID: 5593329569078936850}
   - component: {fileID: 2684102751516209858}
+  - component: {fileID: 203954442632677109}
   m_Layer: 0
   m_Name: Unit_03_rockSlime
   m_TagString: Unit
@@ -286,6 +287,25 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!95 &203954442632677109
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2198491126247409128}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 597b0b85696aa064dbf44b6ed76398ce, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7972002751387962248
 GameObject:
   m_ObjectHideFlags: 0

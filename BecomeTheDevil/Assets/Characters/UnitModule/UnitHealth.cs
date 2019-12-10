@@ -25,7 +25,7 @@ public class UnitHealth : Health
         if (!isDie && currentHP <= 0)
         {
             isDie = true;
-            ani.Die();
+            StartCoroutine(ani.Die());
         }
     }
 
