@@ -19,13 +19,12 @@ public class UnitHealth : Health
         else
         {
             currentHP = 0;
-            isDie = true;
         }
 
         if (!isDie && currentHP <= 0)
         {
             isDie = true;
-            StartCoroutine(ani.Die());
+            ani.StartDie();
         }
     }
 

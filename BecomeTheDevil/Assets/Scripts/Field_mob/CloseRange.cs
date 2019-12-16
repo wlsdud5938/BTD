@@ -9,7 +9,6 @@ public class CloseRange : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        field = transform.parent.GetComponent<FieldMonster>();
         animation = transform.parent.GetComponent<Animator>();
     }
 

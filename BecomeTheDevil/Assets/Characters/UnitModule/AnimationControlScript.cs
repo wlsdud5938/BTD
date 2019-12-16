@@ -31,6 +31,11 @@ public class AnimationControlScript : MonoBehaviour
         sprite.color = Color.white;
     }
 
+    public void StartDie()
+    {
+        StartCoroutine("Die");
+    }
+
     public IEnumerator Die()
     {
         if (gameObject.CompareTag("Enemy"))

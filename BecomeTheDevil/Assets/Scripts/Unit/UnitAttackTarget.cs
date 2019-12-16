@@ -22,18 +22,28 @@ public class UnitAttackTarget : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Enemy"))
+        if((other.CompareTag("Enemy") ||other.CompareTag("Field")) && gameObject.transform.parent.CompareTag("Unit"))
         {
             aggroTarget.AddList(other.gameObject);
+        }
+        else if (gameObject.transform.parent.CompareTag("Field"))
+        {
+            if(other.CompareTag("Enemy") || other.CompareTag("Unit") || other.CompareTag("Player"))
+                aggroTarget.AddList(other.gameObject);
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Enemy"))
+        if ((other.CompareTag("Enemy") || other.CompareTag("Field")) && gameObject.transform.parent.CompareTag("Unit"))
         {
             aggroTarget.RemoveList(other.gameObject);
 
+        }
+        else if (gameObject.transform.parent.CompareTag("Field"))
+        {
+            if (other.CompareTag("Enemy") || other.CompareTag("Unit") || other.CompareTag("Player"))
+                aggroTarget.RemoveList(other.gameObject);
         }
     }
     

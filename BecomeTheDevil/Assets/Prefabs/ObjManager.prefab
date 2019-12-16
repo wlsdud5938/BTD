@@ -46,5 +46,6 @@ MonoBehaviour:
   origin:
   - {fileID: 2868411932850081480, guid: 4bb66e470744d1b439542f474834fbb3, type: 3}
   - {fileID: 6370008347601807583, guid: 81e167a770fff3a4aa2dc8261c98019a, type: 3}
-  - {fileID: 2563374460276023992, guid: fd6d05396483e3f4b80481de9dd5ba0d, type: 3}
+  - {fileID: 5561737218344481815, guid: 1ac7eebc9f467734b87d03d27074a351, type: 3}
   Manager: []
+  unitSlots: {fileID: 0}
