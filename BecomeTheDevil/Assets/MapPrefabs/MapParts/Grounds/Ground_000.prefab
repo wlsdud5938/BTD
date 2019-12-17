@@ -8140,6 +8140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b41a0ffc7e440cd42ae50da82de397da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTestMap: 0
   roomPos: 0000000000000000
   unitList: []
   maxUnit: 5
@@ -8149,6 +8150,7 @@ MonoBehaviour:
   isPath: 0
   parentDoor: 0
   childDoor: 0
+  isRootRoom: 0
 --- !u!1 &3176157485603302266
 GameObject:
   m_ObjectHideFlags: 0
@@ -10646,17 +10648,17 @@ PrefabInstance:
     - target: {fileID: 4156378391124737621, guid: 54dbbef2282168447a7ebcd61da35f36,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.8337244
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4156378391124737621, guid: 54dbbef2282168447a7ebcd61da35f36,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.8337134
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4156378391124737621, guid: 54dbbef2282168447a7ebcd61da35f36,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.0000019073486
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4156378391124737621, guid: 54dbbef2282168447a7ebcd61da35f36,
         type: 3}

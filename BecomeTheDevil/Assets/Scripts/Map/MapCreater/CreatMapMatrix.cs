@@ -49,6 +49,8 @@ public class CreatMapMatrix : MonoBehaviour
     public Queue<int[]> path = new Queue<int[]>();
     public GameObject mainCamera;
     ProCamera2DRooms_fix cameraRoom;
+    public List<GameObject> rooms = new List<GameObject>();
+    public GameObject coreRoom;
 
     // Start is called before the first frame update
 
@@ -239,6 +241,9 @@ public class CreatMapMatrix : MonoBehaviour
                 {
 
                     room = Instantiate(roomList[mapMatrix[j,i]-1], new Vector3((i-14)* 30,0, (-j+14)* 20), Quaternion.Euler(90.0f, 0.0f, 0.0f));
+                    room.GetComponent<SelectGround>().pos[0] = j;
+                    room.GetComponent<SelectGround>().pos[1] = i;
+                    rooms.Add(room);
                     int[] b = new int[2] { j, i };
                     room.transform.GetChild(4).Find("00_Background").GetComponent<RoomInfo>().roomPos = b;
                     for(int z =0;z<trees.Length;z++)
@@ -270,7 +275,8 @@ public class CreatMapMatrix : MonoBehaviour
         Debug.Log(ii[0].ToString() + ii[1].ToString());
         Debug.Log(trees[lastRoom-1].point[0].ToString()+ trees[lastRoom - 1].point[1].ToString());
         findRootNode(trees[lastRoom - 1]);
-        Instantiate(core, new Vector3((ii[1]-14) * 30, 0,  (- ii[0]+14) * 20), Quaternion.Euler(90.0f, 0.0f, 0.0f));
+        findCoreRoom(ii);
+        Instantiate(core, coreRoom.transform.GetChild(4).Find("SpawnPostion").Find("CorePos").gameObject.transform.position, Quaternion.Euler(90.0f, 0.0f, 0.0f));
 
     }
 
@@ -520,5 +526,16 @@ public class CreatMapMatrix : MonoBehaviour
             t.childDoor = 8;
         else if (parentDoor == 8)
             t.childDoor = 4;
+    }
+    void findCoreRoom(int[] ii)
+    {
+        for(int i=0;i<rooms.Count;i++)
+        {
+            if(rooms[i].GetComponent<SelectGround>().pos[0] == ii[0] && rooms[i].GetComponent<SelectGround>().pos[1] == ii[1])
+            {
+                coreRoom = rooms[i];
+                return;
+            }
+        }
     }
 }

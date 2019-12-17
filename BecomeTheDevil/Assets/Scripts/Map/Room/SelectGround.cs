@@ -5,6 +5,7 @@ using UnityEngine;
 public class SelectGround : MonoBehaviour
 {
     public List<GameObject> groundList = new List<GameObject>();
+    public int[] pos = new int[2];
     // Start is called before the first frame update
     void Awake()
     {

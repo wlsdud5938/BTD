@@ -160,4 +160,10 @@ public class Moving : MonoBehaviour
             isRight = false;
 
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log(collision.gameObject.name);
+    }
+
 }
