@@ -39,6 +39,8 @@ public class Bullet : MonoBehaviour
 
             if (dis > maxDis) break;
             bulletSpeed += acceleration * Time.fixedDeltaTime;
+            if (float.IsNaN(bulletSpeed))
+                bulletSpeed = 0;
             transform.position += target.normalized * bulletSpeed * Time.deltaTime;
             yield return null;
             

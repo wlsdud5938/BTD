@@ -364,7 +364,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aggroType: 0
-  aggro: 0
+  aggro: 1
 --- !u!114 &5776761966454137170
 MonoBehaviour:
   m_ObjectHideFlags: 0

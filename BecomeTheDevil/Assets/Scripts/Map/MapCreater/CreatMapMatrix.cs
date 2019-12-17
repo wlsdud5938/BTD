@@ -37,8 +37,8 @@ public class CreatMapMatrix : MonoBehaviour
     private int[] enq = new int[2];
     private int[] deq = new int[2];
     private int ran;
-    private int[] randomArr1 = new int[8] {2,3,6,7,10,11,14,15};    //오른쪽이 열린 방 목록
-    private int[] randomArr2 = new int[8] {1,3,5,7,9,11,13,15};     //왼쪽이 열린 방 목록
+    private int[] randomArr1 = new int[8] {2,3,6,7,10,11,14,15};    //왼쪽이 열린 방 목록
+    private int[] randomArr2 = new int[8] {1,3,5,7,9,11,13,15};     //오른쪽이 열린 방 목록
     private int[] randomArr3 = new int[8] {8,9,10,11,12,13,14,15};      //윗쪽이 열린 방 목록
     private int[] randomArr4 = new int[8] {4,5,6,7,12,13,14,15};        //아래쪽이 열린 방 목록
     public Tree[] trees = new Tree[20];

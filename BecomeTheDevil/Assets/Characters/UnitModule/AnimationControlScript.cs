@@ -40,6 +40,10 @@ public class AnimationControlScript : MonoBehaviour
     {
         if (gameObject.CompareTag("Enemy"))
             GameManager.instance.enemyCount--;
+        if(gameObject.CompareTag("Unit"))
+        {
+            gameObject.GetComponent<FindAggroTarget>().currentRoom.unitList.Remove(gameObject);
+        }
         // 밝아진다
         for (int i = 0; i < sprites.Length; ++i) sprites[i].material.DOFloat(2, "_Brightness", 0.2f);
         yield return new WaitForSeconds(0.2f);

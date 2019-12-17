@@ -94,6 +94,14 @@ public class RoomInfo : MonoBehaviour
             isRootRoom = true;
             gameManager.rootRoom = gameObject.GetComponent<RoomInfo>();
         }
+        if (other.CompareTag("Player"))
+            unitList.Add(other.gameObject);
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+            unitList.Remove(other.gameObject);
     }
 
 

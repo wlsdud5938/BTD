@@ -21,6 +21,4 @@ public abstract class Health : MonoBehaviour
             return damage * (1 - Mathf.Sqrt(defWeight * defensive));
         return 0;
     }
-
-
 }

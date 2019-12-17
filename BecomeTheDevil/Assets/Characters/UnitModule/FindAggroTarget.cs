@@ -87,6 +87,14 @@ public class FindAggroTarget : MonoBehaviour
                 tempAggroStack = list[i].GetComponent<AggroType>().aggro;
                 tempTarget = list[i].gameObject;
             }
+            else if(list[i].GetComponent<AggroType>().aggro == tempAggroStack)
+            {
+                if(Distence(list[i], gameObject) < Distence(tempTarget, gameObject))
+                {
+                    tempAggroStack = list[i].GetComponent<AggroType>().aggro;
+                    tempTarget = list[i].gameObject;
+                }
+            }
         }
         if (tempTarget == null)
             hasTarget = false;
@@ -124,4 +132,8 @@ public class FindAggroTarget : MonoBehaviour
         agent.destination = new Vector3(moveTarget.transform.position.x, 0, moveTarget.transform.position.z); ;
     }
 
+    float Distence(GameObject to, GameObject from)
+    {
+        return Mathf.Sqrt(Mathf.Pow(from.transform.position.x-to.transform.position.x, 2)+ Mathf.Pow(from.transform.position.z - to.transform.position.z, 2));
+    }
 }
